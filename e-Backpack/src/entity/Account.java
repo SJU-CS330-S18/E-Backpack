@@ -1,4 +1,4 @@
-package Entity;
+package entity;
 
 /**
  * This is Account entity class which contains information of Account
