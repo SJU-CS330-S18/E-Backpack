@@ -14,6 +14,7 @@
 		<div class="row justify-content-md-center">
 			<div class="col-md-6 text-center">
 				<div class="list-group">
+				
 					<h1>Welcome to E-Backpack</h1>
 					<a class="list-group-item btn btn-info" href="UpdateProfile.jsp">Update Profile</a><br>
 					<a class="list-group-item btn btn-warning" href="../planner/PlannerPage.jsp">Planner</a> <br>
