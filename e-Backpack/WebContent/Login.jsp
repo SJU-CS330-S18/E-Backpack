@@ -1,8 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:useBean id="error" class="apec.users.Error" scope="session"/>
+
 
 <html>
 <link rel="stylesheet" type="text/css" href="styles.css" />
+
+<style>
+
+
+#banner{
+  width:100%;
+  background-size:880px 680px;
+  background-repeat:no-repeat;
+  background-position:60% 46%;
+  height: 99px;
+  background-color: #333333;
+  color: white;
+  text-align: center;
+}
+
+#logginblock{
+	width: 400px;
+	height: 300px;
+	background-color: white;
+	background-position:center;
+	margin:auto;
+	box-shadow: 10px 10px 5px #333333;
+	
+}
+</style>
+
 <script>function myFunction() {
     var x = document.getElementById("pass");
     if (x.type === "password") {
@@ -14,10 +40,16 @@
 
 <head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-<title>APEC GABEs Login</title>
+<title>e-Backpack Login</title>
+<div id="banner">
+e-Backpack
+</div>
+
+
 </head>
-<jsp:include page="Decorators/Header.jsp" />
+
 <body>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
@@ -43,7 +75,7 @@
 					<input class="button" name="Login" value="Login" type="submit">
 					<input class="button" type="reset">
 			</form>
-			<font color="red"><%=error.getError()%></font>
+		
 		</div>
 	</div>
 	</div>
