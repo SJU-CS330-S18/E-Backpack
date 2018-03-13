@@ -14,7 +14,7 @@
 		<div class="row justify-content-md-center">
 			<div class="col-md-6 text-center">
 				<div class="list-group">
-				<li><a href="userMenu.jsp">Menu</a></li>
+				<li><a href="../homepage/userMenu.jsp">Menu</a></li>
 					<h1>Folder Menu</h1>			
 				</div>
 			</div>
