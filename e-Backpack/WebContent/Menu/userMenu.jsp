@@ -16,7 +16,7 @@
 				<div class="list-group">
 					<h1>Welcome to E-Backpack</h1>
 					<a class="list-group-item btn btn-info" href="UpdateProfile.jsp">Update Profile</a><br>
-					<a class="list-group-item btn btn-warning" href="plannerMenu.jsp">Planner</a> <br>
+					<a class="list-group-item btn btn-warning" href="../planner/PlannerPage.jsp">Planner</a> <br>
 					<a class="list-group-item btn btn-success" href="folderMenu.jsp">Folder</a><br>
 					<a class="list-group-item btn btn-success" href="notebookMenu.jsp">Notebook</a><br>
 				</div>
