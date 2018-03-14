@@ -2,7 +2,7 @@
 
 
 <html>
-<link rel="stylesheet" type="text/css" href="styles.css" />
+<link rel="stylesheet" type="text/css" href="e-BP.css" />
 
 <style>
 
@@ -13,19 +13,20 @@
   background-repeat:no-repeat;
   background-position:60% 46%;
   height: 99px;
-  background-color: #333333;
-  color: white;
-  text-align: center;
+  background-color: #0A0808;
+  color: #93A3B1;
+  text-align: left;
+  font-size: 72;
 }
 
 #logginblock{
 	width: 400px;
-	height: 300px;
+	height: 250px;
 	background-color: white;
 	background-position:center;
 	margin:auto;
 	box-shadow: 10px 10px 5px #333333;
-	
+	text-align: center;
 }
 </style>
 
@@ -41,14 +42,39 @@
 <head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>e-Backpack Login</title>
-<div id="banner">
-e-Backpack 
-</div>
+
 
 
 </head>
 
 <body>
+
+<div id="banner">
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Login</a>
+  <a href="#">Register</a>
+</div>
+
+
+<span style="font-size:45px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<!--  ignore the ...... that was just me being sneaky and centering the title w/ out messing up the navigation bar-->
+<font color="#0A0808">......</font> e-Backpack 
+</div>
+
+<div id="logginblock"> 
 
 	<div class="container">
 		<div class="row">
@@ -76,6 +102,7 @@ e-Backpack
 					<input class="button" type="reset">
 			</form>
 		
+		</div>
 		</div>
 	</div>
 	</div>
