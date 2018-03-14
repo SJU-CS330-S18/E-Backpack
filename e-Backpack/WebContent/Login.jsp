@@ -42,7 +42,7 @@
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>e-Backpack Login</title>
 <div id="banner">
-e-Backpack
+e-Backpack 
 </div>
 
 
