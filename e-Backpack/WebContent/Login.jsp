@@ -97,9 +97,19 @@ function closeNav() {
 						<p class="center">
 						<input type="checkbox" onclick="myFunction()">Show Password
 					</div>
-
+			
 					<input class="button" name="Login" value="Login" type="submit">
 					<input class="button" type="reset">
+					<br>
+					<br>
+					<tr>
+					<td colspan="4" align ="right">
+   						 <br> <br> <h4> New To E-Backpack? </h2>
+    					<form method="post" action="Login.jsp" name="Login">
+   						<input style="color: black;" name="register" value="Create your E-Backpack account" type="submit">
+   					</form>
+				</td>
+			</tr>
 			</form>
 		
 		</div>

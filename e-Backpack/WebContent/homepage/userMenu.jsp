@@ -20,6 +20,7 @@
 					<a class="list-group-item btn btn-warning" href="../planner/PlannerPage.jsp">Planner</a> <br>
 					<a class="list-group-item btn btn-success" href="../folder/folderMenu.jsp">Folder</a><br>
 					<a class="list-group-item btn btn-success" href="../notebook/notebookMenu.jsp">Notebook</a><br>
+					<a class="list-group-item btn btn-success" href="../Login.jsp">Logout</a><br>
 				</div>
 			</div>
 		</div>

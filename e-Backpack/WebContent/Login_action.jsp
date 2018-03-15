@@ -1,19 +1,11 @@
-<%@ page language="java" import="java.sql.*,apec.*, apec.users.*"%>
-<jsp:useBean id="emp" class="apec.users.UserIdentity" scope="request"/>
-<jsp:useBean id="admin" class="apec.users.Admin" scope="session"/>
-<jsp:useBean id="customer" class="apec.users.Customer" scope="session"/>
-<jsp:setProperty name="emp" property="*"/>
+<%@ page language="java" import="java.sql.*"%>
+<jsp:useBean id="student" class= "entity.Student" scope="session"/> 
+<jsp:setProperty name="student" property="*"/> 
 
-<%       
-    int validUser = emp.login();
-    if(validUser == 1){   
-        response.sendRedirect("Menu/AdminMenu.jsp");
-        admin.setAdmin(emp);
-    }else if(validUser == 0){
-        customer.setCustomer(emp);
-        customer.login();
-        response.sendRedirect("Menu/CustomerMenu.jsp");
-    }else{
-    	response.sendRedirect("Login.jsp");
-    }
+<%if(student.login()){
+	 response.sendRedirect("homepage/userMenu.jsp");
+     }
+ else
+ { response.sendRedirect("homepage/userMenu.jsp");}
 %> 
+
