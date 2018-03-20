@@ -15,7 +15,7 @@
   height: 99px;
   background-color: #0A0808;
   color: #93A3B1;
-  text-align: left;
+  text-align: center;
   font-size: 72;
 }
 
@@ -53,12 +53,12 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Login</a>
+  <a href="#">About</a>
   <a href="#">Register</a>
 </div>
 
 
-<span style="font-size:45px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+<span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
 <script>
 function openNav() {
@@ -71,7 +71,7 @@ function closeNav() {
 </script>
 
 <!--  ignore the ...... that was just me being sneaky and centering the title w/ out messing up the navigation bar-->
-<font color="#0A0808">......</font> e-Backpack 
+ e-Backpack 
 </div>
 
 <div id="logginblock"> 
