@@ -8,12 +8,13 @@ import java.sql.*;
 import java.util.Date;
 
 
+
 /**
  * Use the SQL script file provided in this folder to create a NEW (slightly different) 
  * version of the ProductDeals database on Oracle and insert data into all tables. The 
  * script also creates an SQL function.
  */
-public class Student implements Serializable {
+public class Student extends StudentIdentity {
   /**
 	 * 
 	 */
@@ -44,6 +45,9 @@ public class Student implements Serializable {
   public Student(){
 	  
   }
+	public void setStudent(StudentIdentity user) {
+		setStudentIdentity(user);
+	}
   
   /**
    * This method and creates and returns a Connection object to the database. 
@@ -192,14 +196,15 @@ public void setPassword(String password) {
 
 	     con = openDBConnection();
 	     try{
-	     PreparedStatement pstmt=  con.prepareStatement("select * from student where username = ? and pass = ?");
+	     pstmt=  con.prepareStatement("select * from student where username = ? and pass = ?");
          pstmt.clearParameters();
          pstmt.setString(1,this.username);
          pstmt.setString(2, this.password);
-         ResultSet result = pstmt.executeQuery();
+         result = pstmt.executeQuery();
 	     System.out.println(result);
 	     if(result.next()) {
 	    	   this.setUsername(result.getString("username")); 
+	    	   this.setPassword(result.getString("pass")); 
 	    	   this.loggedIn = true;  
 	     }
 	      return this.loggedIn;
