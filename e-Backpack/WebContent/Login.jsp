@@ -14,7 +14,7 @@
   background-position:60% 46%;
   height: 99px;
   background-color: #0A0808;
-  color: #93A3B1;
+  color: #b5cce0;
   text-align: center;
   font-size: 72;
 }
