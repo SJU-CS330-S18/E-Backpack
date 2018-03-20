@@ -14,7 +14,7 @@ import java.util.Date;
  * version of the ProductDeals database on Oracle and insert data into all tables. The 
  * script also creates an SQL function.
  */
-public class Student extends StudentIdentity {
+public class Student implements Serializable {
   /**
 	 * 
 	 */
@@ -46,8 +46,9 @@ public class Student extends StudentIdentity {
   public Student(){
 	  
   }
-	public void setStudent(StudentIdentity user) {
-		setStudentIdentity(user);
+	public Student(String username, String password){
+		this.username=username;
+		this.password = password;
 	}
   
   /**
@@ -135,7 +136,8 @@ public void setLname(String lname) {
 }
 
 /**
- * A getter for class field username
+ * A getter for class field username;
+	     
  */
 public String getUsername() {
 	return username;
@@ -199,10 +201,10 @@ public void setPassword(String password) {
 	     try{
 	     pstmt=  con.prepareStatement("select * from student where username = ? and pass = ?");
          pstmt.clearParameters();
-         pstmt.setString(1, this.username);
-         pstmt.setString(2, this.password);
+         pstmt.setString(1, this.getUsername());
+         pstmt.setString(2, this.getPassword());
          result = pstmt.executeQuery();
-	     System.out.println(result);
+	     
 	     if(result.next()) {
 	    	   this.setUsername(result.getString("username")); 
 	    	   this.setPassword(result.getString("pass")); 
