@@ -28,6 +28,7 @@ public class Student extends StudentIdentity {
   private String lname;
   private String username;
   private String password;
+  
   private PreparedStatement pstmt;
   private Statement stmt;
   private ResultSet result;
@@ -198,13 +199,17 @@ public void setPassword(String password) {
 	     try{
 	     pstmt=  con.prepareStatement("select * from student where username = ? and pass = ?");
          pstmt.clearParameters();
-         pstmt.setString(1,this.username);
+         pstmt.setString(1, this.username);
          pstmt.setString(2, this.password);
          result = pstmt.executeQuery();
 	     System.out.println(result);
 	     if(result.next()) {
 	    	   this.setUsername(result.getString("username")); 
 	    	   this.setPassword(result.getString("pass")); 
+	    	   this.setFname(result.getString("fname"));
+	    	   this.setLname(result.getString("lname"));
+	    	   this.setPhoneno(result.getString("phoneno"));
+	    	   this.setEmailad(result.getString("email"));
 	    	   this.loggedIn = true;  
 	     }
 	      return this.loggedIn;
