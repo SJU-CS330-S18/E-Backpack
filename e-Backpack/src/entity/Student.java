@@ -192,11 +192,11 @@ public void setPassword(String password) {
 
 	     con = openDBConnection();
 	     try{
-	     pstmt=  con.prepareStatement("select username from student where username = ? and pass = ?");
+	     PreparedStatement pstmt=  con.prepareStatement("select * from student where username = ? and pass = ?");
          pstmt.clearParameters();
          pstmt.setString(1,this.username);
          pstmt.setString(2, this.password);
-	     result = pstmt.executeQuery();
+         ResultSet result = pstmt.executeQuery();
 	     System.out.println(result);
 	     if(result.next()) {
 	    	   this.setUsername(result.getString("username")); 

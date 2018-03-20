@@ -6,6 +6,6 @@
 	 response.sendRedirect("homepage/userMenu.jsp");
      }
  else
- { response.sendRedirect("homepage/userMenu.jsp");}
+ { response.sendRedirect("Login.jsp");}
 %> 
 
