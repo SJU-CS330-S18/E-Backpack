@@ -103,15 +103,14 @@ function closeNav() {
 					<br>
 					<br>
 					<tr>
+					</form>
 					<td colspan="4" align ="right">
    						 <br> <br> <h4> New To E-Backpack? </h2>
-    					<form method="post" action="Login.jsp" name="Login">
-   						<input style="color: black;" name="register" value="Create your E-Backpack account" type="submit">
+    					<form method="post" action="Register.jsp" name="Register">
+   						<input style="color: black;" name="Register" value="Create your E-Backpack account" type="submit">
    					</form>
 				</td>
 			</tr>
-			</form>
-		
 		</div>
 		</div>
 	</div>

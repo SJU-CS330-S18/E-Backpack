@@ -170,7 +170,7 @@ public void setPassword(String password) {
 	   
 	   try{
 		    con = openDBConnection();
-		    callStmt = con.prepareCall(" {call team5.CUSTOMER_REGISTER_PROC(?,?,?,?,?,?,?)}");
+		    callStmt = con.prepareCall(" {call team5.STUDENT_REGISTER(?,?,?,?,?,?)}");
 		    callStmt.setString(1,this.phoneno);
 		    callStmt.setString(2,this.emailad);
 		    callStmt.setString(3,this.fname);
