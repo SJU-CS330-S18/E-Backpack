@@ -51,7 +51,6 @@
   <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>
 </div>
 
-
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
 <script>
