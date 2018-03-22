@@ -3,7 +3,7 @@
 <jsp:setProperty name="student" property="*"/> 
 
 <%
-student= new Student(request.getParameter("username"),request.getParameter("password"));
+//student= new Student(request.getParameter("username"),request.getParameter("password"));
 if(student.login()){
 	 response.sendRedirect("userMenu.jsp");
      }
