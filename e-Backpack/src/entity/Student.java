@@ -222,6 +222,7 @@ public void setPassword(String password) {
 	        }
 	    }  
  
+ 
  /**
   * sets loggedIn class field to false
   * @throws IllegalStateException if then method is called when loggedIn = false

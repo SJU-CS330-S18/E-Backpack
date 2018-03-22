@@ -5,7 +5,7 @@
 <%
 student= new Student(request.getParameter("username"),request.getParameter("password"));
 if(student.login()){
-	 response.sendRedirect("homepage/userMenu.jsp");
+	 response.sendRedirect("userMenu.jsp");
      }
  else
  { response.sendRedirect("Login.jsp");}
