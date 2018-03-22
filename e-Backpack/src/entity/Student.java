@@ -199,7 +199,7 @@ public void setPassword(String password) {
 
 	     con = openDBConnection();
 	     try{
-	     pstmt=  con.prepareStatement("select * from student where username = ? and pass = ?");
+	     pstmt= con.prepareStatement("select * from student where username = ? and pass = ?");
          pstmt.clearParameters();
          pstmt.setString(1, this.getUsername());
          pstmt.setString(2, this.getPassword());

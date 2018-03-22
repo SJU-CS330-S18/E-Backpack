@@ -23,8 +23,8 @@ if(value!=null)
 }
 
 #logginblock{
-	width: 400px;
-	height: 250px;
+	width: 600px;
+	height: 300px;
 	background-color: white;
 	background-position:center;
 	margin:auto;
@@ -32,12 +32,52 @@ if(value!=null)
 	text-align: center;
 }
 </style>
- </style>
- </head>
- <body bgcolor = "#99ff66">
+
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<title>e-Backpack Register</title>
+
+
+
+</head>
+
+
+
+
+
+
+	<div id="banner">
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="Login.jsp">Log In</a>
+  
+</div>
+
+
+<span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+ e-Backpack 
+</div>
+
+
+ <body>
+
+<div id="logginblock">
  <div class ="container">
  <header>
- <h1 align="center"> CREATE YOUR ACCOUNT</h1>
+ <h1 align="center"> Create e-Backpack Account</h1>
  </header>
 <form style=""font-family: Times New Roman,Times,serif";" method="post"action="Register_Action.jsp" name="RegisterForm">
 <table align="center">
@@ -76,8 +116,11 @@ if(value!=null)
 <td colspan="4" align ="right">
    <input style="color: black;" name="Confirm" value="Confirm" type="submit">
 </td>
+  </div>
  </div>
+
  </table>
  </form>
+
 </body>
 </html>
