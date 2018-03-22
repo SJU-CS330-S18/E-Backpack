@@ -6,18 +6,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>addevent popup window</title>
-<link rel="stylesheet" type="text/css" href="modalStyle.css" />
+<link rel="stylesheet" type="text/css" href="modalStyle.css"/>
 </head>
 <body>
 
-<button id='modalBtn' class="button">Click Here</button>
+<button id="modalBtn" class="button">Click Here</button>
 
 
 
 <div id="SimpleModal" class="modal">
-	<div class=modal-content">
+	<div class="modal-content">
 		<span class="closeBtn">&times;</span>
-		<p>add new event popup window</p>
+		<form method="post" action="Login_action.jsp" name="Login">
+		<button id="addEventBtn" class="button">Add Event</button>
+					<div class="form-group">
+						<p class="center">
+							<label>Event Title:</label> <input class="event-info"
+								name="Title" value="">
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>Description:</label> <input id="pass" class="event-info"
+								name="Desc" value="">
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>Date:</label> <input class="event-info"
+								name="Date" value="">
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>Start Time</label> <input class="event-info"
+								name="Time" value="">
+						</p>
+					</div>
+					</form>
 	</div>
 </div>
 

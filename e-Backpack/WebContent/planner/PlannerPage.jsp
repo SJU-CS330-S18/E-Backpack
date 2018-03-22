@@ -58,6 +58,7 @@ margin-bottom:20px;
  text-decoration: none;
 }
 </style>
+<link rel="stylesheet" type="text/css" href="modalStyle.css"/>
 </head>
 <div class="container">
 
@@ -73,7 +74,43 @@ margin-bottom:20px;
 
 <body>
 <li><a href="viewPersonCalen.jsp">Personal Calendar</a></li>
-<li><a href="addEvent.jsp">Add an Event</a></li>
+<li><button id="modalBtn" class="button">Add Event</button></li>
+<div id="SimpleModal" class="modal">
+	<div class="modal-content">
+		<span class="closeBtn">&times;</span>
+		<h4 id= "modalHeader">Create New Event</h4>
+		<form method="post" action="addEvent_action.jsp" name="addEvent">
+		
+					<div class="form-group">
+						<p class="center">
+							<label>Event Title:</label> <input class="event-info"
+								name="Title" value="">
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>Description:</label> <input id="pass" class="event-info"
+								name="Desc" value="">
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>Date:</label> <input class="event-info"
+								name="Date" value="">
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>Start Time</label> <input class="event-info"
+								name="Time" value="">
+								<button id="addEventBtn" class="button">Add Event</button>
+						</p>
+					</div>
+					</form>
+	</div>
+</div>
+
+<script src = "modalFunc.js"></script>
 <li><a href="search1Day.jsp">Search One Day</a></li>
 </ul>
 </body>
