@@ -170,7 +170,7 @@ public void setPassword(String password) {
 	   
 	   try{
 		    con = openDBConnection();
-		    callStmt = con.prepareCall(" {call team5.CUSTOMER_REGISTER_PROC(?,?,?,?,?,?,?)}");
+		    callStmt = con.prepareCall(" {call team5.STUDENT_REGISTER(?,?,?,?,?,?)}");
 		    callStmt.setString(1,this.phoneno);
 		    callStmt.setString(2,this.emailad);
 		    callStmt.setString(3,this.fname);
@@ -199,7 +199,7 @@ public void setPassword(String password) {
 
 	     con = openDBConnection();
 	     try{
-	     pstmt=  con.prepareStatement("select * from student where username = ? and pass = ?");
+	     pstmt= con.prepareStatement("select * from student where username = ? and pass = ?");
          pstmt.clearParameters();
          pstmt.setString(1, this.getUsername());
          pstmt.setString(2, this.getPassword());
@@ -221,6 +221,7 @@ public void setPassword(String password) {
 	            return false;
 	        }
 	    }  
+ 
  
  /**
   * sets loggedIn class field to false

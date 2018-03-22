@@ -14,7 +14,7 @@
 
 <head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-<title>APEC GABEs Login</title>
+
 </head>
 <jsp:include page="Decorators/Header.jsp" />
 <body>
