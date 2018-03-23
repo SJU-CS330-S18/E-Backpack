@@ -2,74 +2,64 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<link rel="stylesheet" type="text/css" href="modalStyle.css"/>
+<link rel="stylesheet" type="text/css" href="e-BP.css"/>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Personal Planner</title>
-<style type="text/css">
-body{
-margin:0;
-padding:0;
-font-family:Titillium Web;
-color:black;
-background:#f3f3f3;
+<style>
+
+#banner{
+  width:100%;
+  background-size:880px 680px;
+  background-repeat:no-repeat;
+  background-position:60% 46%;
+  height: 99px;
+  background-color: #0A0808;
+  color: #b5cce0;
+  text-align: center;
+  font-size: 72;
+  padding: 0,0,0,0;
 }
-.container {
-    max-width:960px;
-    width:96%
-}
-header, footer {
-    padding: 1em;
-    color: white;
-    background-color: black;
-    clear: left;
-    text-align: center;
-}
-.logo{
-float:left;
-margin-top:-30px;
-url:logo.PNG;
-}
-nav{
-float:right;
-line-height:70px;
-}
-nav li{
-display:inline-block;
-padding:5px 20px;
-margin-left:10px;
-background:#ff4719;
-line-height:normal;
-}
-nav li a{
-	color: white;
-	 text-decoration: none;
-}
-.content h2{
-color:black;
-background: #f1f1c1;
-padding:10px;
-border-radius:Spx;
-margin-bottom:20px;
-}
-.content ul {
-	list-style-position:outside;
-}
-.content ul a{
- text-decoration: none;
-}
+
 </style>
-<link rel="stylesheet" type="text/css" href="modalStyle.css"/>
+<head>
+<meta content="text/html; charset=ISO-8859-1"
+		http-equiv="content-type">
+				<title >Planner Page</title>
+
+
 </head>
-<div class="container">
+<body>
 
+<div id="banner">
 
-<h1>Make Plan</h1>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="UpdateProfile.jsp">Update Profile</a>
+  <td align="right" width="690"><a href="e-Backpack/WebContent/Logout.jsp">Logout</a></td></tr><br>
 </div>
 
-</head>
+<span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<!-- This title is not the same as the others because of the modal HTML  -->
+ <font size="70">e-Backpack </font>
+</div>
+
+
 <div class="container">
 <div class="content">
-<h2>Main Menu</h2>
+
 <ul class="a">
 
 <body>

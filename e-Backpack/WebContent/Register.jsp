@@ -24,7 +24,7 @@ if(value!=null)
 
 #logginblock{
 	width: 600px;
-	height: 300px;
+	height: 350px;
 	background-color: white;
 	background-position:center;
 	margin:auto;
@@ -32,6 +32,16 @@ if(value!=null)
 	text-align: center;
 }
 </style>
+
+<script>function myFunction() {
+    var x = document.getElementById("pass");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+        
+    }
+}</script>
 
 
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
@@ -107,19 +117,36 @@ function closeNav() {
 </tr>
 <tr>
 	<th align "right"> Password : </th> 
-	<td> <input name="password" size ="25%" height = "100" value= "" ></td>
+	<td> <input name="password" size ="25%" height = "100" value= "" type="password" id="pass" ></td>
 </tr>
 <tr>
 	<th align "right"> Retype Password : </th> 
-	<td> <input name="password2" size ="25%" height = "100" value= "" ></td>
+	<td> <input name="password2" size ="25%" height = "100" value= "" type="password" id="pass">
+	
+	</td>
+	
+	
+	
 </tr>
+
 <td colspan="4" align ="right">
+
+
    <input style="color: black;" name="Confirm" value="Confirm" type="submit">
 </td>
+
+
   </div>
+  
+  
  </div>
 
  </table>
+ 	<div class="form-group">
+						<p class="center">
+						<input type="checkbox" onclick="myFunction()">Show Password
+					</div>
+ 
  </form>
 
 </body>
