@@ -17,8 +17,16 @@ background:#f3f3f3;
     max-width:960px;
     width:96%
 }
-header, footer {
+.plannerPageHeader{ 
     padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+footer {
+	padding: 1em;
     color: white;
     background-color: black;
     clear: left;
@@ -69,7 +77,7 @@ margin-bottom:20px;
 </head>
 <div class="container">
 <div class="content">
-<h2>Main Menu</h2>
+<h2 id = "plannerPageHeader">Main Menu</h2>
 <ul class="a">
 
 <body>
@@ -77,36 +85,40 @@ margin-bottom:20px;
 <li><button id="modalBtn" class="button">Add Event</button></li>
 <div id="SimpleModal" class="modal">
 	<div class="modal-content">
+		<div class = "modal-header">
 		<span class="closeBtn">&times;</span>
-		<h4 id= "modalHeader">Create New Event</h4>
+		<h2 class= "modalHead">Modal Header</h2>
+		</div>
+		<div class="modal-body">
 		<form method="post" action="addEvent_action.jsp" name="addEvent">
 		
 					<div class="form-group">
 						<p class="center">
-							<label>Event Title:</label> <input class="event-info"
-								name="Title" value="">
+							<label>Event Title:</label> <input id="Title" class="event-title"
+								name="Event Title" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Description:</label> <input id="pass" class="event-info"
-								name="Desc" value="">
+							<label>Description:</label> <input id="descText" class="event-desc"
+								name="Description" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Date:</label> <input class="event-info"
+							<label>Date:</label> <input class="event-date"
 								name="Date" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Start Time</label> <input class="event-info"
+							<label>Start Time</label> <input class="event-time"
 								name="Time" value="">
 								<button id="addEventBtn" class="button">Add Event</button>
 						</p>
 					</div>
 					</form>
+					</div>
 	</div>
 </div>
 
