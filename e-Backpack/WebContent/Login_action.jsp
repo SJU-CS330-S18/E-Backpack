@@ -8,6 +8,10 @@ if(student.login()){
 	 response.sendRedirect("userMenu.jsp");
      }
  else
- { response.sendRedirect("Login.jsp");}
+ { 
+	 response.sendRedirect("Login.jsp?Error=1"); 
+	 //response.sendRedirect("Login.jsp");
+ 
+ }
 %> 
 
