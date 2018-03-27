@@ -14,13 +14,12 @@ if(!((request.getParameter("password")).equals(request.getParameter("password2")
 	</jsp:forward>
 <%}
 else{
-try{
+	try{
 	  student.setPassword(request.getParameter("password"));
 	  student.registerCustomer();
-   
- }catch(IllegalStateException ise){
-    out.println(ise.getMessage());
-}
-response.sendRedirect("Login.jsp");
-}
+ 	}catch(IllegalStateException ise){
+    		out.println(ise.getMessage());
+	}
+	response.sendRedirect("Login.jsp");
+	}
 %>
