@@ -5,13 +5,13 @@ body{
 	line-height: 1.6;
 }
 
-.button{
+.Modalbutton{
 	background: #555753;
 	padding: 1em .5em;
 	color: #fff;
 	border: 0;
 }
-.button:hover{
+.Modalbutton:hover{
 	background: #babdb6;
 }
 
@@ -29,11 +29,11 @@ body{
 
 
 .modal-content{
-	background-color: #f4f4f4;
+	background-color: #555753;
 	margin: 20% auto;
-	padding: ;
-	width: 50%;
-	height: 85%;
+	padding: 10px 10px ;
+	width: 40%;
+	height: 78%;
 	
 }
 
@@ -43,12 +43,16 @@ body{
 	font-size: 30px;
 }
 
-.addEventBtn{
+.Eventbutton{
 	background: #555753;
 	padding: 1em .5em;
 	color: #fff;
 	border: 0;
-	float: right;
+	
+}
+
+.Eventbutton:hover{
+	background: #babdb6;
 }
 
 .closeBtn:hover,.closeBtn:focus{
@@ -57,37 +61,14 @@ body{
 	cursor: pointer;
 }
 
-.event-title{
-	border: 2px solid #ccc;
-	border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
+.label{
+	display: inline-block;
+	float: left;
+	clear:left;
+	width: 250px;
+	text-align: right
 }
 
-.event-desc{
-	width: 50%;
-    height: 45px;
-    padding: 16px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-}
-
-.event-date{
-	border: 2px solid #ccc;
-	border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-}
-
-.event-time{
-	border: 2px solid #ccc;
-	border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-}
 
 .modal-header{
 	background: #000;
@@ -97,4 +78,43 @@ body{
 
 .modalHead{
 	color: #555753
+}
+
+.event-desc{
+	width: 60%;
+	height: 110px;
+	padding: 6px 10px;
+	box-sizing: border-box;
+	background-color: #d3d7cf;
+	color: #000
+}
+
+.event-title{
+	padding: 6px 10px;
+	background-color: #d3d7cf;
+	color: #000;
+}
+
+.event-date{
+	padding: 6px 10px;
+	background-color: #d3d7cf;
+	color: #000;
+}
+
+.event-start{
+	padding: 6px 10px;
+	background-color: #d3d7cf;
+	color: #000;
+}
+
+.event-end{
+	padding: 6px 10px;
+	background-color: #d3d7cf;
+	color: #000;
+}
+
+.event-location{
+	padding: 6px 10px;
+	background-color: #d3d7cf;
+	color: #000;
 }

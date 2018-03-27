@@ -10,71 +10,6 @@
 <title>Personal Planner</title>
 <style>
 
-#banner{
-  width:100%;
-  background-size:880px 680px;
-  background-repeat:no-repeat;
-  background-position:60% 46%;
-  height: 99px;
-  background-color: #0A0808;
-  color: #b5cce0;
-  text-align: center;
-  font-size: 72;
-  padding: 0,0,0,0;
-}
-
-.container {
-    max-width:960px;
-    width:96%
-}
-.plannerPageHeader{ 
-    padding: 1em;
-    color: white;
-    background-color: black;
-    clear: left;
-    text-align: center;
-}
-
-footer {
-	padding: 1em;
-    color: white;
-    background-color: black;
-    clear: left;
-    text-align: center;
-}
-.logo{
-float:left;
-margin-top:-30px;
-url:logo.PNG;
-}
-nav{
-float:right;
-line-height:70px;
-}
-nav li{
-display:inline-block;
-padding:5px 20px;
-margin-left:10px;
-background:#ff4719;
-line-height:normal;
-}
-nav li a{
-	color: white;
-	 text-decoration: none;
-}
-.content h2{
-color:black;
-background: #f1f1c1;
-padding:10px;
-border-radius:Spx;
-margin-bottom:20px;
-}
-.content ul {
-	list-style-position:outside;
-}
-.content ul a{
- text-decoration: none;
-}
 </style>
 <head>
 <meta content="text/html; charset=ISO-8859-1"
@@ -116,41 +51,58 @@ function closeNav() {
 
 <body>
 <li><a href="viewPersonCalen.jsp">Personal Calendar</a></li>
-<li><button id="modalBtn" class="button">Add Event</button></li>
+<li><button id="modalBtn" class="Modalbutton">Add Event</button></li>
 <div id="SimpleModal" class="modal">
 	<div class="modal-content">
 		<div class = "modal-header">
 		<span class="closeBtn">&times;</span>
-		<h2 class= "modalHead">Modal Header</h2>
+		<h2 class= "modalHead">Add New Event</h2>
 		</div>
 		<div class="modal-body">
 		<form method="post" action="addEvent_action.jsp" name="addEvent">
 		
 					<div class="form-group">
 						<p class="center">
-							<label>Event Title:</label> <input id="Title" class="event-title"
+							<label>Event Title:</label> <input type ="text" id="Title" class="event-title"
 								name="Event Title" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Description:</label> <input id="descText" class="event-desc"
+							<label>Description:</label> <input type ="text"id="descText" class="event-desc"
 								name="Description" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Date:</label> <input class="event-date"
+							<label>Date:</label> <input type = "text" class="event-date"
 								name="Date" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Start Time</label> <input class="event-time"
-								name="Time" value="">
-								<button id="addEventBtn" class="button">Add Event</button>
+							<label>Start Time</label> <input type = "text" class="event-start"
+								name="Timestart" value="">
+								<label>AM</label><input type = "radio" id ="endAM" name="startAMPM">
+								<label>PM</label><input type = "radio" id ="endPM" name="startAMPM">
 						</p>
 					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>End Time</label> <input type = "text" class="event-end"
+								name="Timeend" value="">
+								<label>AM</label><input type = "radio" id ="endAM" name="endAMPM">
+								<label>PM</label><input type = "radio" id ="endPM" name="endAMPM">
+							
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>Location:</label> <input type = "text" id="Location" class="event-location"
+								name="Event Location" value="">
+						</p>
+					</div>
+					<div><button id="addEventBtn" class="Eventbutton">Add Event</button></div>
 					</form>
 					</div>
 	</div>
