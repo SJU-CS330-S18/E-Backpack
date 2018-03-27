@@ -10,8 +10,6 @@
 <title>Personal Planner</title>
 <style>
 
-<<<<<<< HEAD
-=======
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -25,11 +23,7 @@
   padding: 0,0,0,0;
 }
 #current_day { background-color:yellow; font-weight: bold; } 
--->
 
-
-
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
 </style>
 <head>
 <meta content="text/html; charset=ISO-8859-1"
@@ -138,14 +132,10 @@ actual_calendar.innerHTML = month_menu.calendar();
 <div id="show_calendar">&nbsp;</div>
 <div id="current_month">&nbsp;</div>
 
-<<<<<<< HEAD
+
 <div class="container">
 <div class="content">
 <h2 id = "plannerPageHeader">Main Menu</h2>
-=======
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
-
-<<<<<<< HEAD
 
 <body>
 <li><a href="viewPersonCalen.jsp">Personal Calendar</a></li>
