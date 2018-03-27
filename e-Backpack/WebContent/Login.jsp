@@ -74,6 +74,8 @@ function closeNav() {
  e-Backpack 
 </div>
 
+
+
 <div id="logginblock"> 
 
 	<div class="container">
@@ -98,8 +100,19 @@ function closeNav() {
 						<input type="checkbox" onclick="myFunction()">Show Password
 					</div>
 			
+
+			
 					<input class="button" name="Login" value="Login" type="submit">
-					<input class="button" type="reset">
+					<input class="button" type="reset"><br><br>
+					
+<font color="red"><%
+String error = request.getParameter("Error");
+if(error != null && error.equals("1")){
+	out.println("Invalid Credentails, please try again.");
+}
+
+
+%></font>
 					<br>
 					<br>
 					<tr>

@@ -91,10 +91,6 @@ function closeNav() {
  </header>
 <form style=""font-family: Times New Roman,Times,serif";" method="post"action="Register_Action.jsp" name="RegisterForm">
 <table align="center">
-<!-- <tr> -->
-<!-- 	<th align "right"> ID : </th>  -->
-<%-- 	<td> <input name="id" size ="25%" height = "100" value= <%=admin.seqcustId()%> readonly></td> --%>
-<!-- </tr> -->
 <tr>
 	<th align "right"> Username : </th> 
 	<td> <input name="username" size ="25%" height = "100" value= "" ></td>

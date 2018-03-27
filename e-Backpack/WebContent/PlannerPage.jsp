@@ -10,8 +10,6 @@
 <title>Personal Planner</title>
 <style>
 
-<<<<<<< HEAD
-=======
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -29,7 +27,6 @@
 
 
 
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
 </style>
 <head>
 <meta content="text/html; charset=ISO-8859-1"
@@ -138,74 +135,40 @@ actual_calendar.innerHTML = month_menu.calendar();
 <div id="show_calendar">&nbsp;</div>
 <div id="current_month">&nbsp;</div>
 
-<<<<<<< HEAD
-<div class="container">
-<div class="content">
-<h2 id = "plannerPageHeader">Main Menu</h2>
-=======
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
 
-<<<<<<< HEAD
-
-<body>
-<li><a href="viewPersonCalen.jsp">Personal Calendar</a></li>
-<li><button id="modalBtn" class="Modalbutton">Add Event</button></li>
-=======
 <li><button id="modalBtn" class="button">Add Event</button></li>
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
 <div id="SimpleModal" class="modal">
 	<div class="modal-content">
-		<div class = "modal-header">
 		<span class="closeBtn">&times;</span>
-		<h2 class= "modalHead">Add New Event</h2>
-		</div>
-		<div class="modal-body">
+		<h4 id= "modalHeader">Create New Event</h4>
 		<form method="post" action="addEvent_action.jsp" name="addEvent">
 		
 					<div class="form-group">
 						<p class="center">
-							<label>Event Title:</label> <input type ="text" id="Title" class="event-title"
-								name="Event Title" value="">
+							<label>Event Title:</label> <input class="event-info"
+								name="Title" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Description:</label> <input type ="text"id="descText" class="event-desc"
-								name="Description" value="">
+							<label>Description:</label> <input id="pass" class="event-info"
+								name="Desc" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Date:</label> <input type = "text" class="event-date"
+							<label>Date:</label> <input class="event-info"
 								name="Date" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Start Time</label> <input type = "text" class="event-start"
-								name="Timestart" value="">
-								<label>AM</label><input type = "radio" id ="endAM" name="startAMPM">
-								<label>PM</label><input type = "radio" id ="endPM" name="startAMPM">
+							<label>Start Time</label> <input class="event-info"
+								name="Time" value="">
+								<button id="addEventBtn" class="button">Add Event</button>
 						</p>
 					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>End Time</label> <input type = "text" class="event-end"
-								name="Timeend" value="">
-								<label>AM</label><input type = "radio" id ="endAM" name="endAMPM">
-								<label>PM</label><input type = "radio" id ="endPM" name="endAMPM">
-							
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Location:</label> <input type = "text" id="Location" class="event-location"
-								name="Event Location" value="">
-						</p>
-					</div>
-					<div><button id="addEventBtn" class="Eventbutton">Add Event</button></div>
 					</form>
-					</div>
 	</div>
 </div>
 
