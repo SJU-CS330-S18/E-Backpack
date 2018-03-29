@@ -244,6 +244,26 @@ public void setPassword(String password) {
    this.loggedIn = false;
  }
  
+
+ public ResultSet getEventList()  throws IllegalStateException{
+	  
+	  if(!isLoggedIn())
+	      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");
+	       try{
+	    	   stmt = con.createStatement();
+         String queryString = "SELECT EVENTDESCRIPTION, LOCATION, EVENTDATE, STARTTIME, ENDTIME " 
+         		+ "FROM EVENT "
+               + " WHERE STUUSERNAME = '" + this.getUsername() +"' ";
+
+         result = stmt.executeQuery(queryString);
+         
+	       }
+	       catch (Exception E) {
+	         E.printStackTrace();
+	       }
+	        return result; 
+	     }
+
  /* This method uses a CallStatement object to call an SQL stored procedure
   * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.**/
  
@@ -264,5 +284,6 @@ public void setPassword(String password) {
 	             E.printStackTrace();
 	   }
 }
+
   
 }

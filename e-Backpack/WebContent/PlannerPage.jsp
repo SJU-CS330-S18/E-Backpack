@@ -22,6 +22,23 @@
   font-size: 72;
   padding: 0,0,0,0;
 }
+
+
+#holdingblock{
+	display: inline-block;
+	width: 160px;
+	height: 300px;
+	background-color: white;
+	background-position:center;
+	margin-top:10px;
+	margin-left:40%;
+	box-shadow: 10px 10px 5px #333333;
+	text-align: center;
+	text-size: 40;
+	}
+
+
+
 #current_day { background-color:yellow; font-weight: bold; } 
 -->
 
@@ -61,6 +78,7 @@ function closeNav() {
  <font size="70">e-Backpack </font>
 </div>
 
+<dive id="holdingblock">
 <script type="text/javascript">
 <!-- Begin Hiding
 var today = new Date();
@@ -76,10 +94,10 @@ Date.prototype.calendar = function()
 var startingDay = new Date(this.getFullYear(), this.getMonth(), 1).getDay();
 //We will build the calendar_table variable then pass what we build back-->
    var calendarTable = '<table summary="Calendar" class="calendar" style="text-align: center;">';
-calendarTable += '<caption>' + this.getMonthNames()[this.getMonth()] + '&nbsp;' + this.getFullYear() + '</caption>';
+calendarTable += '<caption>'+ '<   '  + this.getMonthNames()[this.getMonth()] + '&nbsp;' + this.getFullYear() + '   >' + '</caption>' ;
 calendarTable += '<tr><td colspan="7"></td></tr>';
 calendarTable += '<tr>';
-calendarTable += '<td><font color="#B42600">S</font></td>';
+calendarTable += '<td><font color="red">S</font></td>';
 calendarTable += '<td>M</td>';
 calendarTable += '<td>T</td>';
 calendarTable += '<td>W</td>';
@@ -134,7 +152,7 @@ actual_calendar.innerHTML = month_menu.calendar();
 <p>&nbsp</p>
 <div id="show_calendar">&nbsp;</div>
 <div id="current_month">&nbsp;</div>
-
+</div>
 
 <li><button id="modalBtn" class="button">Add Event</button></li>
 <div id="SimpleModal" class="modal">
