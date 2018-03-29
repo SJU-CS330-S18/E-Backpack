@@ -233,5 +233,24 @@ public void setPassword(String password) {
    
    this.loggedIn = false;
  }
+ 
+ public ResultSet getEventList()  throws IllegalStateException{
+	  
+	  if(!isLoggedIn())
+	      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");
+	       try{
+	    	   stmt = con.createStatement();
+         String queryString = "SELECT EVENTDESCRIPTION, LOCATION, EVENTDATE, STARTTIME, ENDTIME " 
+         		+ "FROM EVENT "
+               + " WHERE STUUSERNAME = '" + this.getUsername() +"' ";
+
+         result = stmt.executeQuery(queryString);
+         
+	       }
+	       catch (Exception E) {
+	         E.printStackTrace();
+	       }
+	        return result; 
+	     }
   
 }

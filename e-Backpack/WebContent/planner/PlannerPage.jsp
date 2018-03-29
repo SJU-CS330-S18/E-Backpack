@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" import="java.sql.*,entity.*"%>
+<jsp:useBean id="student" class= "entity.Student" scope="session"/> 
+<jsp:setProperty name="student" property="*"/> 
 <html>
 <link rel="stylesheet" type="text/css" href="modalStyle.css"/>
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
@@ -23,10 +26,6 @@
   padding: 0,0,0,0;
 }
 #current_day { background-color:yellow; font-weight: bold; } 
--->
-
-
-
 </style>
 <head>
 <meta content="text/html; charset=ISO-8859-1"
@@ -57,12 +56,12 @@ function closeNav() {
 }
 
 </script>
-<!-- This title is not the same as the others because of the modal HTML  -->
+
  <font size="70">e-Backpack </font>
 </div>
 
 <script type="text/javascript">
-<!-- Begin Hiding
+
 var today = new Date();
 var month = today.getMonth();
 //Using the Date prototype to assign our month names-->
@@ -86,6 +85,12 @@ calendarTable += '<td>W</td>';
 calendarTable += '<td>TH</td>';
 calendarTable += '<td>F</td>';
 calendarTable += '<td>S</td></tr>'; 
+</script>
+<% try {
+          ResultSet rs = student.getEventList();
+         while (rs.next()) { %>
+
+<script>
 //Lets create blank boxes until we get to the day which actually starts the month-->
 for ( var i = 0; i < startingDay; i++ ) 
 { calendarTable += '<td>&nbsp;</td>'; }
@@ -99,7 +104,7 @@ var border = startingDay;
 for ( var id = '',  i = 1; i <= numberOfDays; i++ ) 
 { if (( month == month ) && ( today.getDate() == i )) { id = 'id="current_day"'; } 
 else { id = ''; }
-calendarTable += '<td ' + id + '>' + i + '</td>'; border++;
+calendarTable += '<td' + id + '>' + i + '</td>'; border++;
 if ((( border % 7 ) == 0 ) && ( i < numberOfDays )) 
 { 
 //Time to make new row, if there are any days left.-->
@@ -112,6 +117,7 @@ calendarTable += '</table>';
 //Return it-->
 return calendarTable; }
 //--> Let's add up some dynamic effect
+
 window.onload = function() {
 selected_month = '<form name="month_holder">';
 selected_month += '<select id="month_items" size="1" onchange="month_picker();">';
@@ -129,9 +135,15 @@ function month_picker()
 { month_menu = new Date(actual_month.value);
 actual_calendar.innerHTML = month_menu.calendar();
 }
-// Done Hiding -->
+
 </script>
-<p>&nbsp</p>
+<%}
+rs.close();}
+
+    catch(IllegalStateException ise){
+        out.println(ise.getMessage());
+    }
+%>
 <div id="show_calendar">&nbsp;</div>
 <div id="current_month">&nbsp;</div>
 
