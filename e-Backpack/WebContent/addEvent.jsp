@@ -50,4 +50,3 @@
 <script src = "modalFunc.js"></script>
 </body>
 </html>
-

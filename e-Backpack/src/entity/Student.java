@@ -29,6 +29,16 @@ public class Student implements Serializable {
   private String username;
   private String password;
   
+  /**
+   * Event fields
+   */
+  private String eventDescription;
+  private String location1;
+  private Date eventDate;
+  private Date startTime;
+  private Date endTime;
+  
+  
   private PreparedStatement pstmt;
   private Statement stmt;
   private ResultSet result;
@@ -234,6 +244,7 @@ public void setPassword(String password) {
    this.loggedIn = false;
  }
  
+
  public ResultSet getEventList()  throws IllegalStateException{
 	  
 	  if(!isLoggedIn())
@@ -252,5 +263,27 @@ public void setPassword(String password) {
 	       }
 	        return result; 
 	     }
+
+ /* This method uses a CallStatement object to call an SQL stored procedure
+  * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.**/
+ 
+ public void addEvent() {
+	   
+	   try{
+		    con = openDBConnection();
+		    callStmt = con.prepareCall(" {call team5.STUDENT_ADD_EVENT(?,?,?,?,?,?)}");
+		    callStmt.setString(1,this.eventDescription);
+		    callStmt.setString(2,this.location1);
+		    callStmt.setDate(3,(java.sql.Date) this.eventDate);
+		    callStmt.setDate(4,(java.sql.Date) this.startTime);
+		    callStmt.setDate(5,(java.sql.Date) this.endTime);
+		    callStmt.setString(6,this.username);
+		    callStmt.execute();
+		    callStmt.close();
+	   } catch (Exception E) {
+	             E.printStackTrace();
+	   }
+}
+
   
 }

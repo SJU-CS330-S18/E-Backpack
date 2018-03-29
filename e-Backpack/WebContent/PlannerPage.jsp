@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ page language="java" import="java.sql.*,entity.*"%>
-<jsp:useBean id="student" class= "entity.Student" scope="session"/> 
-<jsp:setProperty name="student" property="*"/> 
 <html>
 <link rel="stylesheet" type="text/css" href="modalStyle.css"/>
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
@@ -13,8 +10,6 @@
 <title>Personal Planner</title>
 <style>
 
-<<<<<<< HEAD
-=======
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -27,15 +22,28 @@
   font-size: 72;
   padding: 0,0,0,0;
 }
+
+
+#holdingblock{
+	display: inline-block;
+	width: 160px;
+	height: 300px;
+	background-color: white;
+	background-position:center;
+	margin-top:10px;
+	margin-left:40%;
+	box-shadow: 10px 10px 5px #333333;
+	text-align: center;
+	text-size: 40;
+	}
+
+
+
 #current_day { background-color:yellow; font-weight: bold; } 
-<<<<<<< HEAD
-=======
 -->
 
 
 
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
 </style>
 <head>
 <meta content="text/html; charset=ISO-8859-1"
@@ -66,12 +74,13 @@ function closeNav() {
 }
 
 </script>
-
+<!-- This title is not the same as the others because of the modal HTML  -->
  <font size="70">e-Backpack </font>
 </div>
 
+<dive id="holdingblock">
 <script type="text/javascript">
-
+<!-- Begin Hiding
 var today = new Date();
 var month = today.getMonth();
 //Using the Date prototype to assign our month names-->
@@ -85,22 +94,16 @@ Date.prototype.calendar = function()
 var startingDay = new Date(this.getFullYear(), this.getMonth(), 1).getDay();
 //We will build the calendar_table variable then pass what we build back-->
    var calendarTable = '<table summary="Calendar" class="calendar" style="text-align: center;">';
-calendarTable += '<caption>' + this.getMonthNames()[this.getMonth()] + '&nbsp;' + this.getFullYear() + '</caption>';
+calendarTable += '<caption>'+ '<   '  + this.getMonthNames()[this.getMonth()] + '&nbsp;' + this.getFullYear() + '   >' + '</caption>' ;
 calendarTable += '<tr><td colspan="7"></td></tr>';
 calendarTable += '<tr>';
-calendarTable += '<td><font color="#B42600">S</font></td>';
+calendarTable += '<td><font color="red">S</font></td>';
 calendarTable += '<td>M</td>';
 calendarTable += '<td>T</td>';
 calendarTable += '<td>W</td>';
 calendarTable += '<td>TH</td>';
 calendarTable += '<td>F</td>';
 calendarTable += '<td>S</td></tr>'; 
-</script>
-<% try {
-          ResultSet rs = student.getEventList();
-         while (rs.next()) { %>
-
-<script>
 //Lets create blank boxes until we get to the day which actually starts the month-->
 for ( var i = 0; i < startingDay; i++ ) 
 { calendarTable += '<td>&nbsp;</td>'; }
@@ -114,7 +117,7 @@ var border = startingDay;
 for ( var id = '',  i = 1; i <= numberOfDays; i++ ) 
 { if (( month == month ) && ( today.getDate() == i )) { id = 'id="current_day"'; } 
 else { id = ''; }
-calendarTable += '<td' + id + '>' + i + '</td>'; border++;
+calendarTable += '<td ' + id + '>' + i + '</td>'; border++;
 if ((( border % 7 ) == 0 ) && ( i < numberOfDays )) 
 { 
 //Time to make new row, if there are any days left.-->
@@ -127,7 +130,6 @@ calendarTable += '</table>';
 //Return it-->
 return calendarTable; }
 //--> Let's add up some dynamic effect
-
 window.onload = function() {
 selected_month = '<form name="month_holder">';
 selected_month += '<select id="month_items" size="1" onchange="month_picker();">';
@@ -145,86 +147,46 @@ function month_picker()
 { month_menu = new Date(actual_month.value);
 actual_calendar.innerHTML = month_menu.calendar();
 }
-
+// Done Hiding -->
 </script>
-<%}
-rs.close();}
-
-    catch(IllegalStateException ise){
-        out.println(ise.getMessage());
-    }
-%>
+<p>&nbsp</p>
 <div id="show_calendar">&nbsp;</div>
 <div id="current_month">&nbsp;</div>
+</div>
 
-<<<<<<< HEAD
-<div class="container">
-<div class="content">
-<h2 id = "plannerPageHeader">Main Menu</h2>
-=======
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
-
-<<<<<<< HEAD
-
-<body>
-<li><a href="viewPersonCalen.jsp">Personal Calendar</a></li>
-<li><button id="modalBtn" class="Modalbutton">Add Event</button></li>
-=======
 <li><button id="modalBtn" class="button">Add Event</button></li>
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
 <div id="SimpleModal" class="modal">
 	<div class="modal-content">
-		<div class = "modal-header">
 		<span class="closeBtn">&times;</span>
-		<h2 class= "modalHead">Add New Event</h2>
-		</div>
-		<div class="modal-body">
+		<h4 id= "modalHeader">Create New Event</h4>
 		<form method="post" action="addEvent_action.jsp" name="addEvent">
 		
 					<div class="form-group">
 						<p class="center">
-							<label>Event Title:</label> <input type ="text" id="Title" class="event-title"
-								name="Event Title" value="">
+							<label>Event Title:</label> <input class="event-info"
+								name="Title" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Description:</label> <input type ="text"id="descText" class="event-desc"
-								name="Description" value="">
+							<label>Description:</label> <input id="pass" class="event-info"
+								name="Desc" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Date:</label> <input type = "text" class="event-date"
+							<label>Date:</label> <input class="event-info"
 								name="Date" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Start Time</label> <input type = "text" class="event-start"
-								name="Timestart" value="">
-								<label>AM</label><input type = "radio" id ="endAM" name="startAMPM">
-								<label>PM</label><input type = "radio" id ="endPM" name="startAMPM">
+							<label>Start Time</label> <input class="event-info"
+								name="Time" value="">
+								<button id="addEventBtn" class="button">Add Event</button>
 						</p>
 					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>End Time</label> <input type = "text" class="event-end"
-								name="Timeend" value="">
-								<label>AM</label><input type = "radio" id ="endAM" name="endAMPM">
-								<label>PM</label><input type = "radio" id ="endPM" name="endAMPM">
-							
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Location:</label> <input type = "text" id="Location" class="event-location"
-								name="Event Location" value="">
-						</p>
-					</div>
-					<div><button id="addEventBtn" class="Eventbutton">Add Event</button></div>
 					</form>
-					</div>
 	</div>
 </div>
 
