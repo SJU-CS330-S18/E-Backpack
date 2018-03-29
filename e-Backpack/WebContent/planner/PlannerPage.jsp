@@ -158,9 +158,6 @@ rs.close();}
 <body>
 <li><a href="viewPersonCalen.jsp">Personal Calendar</a></li>
 <li><button id="modalBtn" class="Modalbutton">Add Event</button></li>
-
-<li><button id="modalBtn" class="button">Add Event</button></li>
-
 <div id="SimpleModal" class="modal">
 	<div class="modal-content">
 		<div class = "modal-header">
