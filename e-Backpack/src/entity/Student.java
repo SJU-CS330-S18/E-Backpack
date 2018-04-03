@@ -264,26 +264,28 @@ public void setPassword(String password) {
 	        return result; 
 	     }
 
+
  /* This method uses a CallStatement object to call an SQL stored procedure
   * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.**/
  
- public void addEvent() {
+ public void addEvent(String title, String description, String location, Date date) {
 	   
 	   try{
+		   String usern = this.getUsername();
 		    con = openDBConnection();
-		    callStmt = con.prepareCall(" {call team5.STUDENT_ADD_EVENT(?,?,?,?,?,?)}");
-		    callStmt.setString(1,this.eventDescription);
-		    callStmt.setString(2,this.location1);
-		    callStmt.setDate(3,(java.sql.Date) this.eventDate);
-		    callStmt.setDate(4,(java.sql.Date) this.startTime);
-		    callStmt.setDate(5,(java.sql.Date) this.endTime);
-		    callStmt.setString(6,this.username);
+		    callStmt = con.prepareCall(" {call team5.STUDENT_ADD_EVENT(?,?,?,?,?)}");
+		    callStmt.setString(1,title);
+		    callStmt.setString(2,description);
+		    callStmt.setString(3,location);
+		    callStmt.setDate(4,(java.sql.Date) date);
+		    callStmt.setString(5,usern);
 		    callStmt.execute();
 		    callStmt.close();
 	   } catch (Exception E) {
 	             E.printStackTrace();
 	   }
 }
+ 
 
   
 }
