@@ -1,10 +1,8 @@
 package user;
 
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import entity.Student;
 
 public class loginTest {
@@ -12,29 +10,22 @@ public class loginTest {
 
 		@Before
 		public void setUp() throws Exception {
-			s = new Student();
+			s = new Student("ernestW","ernestW");
 		}
 		
 		@Test
 		public void testCreatePerson() {
-			assertTrue("Person p is not null", !(s == null));
+			assertTrue("Student s is not null", !(s == null));
 		}
 
 		
-		@Test 
-		public void testSetters(){
+		@Test
+		public void testLogOn(){
+			boolean log = s.login();
+			assertTrue("login is working", log==true);
 			
-			s.setFname("fname");
-			s.setLname("lname");
-			s.setUsername("username1");
-			s.setPassword("password1");
-			
-			assertTrue("first name works", s.getFname().equals("fname"));
-			assertTrue("last name works", s.getLname().equals("lname"));
-			assertTrue("username works", s.getUsername().equals("username1"));
-			assertTrue("password works", s.getPassword().equals("password1"));
-			
-			
+
+
 		}
 		
 
