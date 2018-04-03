@@ -5,7 +5,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>addevent popup window</title>
+<title></title>
 <link rel="stylesheet" type="text/css" href="modalStyle.css"/>
 </head>
 <body>
@@ -17,30 +17,24 @@
 <div id="SimpleModal" class="modal">
 	<div class="modal-content">
 		<span class="closeBtn">&times;</span>
-		<form method="post" action="Login_action.jsp" name="Login">
-		<button id="addEventBtn" class="button">Add Event</button>
+		<button id="addEvenFolderBtn" class="button">Add Folder</button>
+		<label>Leave options blank if they don't apply</label> 
 					<div class="form-group">
 						<p class="center">
-							<label>Event Title:</label> <input class="event-info"
+							<label>Folder subject:</label> <input class="event-info"
 								name="Title" value="">
 						</p>
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Description:</label> <input id="pass" class="event-info"
-								name="Desc" value="">
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Date:</label> <input class="event-info"
-								name="Date" value="">
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Start Time</label> <input class="event-info"
+							<label>Teacher:</label> <input class="event-info"
 								name="Time" value="">
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="center">
+							<label>Class Time:</label> <input class="event-info"
+								name="Date" value="">
 						</p>
 					</div>
 					</form>
