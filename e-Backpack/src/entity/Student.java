@@ -251,7 +251,7 @@ public void setPassword(String password) {
 	      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");
 	       try{
 	    	   stmt = con.createStatement();
-         String queryString = "SELECT EVENTDESCRIPTION, LOCATION, EVENTDATE, STARTTIME, ENDTIME " 
+         String queryString = "SELECT EVENTDESCRIPTION, LOCATION1, EVENTDATE " 
          		+ "FROM EVENT "
                + " WHERE STUUSERNAME = '" + this.getUsername() +"' ";
 

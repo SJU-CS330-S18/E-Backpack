@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.sql.*,entity.*, java.util.*"%>
+<jsp:useBean id="student" class= "entity.Student" scope="session"/> 
+<jsp:setProperty name="student" property="*"/> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <link rel="stylesheet" type="text/css" href="modalStyle.css"/>
@@ -9,7 +10,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Personal Planner</title>
 <style>
-
+*{
+	 box-sizing: border-box;
+}
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -25,19 +28,22 @@
 
 
 #holdingblock{
-	display: inline-block;
-	width: 500px;
+	
+	width: 50%;
 	height: 500px;
 	background-color: white;
-	background-position:center;
-	margin-top:10px;
-	margin-left:33%;
-	box-shadow: 10px 10px 5px #333333;
-	text-align: center;
+	background-position:left;
+	float:left
+	
+	
 	
 	}
 
-
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 #current_day { background-color:yellow; font-weight: bold; } 
 -->
@@ -77,7 +83,7 @@ function closeNav() {
 <!-- This title is not the same as the others because of the modal HTML  -->
  <font size="120">e-Backpack </font>
 </div>
-
+<div class="row">
 <div id="holdingblock" style= text-align:center>
 <script type="text/javascript">
 <!-- Begin Hiding
@@ -226,6 +232,33 @@ actual_calendar.innerHTML = month_menu.calendar();
 <script src = "modalFunc.js"></script>
 <a href="search1Day.jsp">Search One Day</a>
 </ul>
+</div>
+<div id="holdingblock" style= text-align:center>
+<h2>Today Schedule</h2>
+	<%try{
+	ResultSet rs = student.getEventList();
+	java.sql.Date dateC = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+	//System.out.println(dateC.toString());
+	%><table style="width:100%">
+	<tr><th>Event Date</th>
+	<th>Event Location</th>
+	<th>Description</th></tr>
+	<%	while(rs.next()){
+		java.sql.Date eventD = rs.getDate("eventdate");
+	if(eventD.toString().equals(dateC.toString())){ 
+		%>
+     	<tr>
+			<td style="vertical-align: top; text-align: center;"><%=rs.getString("eventdescription")%></td>
+       		<td style="vertical-align: top; text-align: center;"><%=eventD%></td>
+       		<td style="vertical-align: top; text-align: center;"><%=rs.getString("location1")%></td> 
+     	</tr>
+   
+     	<%}}
+	}catch(IllegalStateException ise){
+	    out.println(ise.getMessage());
+	} %>
+	</table>
+</div>
 </div>
 </body>
 </html>
