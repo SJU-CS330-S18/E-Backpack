@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.*;
@@ -31,6 +32,10 @@ public class Event implements Serializable {
 		private Timestamp endtime;
 		private String username;
 	
+		
+		public Event() {
+			
+		}
 	/**
 	 * Constructor of the event class to create an instance of Event comprised of the 
 	 * specific information provided in the parameters.
@@ -189,6 +194,7 @@ public class Event implements Serializable {
 	}
 	
 
+
 	 /* This method uses a CallStatement object to call an SQL stored procedure
 	  * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.**/
 	 
@@ -210,4 +216,43 @@ public class Event implements Serializable {
 		             E.printStackTrace();
 		   }
 	}
+	 
+	 /**
+
+	   * This method uses a Statement object to query the CUSTOMER table
+	   * for the customer whose id matches the provided id
+	   * 
+	   * @return a ResultSet object containing the record for the matching customer from 
+	   * the CUSTOMER table
+	   * 
+	   * @throws IllegalStateException if then method is called when loggedIn = false**/
+	  public ResultSet getEventInfo()  throws IllegalStateException{
+		  con = openDBConnection();
+	       try{
+	    	   stmt = con.createStatement();
+	          String queryString = "Select eventdescription,location1,eventdate,eventtitle,starttime,endtime,stuusername FROM EVENT where"
+	          		+ " stuUsername='" +this.username+"'";
+	          result = stmt.executeQuery(queryString);
+	       }       
+	       catch (Exception E) {
+	    	   E.printStackTrace();
+	       }
+	       return  result;
+	  	}
+	  
+	  public void updateEvent(String eventtitle, String eventdescription, String location, Date date, Timestamp starttime, Timestamp endtime, String username) throws SQLException{
+
+		  con = openDBConnection();
+		    callStmt = con.prepareCall(" {call team5.STUDENT_UPDATE_EVENT(?,?,?,?,?,?,?)}");
+		    callStmt.setString(1,this.eventtitle);
+		    callStmt.setString(2,this.eventdescription);
+		    callStmt.setString(3,this.location);
+		    callStmt.setDate(4,(java.sql.Date) eventdate);
+		    callStmt.setTimestamp(5,(java.sql.Timestamp) starttime);
+		    callStmt.setTimestamp(6,(java.sql.Timestamp) endtime);
+		    callStmt.setString(7,this.username);
+		    callStmt.execute();
+		    callStmt.close();
+		  }  
+	  
 }

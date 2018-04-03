@@ -160,8 +160,12 @@ actual_calendar.innerHTML = month_menu.calendar();
  
 
 <form style=""font-family: Times New Roman,Times,serif";" method="post"action="addNewEvent.jsp" name="addEvent">
-<li><button id="modalBtn" class="link">Add/Update Event</button></li>
+<li><button id="modalBtn" class="link">Add Event</button></li>
 </form>
+<form style=""font-family: Times New Roman,Times,serif";" method="post"action="UpdateEvent.jsp" name="updateEvent">
+<li><button id="modalBtn" class="link">Update Event</button></li>
+</form>
+
 
 <br>
 <script src = "modalFunc.js"></script>
