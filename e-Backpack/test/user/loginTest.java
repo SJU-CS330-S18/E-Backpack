@@ -10,7 +10,7 @@ public class loginTest {
 
 		@Before
 		public void setUp() throws Exception {
-			s = new Student();
+			s = new Student("ernestW","ernestW");
 		}
 		
 		@Test
@@ -21,7 +21,6 @@ public class loginTest {
 		
 		@Test
 		public void testLogOn(){
-
 			boolean log = s.login();
 			assertTrue("login is working", log==true);
 			
