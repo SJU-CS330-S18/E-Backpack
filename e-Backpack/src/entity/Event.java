@@ -5,11 +5,15 @@ import java.util.*;
 /**
  * A class representing a specific Event to be added to the Users personal planner calender
  * 
- * @author sjhalloran
+ * @author k1moua
  *
  */
 
-public class Event {
+public class Event implements Serializable {
+	  /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;{
 
 	private String title, location, description, date, courseRelation;
 	private int scheduledTime;
@@ -26,14 +30,15 @@ public class Event {
 	 * @param scheudledTime: the specific start time of the event
 	 */
 	
-	public Event(String title, String location, String description, String date, String courseRelation, int scheduledTime) {
+	public Event(String eventtitle, String eventdescription, String location, Date eventdate, Timestamp starttime, Timestamp endtime, String username) {
 		
-		this.title = title;
+		this.eventtitle = eventtitle;
+		this.eventdescription = eventdescription;
 		this.location = location;
-		this.description = description;
-		this.date = date;
-		this.courseRelation = courseRelation;
-		this.scheduledTime = scheduledTime;
+		this.eventdate = eventdate;
+		this.starttime = starttime;
+		this.endtime = endtime;
+		this.username = username;
 	}
 	
 	/**
@@ -59,7 +64,7 @@ public class Event {
 	 * @return String location
 	 */
 	
-	public String getEventLocation() {
+	public String getLocation() {
 		return location;
 	}
 	
@@ -68,8 +73,8 @@ public class Event {
 	 * @return void 
 	 */
 	
-	public void setEventLocation(String newLoc) {
-		this.location = newLoc;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 	/**
@@ -78,7 +83,7 @@ public class Event {
 	 */
 	
 	public String getEventDescription() {
-		return description;
+		return eventdescription;
 	}
 	
 	/**
@@ -86,8 +91,8 @@ public class Event {
 	 * @return void 
 	 */
 	
-	public void setEventDescription(String newDesc) {
-		this.description = newDesc;
+	public void setEventDescription(String eventdescription) {
+		this.eventdescription = eventdescription;
 	}
 	
 	/**
@@ -96,7 +101,7 @@ public class Event {
 	 */
 	
 	public String getEventDate() {
-		return date;
+		return eventdate;
 	}
 	
 	/**
@@ -104,35 +109,18 @@ public class Event {
 	 * @return void 
 	 */
 	
-	public void setEventDate(String newDate) {
-		this.date = newDate;
+	public void setEventDate(String eventdate) {
+		this.eventdate = eventdate;
 	}
 	
-	/**
-	 * returns the course the event is related too
-	 * @return String course name
-	 */
-	
-	public String getEventCourse() {
-		return courseRelation;
-	}
-	
-	/**
-	 * sets the course the event is related too
-	 * @return void 
-	 */
-	
-	public void setEventCourse(String newCourse) {
-		this.courseRelation = newCourse;
-	}
 	
 	/**
 	 * returns the scheduled start time of the event
 	 * @return int scheduledTime
 	 */
 	
-	public int getEventTime() {
-		return scheduledTime;
+	public int getStarttime() {
+		return starttime;
 	}
 	
 	/**
@@ -140,7 +128,48 @@ public class Event {
 	 * @return void 
 	 */
 	
-	public void setEventTime(int newTime) {
-		this.scheduledTime = newTime;
+	public void setStarttime(int starttime) {
+		this.starttime = starttime;
+	}
+	
+	/**
+	 * returns the scheduled start time of the event
+	 * @return int scheduledTime
+	 */
+	
+	public int getEndtime() {
+		return endtime;
+	}
+	
+	/**
+	 * sets the scheduled start time of the event
+	 * @return void 
+	 */
+	
+	public void setEndtime(int endtime) {
+		this.endtime = endtime;
+	}
+	
+
+	 /* This method uses a CallStatement object to call an SQL stored procedure
+	  * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.**/
+	 
+	 public void addEvent() {
+		   
+		   try{
+			    con = openDBConnection();
+			    callStmt = con.prepareCall(" {call team5.STUDENT_ADD_EVENT(?,?,?,?,?,?,?)}");
+			    callStmt.setString(1,this.eventtitle);
+			    callStmt.setString(2,this.eventdescription);
+			    callStmt.setString(3,this.location);
+			    callStmt.setDate(4,(java.sql.Date) this.eventdate);
+			    callStmt.setTimestamp(5,(java.sql.Timestamp) this.starttime);
+			    callStmt.setTimestamp(6,(java.sql.Timestamp) this.endtime);
+			    callStmt.setString(7,this.username);
+			    callStmt.execute();
+			    callStmt.close();
+		   } catch (Exception E) {
+		             E.printStackTrace();
+		   }
 	}
 }
