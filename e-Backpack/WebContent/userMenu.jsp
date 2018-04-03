@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@include file="UserMenuErrorPage.jsp"%>
+<%if(!hasAccess){
+	response.sendRedirect("Login.jsp?Error=2");
+	}%>
 <html>
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
    		  
