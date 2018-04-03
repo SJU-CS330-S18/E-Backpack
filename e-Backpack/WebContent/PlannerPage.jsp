@@ -159,41 +159,9 @@ actual_calendar.innerHTML = month_menu.calendar();
 
  
 
-<button id="modalBtn" class="button">Add Event</button>
-<div id="SimpleModal" class="modal">
-	<div class="modal-content">
-		<span class="closeBtn">&times;</span>
-		<h4 id= "modalHeader">Create New Event</h4>
-		<form method="post" action="addEvent_action.jsp" name="addEvent">
-		
-					<div class="form-group">
-						<p class="center">
-							<label>Event Title:</label> <input class="event-info"
-								name="Title" value="">
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Description:</label> <input id="pass" class="event-info"
-								name="Desc" value="">
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Date:</label> <input class="event-info"
-								name="Date" value="">
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Start Time</label> <input class="event-info"
-								name="Time" value="">
-								<button id="addEventBtn" class="button">Add Event</button>
-						</p>
-					</div>
-					</form>
-	</div>
-</div>
+<form style=""font-family: Times New Roman,Times,serif";" method="post"action="addNewEvent.jsp" name="addEvent">
+<li><button id="modalBtn" class="link">Add/Update Event</button></li>
+</form>
 
 <br>
 <script src = "modalFunc.js"></script>
