@@ -158,7 +158,6 @@ actual_calendar.innerHTML = month_menu.calendar();
 
 
 <body>
-<li><a href="viewPersonCalen.jsp">Personal Calendar</a></li>
 <li><button id="modalBtn" class="Modalbutton">Add Event</button></li>
 <div id="SimpleModal" class="modal">
 	<div class="modal-content">
@@ -177,8 +176,8 @@ actual_calendar.innerHTML = month_menu.calendar();
 					</div>
 					<div class="form-group">
 						<p class="center">
-							<label>Description:</label> <input type ="text"id="descText" class="event-desc"
-								name="Description" value="">
+							<label>Description:</label> <textarea rows="10" cols = "30" type ="text"id="descText" class="event-desc"
+								name="Description" value=""></textarea>
 						</p>
 					</div>
 					<div class="form-group">
@@ -187,23 +186,23 @@ actual_calendar.innerHTML = month_menu.calendar();
 								name="Date" value="">
 						</p>
 					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Start Time</label> <input type = "text" class="event-start"
-								name="Timestart" value="">
-								<label>AM</label><input type = "radio" id ="endAM" name="startAMPM">
-								<label>PM</label><input type = "radio" id ="endPM" name="startAMPM">
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>End Time</label> <input type = "text" class="event-end"
-								name="Timeend" value="">
-								<label>AM</label><input type = "radio" id ="endAM" name="endAMPM">
-								<label>PM</label><input type = "radio" id ="endPM" name="endAMPM">
+<!-- 					<div class="form-group"> -->
+<!-- 						<p class="center"> -->
+<!-- 							<label>Start Time</label> <input type = "text" class="event-start" -->
+<!-- 								name="Timestart" value=""> -->
+<!-- 								<label>AM</label><input type = "radio" id ="endAM" name="startAMPM"> -->
+<!-- 								<label>PM</label><input type = "radio" id ="endPM" name="startAMPM"> -->
+<!-- 						</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="form-group"> -->
+<!-- 						<p class="center"> -->
+<!-- 							<label>End Time</label> <input type = "text" class="event-end" -->
+<!-- 								name="Timeend" value=""> -->
+<!-- 								<label>AM</label><input type = "radio" id ="endAM" name="endAMPM"> -->
+<!-- 								<label>PM</label><input type = "radio" id ="endPM" name="endAMPM"> -->
 							
-						</p>
-					</div>
+<!-- 						</p> -->
+<!-- 					</div> -->
 					<div class="form-group">
 						<p class="center">
 							<label>Location:</label> <input type = "text" id="Location" class="event-location"
@@ -217,12 +216,7 @@ actual_calendar.innerHTML = month_menu.calendar();
 </div>
 
 
- 
-
-<form style=""font-family: Times New Roman,Times,serif";" method="post"action="addNewEvent.jsp" name="addEvent">
-<li><button id="modalBtn" class="link">Add Event</button></li>
-</form>
-<form style=""font-family: Times New Roman,Times,serif";" method="post"action="UpdateEvent.jsp" name="updateEvent">
+ <form style=""font-family: Times New Roman,Times,serif";" method="post"action="UpdateEvent.jsp" name="updateEvent">
 <li><button id="modalBtn" class="link">Update Event</button></li>
 </form>
 
