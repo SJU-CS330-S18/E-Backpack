@@ -222,8 +222,8 @@ actual_calendar.innerHTML = month_menu.calendar();
 </div>
 
 
- <form style=""font-family: Times New Roman,Times,serif";" method="post"action="UpdateEvent.jsp" name="updateEvent">
-<li><button id="modalBtn" class="link">Update Event</button></li>
+ <form style=""font-family: Times New Roman,Times,serif";" method="post"action="AddEvent.jsp" name="addEvent">
+<li><button id="modalBtn" class="link">Add Event</button></li>
 </form>
 
 
