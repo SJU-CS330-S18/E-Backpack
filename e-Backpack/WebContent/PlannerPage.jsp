@@ -26,15 +26,15 @@
 
 #holdingblock{
 	display: inline-block;
-	width: 160px;
-	height: 300px;
+	width: 500px;
+	height: 500px;
 	background-color: white;
 	background-position:center;
 	margin-top:10px;
-	margin-left:40%;
+	margin-left:33%;
 	box-shadow: 10px 10px 5px #333333;
 	text-align: center;
-	text-size: 40;
+	
 	}
 
 
@@ -58,8 +58,8 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="UpdateProfile.jsp">Update Profile</a>
-  <td align="right" width="690"><a href="e-Backpack/WebContent/Logout.jsp">Logout</a></td></tr><br>
+  <a href="userMenu.jsp">Menu</a>
+  <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>
 </div>
 
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
@@ -75,15 +75,16 @@ function closeNav() {
 
 </script>
 <!-- This title is not the same as the others because of the modal HTML  -->
- <font size="70">e-Backpack </font>
+ <font size="120">e-Backpack </font>
 </div>
 
-<dive id="holdingblock">
+<div id="holdingblock" style= text-align:center>
 <script type="text/javascript">
 <!-- Begin Hiding
 var today = new Date();
 var month = today.getMonth();
 //Using the Date prototype to assign our month names-->
+
 Date.prototype.getMonthNames = function() { return [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]; }
 //Getting the number of day in the month.-->
 Date.prototype.getDaysInMonth = function() 
@@ -93,17 +94,19 @@ Date.prototype.calendar = function()
 //This will be the starting day to our calendar-->
 var startingDay = new Date(this.getFullYear(), this.getMonth(), 1).getDay();
 //We will build the calendar_table variable then pass what we build back-->
-   var calendarTable = '<table summary="Calendar" class="calendar" style="text-align: center;">';
-calendarTable += '<caption>'+ '<   '  + this.getMonthNames()[this.getMonth()] + '&nbsp;' + this.getFullYear() + '   >' + '</caption>' ;
+   var calendarTable = '<table summary="Calendar" class="calendar" style= "margin-left:15%" ';
+  // calendarTable.style.fontSize("large");
+   
+calendarTable += '<caption>' + '<font size="25">'+ this.getMonthNames()[this.getMonth()] + '&nbsp;' + this.getFullYear() + '</font>' + '</caption>';
 calendarTable += '<tr><td colspan="7"></td></tr>';
 calendarTable += '<tr>';
-calendarTable += '<td><font color="red">S</font></td>';
-calendarTable += '<td>M</td>';
-calendarTable += '<td>T</td>';
-calendarTable += '<td>W</td>';
-calendarTable += '<td>TH</td>';
-calendarTable += '<td>F</td>';
-calendarTable += '<td>S</td></tr>'; 
+calendarTable += '<td><font color="red" size="25"><b>S/</b></font></td>';
+calendarTable += '<td><b><font size="40">M/</b></font></td>';
+calendarTable += '<td><b><font size="40">T/</b></font></td>';
+calendarTable += '<td><b><font size="40">W/</b></font></td>';
+calendarTable += '<td><b><font size="40">TH/</b></font></td>';
+calendarTable += '<td><b><font size="40">F/</b></font></td>';
+calendarTable += '<td><b><font size="40">S</b></font></td></tr>'; 
 //Lets create blank boxes until we get to the day which actually starts the month-->
 for ( var i = 0; i < startingDay; i++ ) 
 { calendarTable += '<td>&nbsp;</td>'; }
@@ -152,9 +155,11 @@ actual_calendar.innerHTML = month_menu.calendar();
 <p>&nbsp</p>
 <div id="show_calendar">&nbsp;</div>
 <div id="current_month">&nbsp;</div>
-</div>
 
-<li><button id="modalBtn" class="button">Add Event</button></li>
+
+
+
+<button id="modalBtn" class="button">Add Event</button>
 <div id="SimpleModal" class="modal">
 	<div class="modal-content">
 		<span class="closeBtn">&times;</span>
@@ -190,8 +195,10 @@ actual_calendar.innerHTML = month_menu.calendar();
 	</div>
 </div>
 
+<br>
 <script src = "modalFunc.js"></script>
-<li><a href="search1Day.jsp">Search One Day</a></li>
+<a href="search1Day.jsp">Search One Day</a>
 </ul>
+</div>
 </body>
 </html>
