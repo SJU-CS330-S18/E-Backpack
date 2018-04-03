@@ -157,7 +157,7 @@ actual_calendar.innerHTML = month_menu.calendar();
 <div id="current_month">&nbsp;</div>
 
 
-
+ 
 
 <button id="modalBtn" class="button">Add Event</button>
 <div id="SimpleModal" class="modal">
