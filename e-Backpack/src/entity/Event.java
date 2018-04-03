@@ -1,5 +1,13 @@
 package entity;
 
+import java.io.Serializable;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.*;
 
 /**
@@ -13,11 +21,15 @@ public class Event implements Serializable {
 	  /**
 		 * 
 		 */
-		private static final long serialVersionUID = 1L;{
+		private static final long serialVersionUID = 1L;
 
-	private String title, location, description, date, courseRelation;
-	private int scheduledTime;
-	
+		private String eventtitle;
+		private String eventdescription;
+		private String location;
+		private Date eventdate;
+		private Timestamp starttime;
+		private Timestamp endtime;
+		private String username;
 	
 	/**
 	 * Constructor of the event class to create an instance of Event comprised of the 
@@ -41,13 +53,39 @@ public class Event implements Serializable {
 		this.username = username;
 	}
 	
+	
+	private PreparedStatement pstmt;
+	  private Statement stmt;
+	  private ResultSet result;
+	  private Connection con;
+	  private CallableStatement callStmt;
+	  
+	  
+	  /**
+	   * This method and creates and returns a Connection object to the database. 
+	   * All other methods that need database access should call this method.
+	   * @return a Connection object to Oracle
+	   */
+	  public Connection openDBConnection() {
+	    try {
+	      // Load driver and link to driver manager
+	      Class.forName("oracle.jdbc.OracleDriver");
+	      // Create a connection to the specified database
+	      Connection myConnection = DriverManager.getConnection("jdbc:oracle:thin:@//cscioraclesrv.ad.csbsju.edu:1521/" +
+	                                                            "csci.cscioraclesrv.ad.csbsju.edu","TEAM5", "mnz");
+	      return myConnection;
+	    } catch (Exception E) {
+	      E.printStackTrace();
+	    }
+	    return null;
+	  }
 	/**
 	 * returns the title of the event
 	 * @returns string title
 	 */
 	
 	public String getEventTitle() {
-		return title;
+		return eventtitle;
 	}
 	
 	/**
@@ -56,7 +94,7 @@ public class Event implements Serializable {
 	 */
 	
 	public void setEventTitle(String newTitle) {
-		this.title = newTitle;
+		this.eventtitle = newTitle;
 	}
 	
 	/**
@@ -100,7 +138,7 @@ public class Event implements Serializable {
 	 * @return String date
 	 */
 	
-	public String getEventDate() {
+	public Date getEventDate() {
 		return eventdate;
 	}
 	
@@ -109,7 +147,7 @@ public class Event implements Serializable {
 	 * @return void 
 	 */
 	
-	public void setEventDate(String eventdate) {
+	public void setEventDate(Date eventdate) {
 		this.eventdate = eventdate;
 	}
 	
@@ -119,7 +157,7 @@ public class Event implements Serializable {
 	 * @return int scheduledTime
 	 */
 	
-	public int getStarttime() {
+	public Timestamp getStarttime() {
 		return starttime;
 	}
 	
@@ -128,7 +166,7 @@ public class Event implements Serializable {
 	 * @return void 
 	 */
 	
-	public void setStarttime(int starttime) {
+	public void setStarttime(Timestamp starttime) {
 		this.starttime = starttime;
 	}
 	
@@ -137,7 +175,7 @@ public class Event implements Serializable {
 	 * @return int scheduledTime
 	 */
 	
-	public int getEndtime() {
+	public Timestamp getEndtime() {
 		return endtime;
 	}
 	
@@ -146,7 +184,7 @@ public class Event implements Serializable {
 	 * @return void 
 	 */
 	
-	public void setEndtime(int endtime) {
+	public void setEndtime(Timestamp endtime) {
 		this.endtime = endtime;
 	}
 	
@@ -154,7 +192,7 @@ public class Event implements Serializable {
 	 /* This method uses a CallStatement object to call an SQL stored procedure
 	  * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.**/
 	 
-	 public void addEvent() {
+	 public void addEvent(Date eventdate, Timestamp starttime, Timestamp endtime) {
 		   
 		   try{
 			    con = openDBConnection();
@@ -162,9 +200,9 @@ public class Event implements Serializable {
 			    callStmt.setString(1,this.eventtitle);
 			    callStmt.setString(2,this.eventdescription);
 			    callStmt.setString(3,this.location);
-			    callStmt.setDate(4,(java.sql.Date) this.eventdate);
-			    callStmt.setTimestamp(5,(java.sql.Timestamp) this.starttime);
-			    callStmt.setTimestamp(6,(java.sql.Timestamp) this.endtime);
+			    callStmt.setDate(4,(java.sql.Date) eventdate);
+			    callStmt.setTimestamp(5,(java.sql.Timestamp) starttime);
+			    callStmt.setTimestamp(6,(java.sql.Timestamp) endtime);
 			    callStmt.setString(7,this.username);
 			    callStmt.execute();
 			    callStmt.close();
