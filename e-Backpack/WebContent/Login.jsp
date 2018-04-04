@@ -110,6 +110,9 @@ String error = request.getParameter("Error");
 if(error != null && error.equals("1")){
 	out.println("Invalid Credentails, please try again.");
 }
+else if(error != null && error.equals("2")){
+	out.println("You don't have access to the system.");
+}
 
 
 %></font>
