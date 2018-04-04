@@ -159,7 +159,7 @@ actual_calendar.innerHTML = month_menu.calendar();
 
 <body>
 <li><button id="modalBtn" class="Modalbutton">Add Event</button></li>
-<div id="SimpleModal" class="modal">
+<div name= "SimpleModal" id="SimpleModal" class="modal">
 	<div class="modal-content">
 		<div class = "modal-header">
 		<span class="closeBtn">&times;</span>
