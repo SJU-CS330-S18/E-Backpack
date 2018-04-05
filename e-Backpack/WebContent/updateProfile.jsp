@@ -31,12 +31,12 @@
 				</tr>
 				<tr>
 					<td>First Name</td>
-					<td><input name="first_name"
+					<td><input name="fname"
 						value=<%=student.getFname()%>></td>
 				</tr>
 				<tr>
 					<td>Last Name</td>
-					<td><input name="last_name" value=<%=student.getLname()%>></td>
+					<td><input name="lname" value=<%=student.getLname()%>></td>
 				</tr>
 				<tr>
 					<td>Email</td>
@@ -44,13 +44,13 @@
 				</tr>
 				<tr>
 					<td>Phone Number</td>
-					<td><input name="phone_number"
+					<td><input name="phoneno"
 						value=<%=student.getPhoneno()%>></td>
 				</tr>
 
 				<tr>
 					<td>Old Password</td>
-					<td><input name="password" value=<%=student.getPassword()%>
+					<td><input name="pass" value=<%=student.getPassword()%>
 						type="password" readonly></td>
 				</tr>
 				<tr>
