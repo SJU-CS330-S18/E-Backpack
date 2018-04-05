@@ -9,6 +9,7 @@ import java.util.Date;
 
 
 
+
 /**
  * Use the SQL script file provided in this folder to create a NEW (slightly different) 
  * version of the ProductDeals database on Oracle and insert data into all tables. The 
@@ -286,6 +287,37 @@ public void setPassword(String password) {
 	   }
 }
  
+	/**
+	 * Updates the users profile
+	 */
+	public void updateProfile() {
+	
+		PreparedStatement stmt;
+		try {
+			String query = "UPDATE STUDENT SET pass=? WHERE username=?";
+			stmt = con.prepareStatement(query);
+			stmt.setString(1, this.password);
+			stmt.setString(2, this.username);
+			stmt.executeUpdate();
 
+			query = "UPDATE student SET "+
+					"email=?, "+
+					"fname=?, "+
+					"lname=?, "+
+					"phoneno=? "+
+					"WHERE username=?";
+			stmt = con.prepareStatement(query);
+			stmt.clearParameters();
+			stmt.setString(1, this.emailad);
+			stmt.setString(2, this.fname);
+			stmt.setString(3, this.lname);
+			stmt.setString(4, this.phoneno);
+			stmt.setString(5, this.username);
+			stmt.executeUpdate();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
   
 }
