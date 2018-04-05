@@ -296,6 +296,7 @@ public void setPassword(String password) {
 		try {
 			String query = "UPDATE STUDENT SET pass=? WHERE username=?";
 			stmt = con.prepareStatement(query);
+			stmt.clearParameters();
 			stmt.setString(1, this.password);
 			stmt.setString(2, this.username);
 			stmt.executeUpdate();
