@@ -48,7 +48,8 @@
 #current_day { background-color:yellow; font-weight: bold; } 
 -->
 
-
+.btn:hover {background: #eee;}
+.link{color:black;}
 
 </style>
 <head>
@@ -227,8 +228,9 @@ actual_calendar.innerHTML = month_menu.calendar();
 </form>
 
 <script src = "modalFunc.js"></script>
-<a href="search1Day.jsp">Search One Day</a>
-</ul>
+ <form style=""font-family: Times New Roman,Times,serif";" method="post"action="search.html" name="search">
+<button id="modalBtn" class="link">Jump To...</button>
+</form>
 </div>
 <div id="holdingblock" style= text-align:center>
 <h2>Today's Schedule</h2>

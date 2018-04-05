@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+<link rel="stylesheet" type="text/css" href="modalStyle.css"/>
+<link rel="stylesheet" type="text/css" href="e-BP.css"/>
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Jump To</title>
+<style>
+#banner{
+  width:100%;
+  background-size:880px 680px;
+  background-repeat:no-repeat;
+  background-position:60% 46%;
+  height: 99px;
+  background-color: #0A0808;
+  color: #b5cce0;
+  text-align: center;
+  font-size: 72;
+  padding: 0,0,0,0;
+}
+</style>
+</head>
+<meta content="text/html; charset=ISO-8859-1"
+		http-equiv="content-type">
+<body>
+
+
+<div id="banner">
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="userMenu.jsp">Menu</a>
+  <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>
+</div>
+
+<span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+</script>
+<!-- This title is not the same as the others because of the modal HTML  -->
+ <font size="120">e-Backpack </font>
+</div>
+<div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+
+    <!-- Form code begins -->
+    <form method="post">
+      <div class="form-group"> <!-- Date input -->
+        <label class="control-label" for="date">Date</label>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+      </div>
+      <div class="form-group"> <!-- Submit button -->
+        <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+      </div>
+     </form>
+     <!-- Form code ends --> 
+
+    </div>
+  </div>    
+ </div>
+</div>
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
+</body>
+</html>
