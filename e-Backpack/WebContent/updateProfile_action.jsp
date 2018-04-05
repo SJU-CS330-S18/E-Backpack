@@ -8,5 +8,11 @@
 		student.setPassword(newPass);
 	}
 	student.updateProfile();
-	response.sendRedirect("updateProfile.jsp");
+	if(newPass.equals(request.getParameter("newPass2"))){
+	response.sendRedirect("updateProfile.jsp?Error=1");
+	}else{
+		response.sendRedirect("updateProfile.jsp?Error=2");
+	}
+	
+	
 %>

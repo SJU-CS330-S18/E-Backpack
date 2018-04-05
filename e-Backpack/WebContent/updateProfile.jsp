@@ -73,8 +73,20 @@
 					<td></td>
 					<td><input class="button" name="UpdateProfile" value="Update" type="submit">
 						<input class="button" type="submit" value="Cancel"
-						formaction="../userMenu.jsp"></td>
+						formaction="userMenu.jsp"></td>
 				</tr>
+				<tr>
+				<font color="red"><%
+String error = request.getParameter("Error");
+if(error != null && error.equals("1")){
+	out.println("You have successfully updated your personal information.");
+}
+else if(error != null && error.equals("2")){
+	out.println("Password and retype password don't match.");
+}
+
+%></font>
+</tr>
 			</table>
 			<br> <br>
 
