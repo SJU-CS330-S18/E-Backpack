@@ -45,7 +45,7 @@ if(value!=null)
 
 
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-<title>e-Backpack Register</title>
+<title>e-Backpack Add Event</title>
 
 
 
@@ -60,7 +60,8 @@ if(value!=null)
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="Login.jsp">Log In</a>
+  <a href="userMenu.jsp">Menu</a>
+  <a href="Logout.jsp">Log Out</a>
   
 </div>
 
@@ -94,7 +95,7 @@ function closeNav() {
 <form style=""font-family: Times New Roman,Times,serif";" method="post"action="addEvent_action.jsp" name="RegisterForm">
 <table align="center">
 <tr>
-	<th align "right"> Eventitle : </th> 
+	<th align "right"> Event Title : </th> 
 	<td> <input name="title" size ="25%" height = "100" value= "" ></td>
 </tr>
 <tr>
@@ -106,7 +107,7 @@ function closeNav() {
 	<td> <input name="location" size ="25%" height = "100" value= "" ></td>
 </tr>
 <tr>
-	<th align "right"> Date: </th> 
+	<th align "right"> Date (MM/DD/YYYY): </th> 
 	<td> <input name="date" size ="25%" height = "100" value= "" ></td>
 </tr>
 <td colspan="4" align ="right">
@@ -116,6 +117,10 @@ function closeNav() {
 </td>
 </table>
 </form>
+
+<form method="post" action="PlannerPage.jsp" name="Return">
+   						<input style="color: black;" name="Return" value="Return to Planner" type="submit">
+   					</form>
 
 </body>
 </html>

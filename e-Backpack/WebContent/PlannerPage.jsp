@@ -100,7 +100,7 @@ Date.prototype.calendar = function()
 //This will be the starting day to our calendar-->
 var startingDay = new Date(this.getFullYear(), this.getMonth(), 1).getDay();
 //We will build the calendar_table variable then pass what we build back-->
-   var calendarTable = '<table summary="Calendar" class="calendar" style= "margin-left:15%" ';
+   var calendarTable = '<table summary="Calendar" class="calendar" style= "margin-left:25%" ';
   // calendarTable.style.fontSize("large");
    
 calendarTable += '<caption>' + '<font size="25">'+ this.getMonthNames()[this.getMonth()] + '&nbsp;' + this.getFullYear() + '</font>' + '</caption>';
@@ -164,7 +164,7 @@ actual_calendar.innerHTML = month_menu.calendar();
 
 
 <body>
-<li><button id="modalBtn" class="Modalbutton">Add Event</button></li>
+<!-- <button id="modalBtn" class="Modalbutton">Add Event</button> -->
 <div name= "SimpleModal" id="SimpleModal" class="modal">
 	<div class="modal-content">
 		<div class = "modal-header">
@@ -223,26 +223,23 @@ actual_calendar.innerHTML = month_menu.calendar();
 
 
  <form style=""font-family: Times New Roman,Times,serif";" method="post"action="AddEvent.jsp" name="addEvent">
-<li><button id="modalBtn" class="link">Add Event</button></li>
+<button id="modalBtn" class="link">Add Event</button>
 </form>
-
-
-<br>
 
 <script src = "modalFunc.js"></script>
 <a href="search1Day.jsp">Search One Day</a>
 </ul>
 </div>
 <div id="holdingblock" style= text-align:center>
-<h2>Today Schedule</h2>
+<h2>Today's Schedule</h2>
 	<%try{
 	ResultSet rs = student.getEventList();
 	java.sql.Date dateC = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 	//System.out.println(dateC.toString());
 	%><table style="width:100%">
-	<tr><th>Event Date</th>
-	<th>Event Location</th>
-	<th>Description</th></tr>
+	<tr><th>Event</th>
+	<th>Event Date</th>
+	<th>Location</th></tr>
 	<%	while(rs.next()){
 		java.sql.Date eventD = rs.getDate("eventdate");
 	if(eventD.toString().equals(dateC.toString())){ 
