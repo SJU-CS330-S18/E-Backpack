@@ -38,7 +38,7 @@
 	<head>
 		<meta content="text/html; charset=ISO-8859-1"
 		http-equiv="content-type">
-				<title >User Menu</title>
+				<title >Folder Menu</title>
 	</head>
 	
 	
@@ -71,8 +71,9 @@ function closeNav() {
 
 
 <div id="holdingblock">
-
-			Folder item here~~~
+<br>
+			<a href="AddSubjectFolder.jsp"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ4Uesj_ZEC-sLUuTPCI5fBaBfN_iX0Erscqlz9ACtD_pPUIovg"></a>
+			<br><br> <a href="AddSubjectFolder.jsp">Add New Folder</a>
 </div>
 
 
