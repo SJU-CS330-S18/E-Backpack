@@ -68,6 +68,18 @@
 	background: #babdb6;
 }
 
+#retireNotebookBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#retireNotebookBtn:hover{
+	background: #babdb6;
+}
+
 
  
 .bordered {
@@ -132,6 +144,7 @@ function closeNav() {
             <label>Notebook:</label>
             <!-- notebook thats selected name -->
             <input id="inputNootbookName" ></input>
+            <button id = "retireNotebookBtn">Retire this Notebook</button>    
         </div>
      
     </div>
