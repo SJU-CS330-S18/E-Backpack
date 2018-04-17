@@ -5,18 +5,18 @@ body{
 	line-height: 1.6;
 }
 
-.Modalbutton{
+.addEventBtn{
 	background: #ffffff;
 	padding: 10px 20px;
 	color: #000;
 	border: 0;
 	border-radius: 12px;
 }
-.Modalbutton:hover{
+.addEventBtn:hover{
 	background: #babdb6;
 }
 
-.modal{
+.addEventModal{
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -30,7 +30,7 @@ body{
 
 
 .modal-content{
-	background-color: #555753;
+	background-color: #f3f3f3;
 	margin: 20% auto;
 	padding: 10px 10px ;
 	width: 40%;
@@ -57,7 +57,7 @@ body{
 }
 
 .closeBtn:hover,.closeBtn:focus{
-	color: #000;
+	color: #ffffff;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -78,7 +78,7 @@ body{
 }
 
 .modalHead{
-	color: #555753
+	color: #ffffff
 }
 
 .event-desc{
