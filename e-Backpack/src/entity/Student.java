@@ -441,21 +441,26 @@ public void setStuuserName(String stuUsername) {
 		
 	}
 	
+<<<<<<< HEAD
 	/** 
 	  * This method attempts to retrieve the current notes list for the student
 	  * @return returns a resultset with the current notes list
 	  */
 	public ResultSet getCurrentNotesList()  throws IllegalStateException{
+=======
+	public ResultSet getCurrentNotebooksList()  throws IllegalStateException{
+>>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
 		  
 		  if(!isLoggedIn()) {
 		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
 		  try{
+			  //String n = "N";
 			  stmt = con.createStatement();
-	          String queryString = "SELECT coursetitle"+
+	          String queryString = "SELECT COURSETITLE "+
 	         		 			   "FROM NOTEBOOK "+
-	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"'" + 
-	         		 			   "ISRETIRED = 'N'";
-
+	         		 			   "WHERE ISRETIRED = 'N' "+
+	         		 			   "STUUSERNAME = '" + this.getUsername() +"' ";
+	         		 			   
 	          result = stmt.executeQuery(queryString);
 	         
 		       }
