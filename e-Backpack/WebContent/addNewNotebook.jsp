@@ -13,7 +13,7 @@
 				<tr>
 					<td>Course Title</td>
 					<td><input name="courseTitle" >
-						></td>
+						</td>
 				</tr>
 					<td><input class="button" name="AddNewNotebook" type="submit">
 						<input class="button" type="submit" value="Cancel"
