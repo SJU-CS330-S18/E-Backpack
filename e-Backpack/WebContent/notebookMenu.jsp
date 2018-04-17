@@ -89,7 +89,7 @@ function closeNav() {
 </div>
 
 <%try{
-	ResultSet rs = student.getCurrentNotesList();
+	ResultSet rs = student.getCurrentNotebooksList();
 %>				
 <table>
 		<tbody>
@@ -106,7 +106,7 @@ function closeNav() {
 				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
 				</td>
 				<td>
-					<form method="post" action="NoteUI.jsp" name="note">
+					<form method="post" action="NoteUI.jsp" name="note"></form>
 				</td>
 			</tr>
 		</tbody>
