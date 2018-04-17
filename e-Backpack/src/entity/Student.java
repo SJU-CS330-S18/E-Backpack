@@ -443,8 +443,8 @@ public void setStuuserName(String stuUsername) {
 	
 
 	/** 
-	  * This method attempts to retrieve the current notes list for the student
-	  * @return returns a resultset with the current notes list
+	  * This method attempts to retrieve the current notebooks list for the student
+	  * @return returns a resultset with the current notebooks list
 	  */
 	public ResultSet getCurrentNotebooksList()  throws IllegalStateException{
 
@@ -457,6 +457,31 @@ public void setStuuserName(String stuUsername) {
 	          String queryString = "SELECT COURSETITLE "+
 	         		 			   "FROM NOTEBOOK "+
 	         		 			   "WHERE ISRETIRED = 'N' AND "+
+	         		 			   "STUUSERNAME = '" + this.getUsername() +"' ";
+	          result = stmt.executeQuery(queryString);
+	         
+		       }
+		       catch (Exception E) {
+		         E.printStackTrace();
+		       }
+		        return result; 
+		     }
+	
+	/** 
+	  * This method attempts to retrieve the retired notebooks list for the student
+	  * @return returns a resultset with the retired notebooks list
+	  */
+	public ResultSet getRetiredNotebooksList()  throws IllegalStateException{
+
+		  
+		  if(!isLoggedIn()) {
+		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
+		  try{
+			  //String n = "N";
+			  stmt = con.createStatement();
+	          String queryString = "SELECT COURSETITLE "+
+	         		 			   "FROM NOTEBOOK "+
+	         		 			   "WHERE ISRETIRED = 'Y' AND "+
 	         		 			   "STUUSERNAME = '" + this.getUsername() +"' ";
 	          result = stmt.executeQuery(queryString);
 	         

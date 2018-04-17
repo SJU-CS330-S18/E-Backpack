@@ -118,5 +118,36 @@ function closeNav() {
 			%>
 	</table>
 	
+	<%try{
+	ResultSet rs = student.getRetiredNotebooksList();
+%>				
+<table>
+		<tbody>
+			<tr>
+				<td style="vertical-align: top;">Retired Notebook Title<br>
+				</td>
+				<td style="vertical-align: top;"> <br>
+				</td>
+			</tr>
+			<%
+			while(rs.next()){
+			%>
+			<tr>
+				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
+				</td>
+				<td>
+					<form method="post" action="NoteUI.jsp" name="note"></form>
+				</td>
+			</tr>
+		</tbody>
+					<%
+			}
+			}catch(IllegalStateException ise){
+			    out.println(ise.getMessage());
+			}
+			%>
+	</table>
+	
+	
 	</body>
 </html>
