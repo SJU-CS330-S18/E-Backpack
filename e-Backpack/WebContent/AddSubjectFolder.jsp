@@ -146,7 +146,7 @@ function closeNav() {
 						<p class="center">
 							<label>Class Time:</label> <input class="event-info"
 								name="Date" value="">
-						</p>
+						</p> 
 					</div>
 			 		</form> 
 	</div>
