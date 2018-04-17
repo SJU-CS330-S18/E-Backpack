@@ -473,7 +473,7 @@ public void setStuuserName(String stuUsername) {
 	          String queryString = "SELECT coursetitle "+
 	         		 			   "FROM NOTEBOOK "+
 	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"'and " + 
-	         		 			   "ISRETIRED = 'N'";
+	         		 			   "ISRETIRED = 'Y'";
 
 	          result = stmt.executeQuery(queryString);
 	         
