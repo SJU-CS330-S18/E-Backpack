@@ -130,29 +130,35 @@ function closeNav() {
     <div id="divNotebookFile" class="bordered">
         <div>
             <label>Notebook:</label>
+            <!-- notebook thats selected name -->
             <input id="inputNootbookName" ></input>
         </div>
      
     </div>
- 
+ <!-- section for all notes in selcted notebook -->
     <div id="divNoteList" class="bordered">
         <label>Notes:</label>
         <div>
-            <button id = "newNoteBtn">Add new note</button>     
+        <!-- button to create a new note  -->
+            <button id = "newNoteBtn">Add new note</button>    
+            <!-- button to delete a selcted note from list of notes --> 
             <button id = "deleteNoteBtn" >Delete selected Note</button>
         </div>
         <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange=""></select>
     </div>
- 
+ <!-- section for a selected or new note. able read create and change a note -->
     <div id="divDocumentSelected" class="bordered">
         <div><label>Document Selected:</label></div>
         <div>
             <label>Name:</label>
+            <!-- name of selected note that is being viewed -->
             <input id="noteTextBox" ></input>
+            <!-- button to save any new notes or changes to a note -->
             <button id = "saveBtn"onclick="buttonDocumentSelectedSave_Clicked();">Save</button>
            
         </div>
         <div></div>
+        <!-- text are for selected notes contents used for reading and editing and creating a note -->
         <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20"></textarea></div>
     </div>
  
