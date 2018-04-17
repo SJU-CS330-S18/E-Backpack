@@ -404,15 +404,35 @@ public void setStuuserName(String stuUsername) {
 		
 	}
 	
-	public ResultSet getCurrentNotesList()  throws IllegalStateException{
+	public ResultSet getCurrentNotebooksList()  throws IllegalStateException{
 		  
 		  if(!isLoggedIn()) {
 		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
 		  try{
 			  stmt = con.createStatement();
-	          String queryString = "SELECT coursetitle"+
+	          String queryString = "SELECT COURSETITLE "+
 	         		 			   "FROM NOTEBOOK "+
-	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"'" + 
+	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"' and " + 
+	         		 			   "ISRETIRED = 'N'";
+
+	          result = stmt.executeQuery(queryString);
+	         
+		       }
+		       catch (Exception E) {
+		         E.printStackTrace();
+		       }
+		        return result; 
+		     }
+	
+	public ResultSet getRetiredNotebooksList()  throws IllegalStateException{
+		  
+		  if(!isLoggedIn()) {
+		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
+		  try{
+			  stmt = con.createStatement();
+	          String queryString = "SELECT coursetitle "+
+	         		 			   "FROM NOTEBOOK "+
+	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"'and " + 
 	         		 			   "ISRETIRED = 'N'";
 
 	          result = stmt.executeQuery(queryString);
