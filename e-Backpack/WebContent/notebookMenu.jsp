@@ -94,9 +94,14 @@ function closeNav() {
 </div>
 <!-- Gets the list of a student's current notebooks to display from the information in the database -->
 <%try{
+<<<<<<< HEAD
 	ResultSet rs = student.getCurrentNotesList();
 %>		
 <div id="holdingblock">		
+=======
+	ResultSet rs = student.getCurrentNotebooksList();
+%>				
+>>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
 <table>
 		<tbody>
 			<tr>
@@ -112,7 +117,7 @@ function closeNav() {
 				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
 				</td>
 				<td>
-					<form method="post" action="NoteUI.jsp" name="note">
+					<form method="post" action="NoteUI.jsp" name="note"></form>
 				</td>
 			</tr>
 		</tbody>
@@ -125,6 +130,37 @@ function closeNav() {
 	</table>
 	</div>
 	
+	
+	
+	<%try{
+	ResultSet rs = student.getRetiredNotebooksList();
+%>				
+<table>
+		<tbody>
+			<tr>
+				<td style="vertical-align: top;">Retired Notebook Title<br>
+				</td>
+				<td style="vertical-align: top;"> <br>
+				</td>
+			</tr>
+			<%
+			while(rs.next()){
+			%>
+			<tr>
+				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
+				</td>
+				<td>
+					<form method="post" action="NoteUI.jsp" name="note"></form>
+				</td>
+			</tr>
+		</tbody>
+					<%
+			}
+			}catch(IllegalStateException ise){
+			    out.println(ise.getMessage());
+			}
+			%>
+	</table>
 	
 	
 	</body>
