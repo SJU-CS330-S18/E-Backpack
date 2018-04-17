@@ -1,15 +1,17 @@
+<%-- Import java.sql.* and use the Student bean as id: student --%>
 <%@ page language="java" import="java.sql.*" %>
 <jsp:useBean id="student" class="entity.Student" scope="session"/>
 
+<%-- if the password does not match then retype the password --%>
 <%  String value = request.getParameter("value");
 if(value!=null)
    out.println("PASSWORD DOES NOT MATCH RETYPE PASSWORD");%>
+   
+   
 <html>
 <link rel="stylesheet" type="text/css" href="e-BP.css" />
 
 <style>
-
-
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -43,27 +45,17 @@ if(value!=null)
     }
 }</script>
 
-
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>e-Backpack Register</title>
-
-
-
 </head>
-
-
-
-
-
 
 	<div id="banner">
 
+<%-- side navigation --%>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="Login.jsp">Log In</a>
-  
 </div>
-
 
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
@@ -76,14 +68,11 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-
-
  e-Backpack 
 </div>
-
-
  <body>
 
+<%-- A container on the create account page to add a new account--%>
 <div id="logginblock">
  <div class ="container">
  <header>
@@ -120,30 +109,20 @@ function closeNav() {
 	<td> <input name="password2" size ="25%" height = "100" value= "" type="password" id="pass">
 	
 	</td>
-	
-	
-	
 </tr>
 
+<%-- Submit the new account request/creation--%>
 <td colspan="4" align ="right">
-
-
    <input style="color: black;" name="Confirm" value="Confirm" type="submit">
 </td>
-
-
-  </div>
-  
-  
- </div>
-
- </table>
+</div>
+</div>
+</table>
  	<div class="form-group">
-						<p class="center">
-						<input type="checkbox" onclick="myFunction()">Show Password
-					</div>
- 
- </form>
+	<p class="center">
+	<input type="checkbox" onclick="myFunction()">Show Password
+</div>
+</form>
 
 </body>
 </html>

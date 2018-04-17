@@ -95,7 +95,7 @@ function closeNav() {
 <!-- Gets the list of a student's current notebooks to display from the information in the database -->
 <%try{
 
-	ResultSet rs = student.getCurrentNotesList();
+	ResultSet rs = student.getCurrentNotebooksList();
 %>		
 <div id="holdingblock">		
 
@@ -112,7 +112,7 @@ function closeNav() {
 			while(rs.next()){
 			%>
 			<tr>
-				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
+				<td style="vertical-align: top;"><a href="NoteUI.jsp"><%=rs.getString("COURSETITLE")%></a><br>
 				</td>
 				<td>
 					<form method="post" action="NoteUI.jsp" name="note"></form>
@@ -145,7 +145,7 @@ function closeNav() {
 			while(rs.next()){
 			%>
 			<tr>
-				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
+				<td style="vertical-align: top;"><a href="NoteUI.jsp"><%=rs.getString("COURSETITLE")%></a><br>
 				</td>
 				<td>
 					<form method="post" action="NoteUI.jsp" name="note"></form>

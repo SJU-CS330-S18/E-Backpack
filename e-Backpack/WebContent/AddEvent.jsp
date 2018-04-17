@@ -1,9 +1,7 @@
+<%-- Import java.sql.* and use the Student bean as id: student --%>
 <%@ page language="java" import="java.sql.*" %>
 <jsp:useBean id="student" class="entity.Student" scope="session"/>
 
-<%  String value = request.getParameter("value");
-if(value!=null)
-   out.println("PASSWORD DOES NOT MATCH RETYPE PASSWORD");%>
 <html>
 <link rel="stylesheet" type="text/css" href="e-BP.css" />
 
@@ -47,24 +45,14 @@ if(value!=null)
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>e-Backpack Add Event</title>
 
-
-
 </head>
-
-
-
-
-
-
-	<div id="banner">
+<div id="banner">
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="userMenu.jsp">Menu</a>
   <a href="Logout.jsp">Log Out</a>
-  
 </div>
-
 
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
@@ -77,14 +65,12 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-
-
  e-Backpack 
 </div>
-
-
  <body>
 
+<%-- Container to add a new event with elements being typed in. The action after is to go to
+	addEvent_action.jsp. This add action page interacts with the student bean. --%>
 <div id="logginblock">
  <div class ="container">
  <header>
@@ -113,14 +99,14 @@ function closeNav() {
 <td colspan="4" align ="right">
 
 
-   <input style="color: black;" name="Confirm" value="Confirm" type="submit">
+<input style="color: black;" name="Confirm" value="Confirm" type="submit">
 </td>
 </table>
 </form>
 
 <form method="post" action="PlannerPage.jsp" name="Return">
-   						<input style="color: black;" name="Return" value="Return to Planner" type="submit">
-   					</form>
+<input style="color: black;" name="Return" value="Return to Planner" type="submit">
+</form>
 
 </body>
 </html>
