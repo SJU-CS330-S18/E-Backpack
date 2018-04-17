@@ -148,7 +148,7 @@ function closeNav() {
 								name="Date" value="">
 						</p>
 					</div>
-					</form>
+			 		</form>
 	</div>
 </div>
 </center>
