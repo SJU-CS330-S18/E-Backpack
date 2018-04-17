@@ -456,9 +456,8 @@ public void setStuuserName(String stuUsername) {
 			  stmt = con.createStatement();
 	          String queryString = "SELECT COURSETITLE "+
 	         		 			   "FROM NOTEBOOK "+
-	         		 			   "WHERE ISRETIRED = 'N' "+
+	         		 			   "WHERE ISRETIRED = 'N' AND "+
 	         		 			   "STUUSERNAME = '" + this.getUsername() +"' ";
-	         		 			   
 	          result = stmt.executeQuery(queryString);
 	         
 		       }
