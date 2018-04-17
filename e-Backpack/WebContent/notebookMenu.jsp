@@ -22,15 +22,14 @@
 
 #holdingblock{
 	display: inline-block;
-	width: 500px;
-	height: 500px;
+	vertical-align: top;
+	width: 250px;
+	height: 300px;
 	background-color: white;
-	background-position:center;
-	margin-top:10px;
-	margin-left:33%;
 	box-shadow: 10px 10px 5px #333333;
 	text-align: center;
-	
+	margin: 20px;
+
 	}
 
 
@@ -54,6 +53,7 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="updateProfile.jsp">Update Profile</a>
   <a href="userMenu.jsp">Menu</a>
   <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>
 </div>
@@ -79,15 +79,11 @@ function closeNav() {
  
 	
 	<body>
-	<div class="container">
-		<div class="row justify-content-md-center">
-			<div class="col-md-6 text-center">
-				<div class="list-group">
-					<h1>Notebook Menu</h1>
-					
-				</div>
-			</div>
-		</div>
-	</div>
+	<div id="holdingblock">
+<br>
+			<a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ4Uesj_ZEC-sLUuTPCI5fBaBfN_iX0Erscqlz9ACtD_pPUIovg"></a>
+			<br><br> <a href="#">Add New Notebook</a>
+</div>
+	
 	</body>
 </html>
