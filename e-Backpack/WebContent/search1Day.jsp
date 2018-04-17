@@ -1,25 +1,19 @@
-<%@ page language="java" import="java.sql.*,entity.*, java.util.*"%>
-<jsp:useBean id="student" class= "entity.Student" scope="session"/> 
-<jsp:setProperty name="student" property="*"/> 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" import="java.sql.*" %>
+<%@ page import = "java.io.*, java.util.Date" %>
+<%@ page import = "javax.servlet.*, java.text.*" %>
+<jsp:useBean id="student" class="entity.Student" scope="session"/>
+<jsp:setProperty name="student" property="*"/>
 <html>
 <link rel="stylesheet" type="text/css" href="modalStyle.css"/>
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
+
 <head>
-<meta content="text/html;
-		http-equiv="content-type">
-		<meta charset="utf-8">
-		<meta name ="viewport" content= "width=device-width, initial -scale=1">
-		   <link rel="styleshe" type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bookstrap.min.css">
-		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		  <script src="https://maxcdn.bootstrapcdn.com/bookstrap/3.3.7/js/bookstrap.min.js"></script>
-		  
-		  
-		  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
-		  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepiecker3.min.css">
-		  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/booktstrap-datepicker.min.js"></script>
-<title>Jump To...</title>
-<style type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Personal Planner</title>
+<style>
+*{
+	 box-sizing: border-box;
+}
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -33,38 +27,92 @@
   padding: 0,0,0,0;
 }
 
-</style>        
+
+#holdingblock{
+	
+	width: 50%;
+	height: 500px;
+	background-color: white;
+	background-position:left;
+	float:left
+	
+	
+	
+	}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#current_day { background-color:yellow; font-weight: bold; } 
+-->
+
+.btn:hover {background: #eee;}
+.link{color:black;}
+
+</style>
+<head>
+<meta content="text/html; charset=ISO-8859-1"
+		http-equiv="content-type">
+				<title >Planner Page</title>
+
+
 </head>
 <body>
 
+<div id="banner">
 
-
-<!-- This title is not the same as the others because of the modal HTML  -->
- <font size="120">e-Backpack </font>
-
-<div class="container">
-<div class="row">
-		<div class="col-md-4 form-group">
-		<label>Jump To</label>
-		<div class="input-group input-append date" id ="dateRangePicker">
-			<input type="text" class ="form-control" name="date">
-			<span class ="input-group-addon add-on"><span class="glyphicon-calendar"></span></span>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="updateProfile.jsp">Update Profile</a>
+  <a href="userMenu.jsp">Menu</a>
+  <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>
 </div>
-</div>
-</div>< /div>
+
+<span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
 <script>
-$(document).ready(function(){
-	$('$dateRangePicker')
-	.datepicker{(
-			format: 'mm/dd/yyyy',
-			startDate:'01/01/2018',
-			endDate:'12/30/2028'
-			)};
-			
-});
-</script>			
-       
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
 
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+</script>
+<font size="120">e-Backpack </font>
+</div>
+<div class="row">
+<div id="holdingblock" style= text-align:center>
+<%
+try{
+	String date = request.getParameter("date");
+SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+	Date neweventdate = sdf.parse(date);
+	java.sql.Date sDate = new java.sql.Date(neweventdate.getTime());
+	ResultSet rs = student.search1Day(sDate);
+	%><table style="width:100%">
+	<tr><th>Event</th>
+	<th>Event Date</th>
+	<th>Location</th></tr>
+	<%	while(rs.next()){
+		
+		%>
+     	<tr>
+     	<td style="vertical-align: top; text-align: center;"><%=rs.getString("EVENTTITLE")%></td>
+			<td style="vertical-align: top; text-align: center;"><%=rs.getString("eventdescription")%></td>
+       		<td style="vertical-align: top; text-align: center;"><%=rs.getString("location1")%></td> 
+     	</tr>
+   
+     	<%}
+	}catch(IllegalStateException ise){
+	    out.println(ise.getMessage());
+	} %>
+	</table>
+	</div>
+	</div>
 </body>
 </html>

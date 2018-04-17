@@ -60,7 +60,7 @@ function closeNav() {
    <div class="col-md-6 col-sm-6 col-xs-12">
 
     <!-- Form code begins -->
-    <form method="post">
+    <form method="post" action="search1Day.jsp">
       <div class="form-group"> <!-- Date input -->
         <label class="control-label" for="date">Date</label>
         <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
@@ -74,7 +74,7 @@ function closeNav() {
     </div>
   </div>    
  </div>
-</div>
+
 <script>
     $(document).ready(function(){
       var date_input=$('input[name="date"]'); //our date input has the name "date"
@@ -88,5 +88,7 @@ function closeNav() {
       date_input.datepicker(options);
     })
 </script>
+
+
 </body>
 </html>
