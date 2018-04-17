@@ -1,3 +1,7 @@
+<%@ page language="java" import="java.sql.*,entity.*"%>
+<jsp:useBean id="student" class="entity.Student" scope="session"/>
+<jsp:setProperty name="student" property="*"/>
+
 <html>
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
 
@@ -45,7 +49,6 @@
 		http-equiv="content-type">
 				<title >Notebook</title>
 
-
 </head>
 <body>
 
@@ -81,9 +84,39 @@ function closeNav() {
 	<body>
 	<div id="holdingblock">
 <br>
-			<a href="NoteUI.jsp"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ4Uesj_ZEC-sLUuTPCI5fBaBfN_iX0Erscqlz9ACtD_pPUIovg"></a>
+			<a href="addNewNotebook.jsp"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ4Uesj_ZEC-sLUuTPCI5fBaBfN_iX0Erscqlz9ACtD_pPUIovg"></a>
 			<br><br> <a href="addNewNotebook.jsp">Add New Notebook</a>
 </div>
+
+<%try{
+	ResultSet rs = student.getCurrentNotesList();
+%>				
+<table>
+		<tbody>
+			<tr>
+				<td style="vertical-align: top;">Currently used Notebook Title<br>
+				</td>
+				<td style="vertical-align: top;"> <br>
+				</td>
+			</tr>
+			<%
+			while(rs.next()){
+			%>
+			<tr>
+				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
+				</td>
+				<td>
+					<form method="post" action="NoteUI.jsp" name="note">
+				</td>
+			</tr>
+		</tbody>
+					<%
+			}
+			}catch(IllegalStateException ise){
+			    out.println(ise.getMessage());
+			}
+			%>
+	</table>
 	
 	</body>
 </html>

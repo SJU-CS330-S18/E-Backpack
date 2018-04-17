@@ -384,5 +384,25 @@ public void setStuuserName(String stuUsername) {
 		}
 		
 	}
+	
+	public ResultSet getCurrentNotesList()  throws IllegalStateException{
+		  
+		  if(!isLoggedIn()) {
+		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
+		  try{
+			  stmt = con.createStatement();
+	          String queryString = "SELECT coursetitle"+
+	         		 			   "FROM NOTEBOOK "+
+	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"'" + 
+	         		 			   "ISRETIRED = 'N'";
+
+	          result = stmt.executeQuery(queryString);
+	         
+		       }
+		       catch (Exception E) {
+		         E.printStackTrace();
+		       }
+		        return result; 
+		     }
   
 }
