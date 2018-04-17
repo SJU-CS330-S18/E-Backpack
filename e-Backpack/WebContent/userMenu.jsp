@@ -13,7 +13,7 @@ feature of the e-Backpack: planner, folder, and notebook. A clean layout and cle
    		  
 <style>
 
-<!-- Top banner element, used throughout project. -->
+/* Top banner element, used throughout project.*/
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -27,7 +27,7 @@ feature of the e-Backpack: planner, folder, and notebook. A clean layout and cle
   padding: 0,0,0,0;
 }
 
-<!-- DIV element used throughout the project to hold other elements, and add contrast from background.-->
+/* DIV element used throughout the project to hold other elements, and add contrast from background.*/
 #holdingblock{
 	display: inline-block;
 	vertical-align: top;
