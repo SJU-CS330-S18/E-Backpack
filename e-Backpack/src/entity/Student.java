@@ -39,6 +39,10 @@ public class Student implements Serializable {
   private Date startTime;
   private Date endTime;
   
+  private String courseTitle;
+  private String stuUsername;
+  private boolean isRetired;
+  
   
   private PreparedStatement pstmt;
   private Statement stmt;
@@ -172,6 +176,28 @@ public String getPassword() {
  */
 public void setPassword(String password) {
 	this.password = password;
+}
+
+
+
+public Boolean checkIsRetired() {
+	return this.isRetired;
+}
+
+public String getCoursetitle() {
+	return courseTitle;
+}
+
+public String getStuUsername() {
+	return stuUsername;
+}
+
+public void setCourseTitle(String courseTitle) {
+	this.courseTitle = courseTitle; 
+}
+
+public void setStuuserName(String stuUsername) {
+	this.stuUsername = stuUsername;
 }
 
 
@@ -319,6 +345,23 @@ public void setPassword(String password) {
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}
+	}
+	
+	public void addNewNotebook(String courseT) {
+		PreparedStatement stmt;
+		try {
+			
+			String query = "INSERT INTO NOTEBOOK (COURSETITLE, ISRETIRED, STUUSERNAME) VALUES (?,'N',?)";
+			stmt = con.prepareStatement(query);
+			stmt.clearParameters();
+			stmt.setString(1,courseT);
+			stmt.setString(2, this.username);
+			stmt.executeUpdate();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
 	}
   
 }

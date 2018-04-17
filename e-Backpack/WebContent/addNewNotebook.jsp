@@ -1,6 +1,4 @@
 <%@ page language="java" import="java.sql.*,entity.*"%>
-<jsp:useBean id="student" class="entity.Student" scope="session"/>
-<jsp:setProperty name="student" property="*"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +12,7 @@
 			<table id="AddNewNotebook">
 				<tr>
 					<td>Course Title</td>
-					<td><input name="coursetitle" value=<%=student.getUsername()%>
+					<td><input name="courseTitle" >
 						></td>
 				</tr>
 					<td><input class="button" name="AddNewNotebook" type="submit">
