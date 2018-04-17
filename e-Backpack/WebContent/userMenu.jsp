@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="userMenuErrorPage.jsp"%>
 
-<!-- JSP Page to represent the UserMenu UI. This UI page is a landing where the student can move to each 
+<!--  JSP Page to represent the UserMenu UI. This UI page is a landing where the student can move to each 
 feature of the e-Backpack: planner, folder, and notebook. A clean layout and clear icons allow easy use.  -->
 
 <!-- Checks to see if user is logged in. If not, user cannot access page and will be directed to login page. -->

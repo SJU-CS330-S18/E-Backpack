@@ -1,4 +1,4 @@
-<!-- JSP Page to represent the Notebook UI. This UI page is a place where the
+<!--  JSP Page to represent the Notebook UI. This UI page is a place where the
 user can see their current active and retired notebooks. Clicking on a listed notebook
 allows the user to view, create, and edit their current notes for that specific notebook.  -->
 
