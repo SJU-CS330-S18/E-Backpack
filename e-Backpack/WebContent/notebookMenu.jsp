@@ -94,14 +94,12 @@ function closeNav() {
 </div>
 <!-- Gets the list of a student's current notebooks to display from the information in the database -->
 <%try{
-<<<<<<< HEAD
+
 	ResultSet rs = student.getCurrentNotesList();
 %>		
 <div id="holdingblock">		
-=======
-	ResultSet rs = student.getCurrentNotebooksList();
-%>				
->>>>>>> branch 'master' of https://github.com/SJU-CS330-S18/E-Backpack.git
+
+
 <table>
 		<tbody>
 			<tr>
