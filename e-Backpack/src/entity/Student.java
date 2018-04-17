@@ -290,6 +290,24 @@ public void setStuuserName(String stuUsername) {
 	       }
 	        return result; 
 	     }
+ public ResultSet search1Day(Date date)  throws IllegalStateException{
+	  
+	  if(!isLoggedIn())
+	      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");
+	       try{
+	    	   stmt = con.createStatement();
+       String queryString = "SELECT EVENTTITLE,EVENTDESCRIPTION, LOCATION1 " 
+       		+ "FROM EVENT "
+             + " WHERE STUUSERNAME = '" + this.getUsername() +"' and EVENTDATE=to_date('"+date+"','YYYY-MM-DD')";
+
+       result = stmt.executeQuery(queryString);
+       
+	       }
+	       catch (Exception E) {
+	         E.printStackTrace();
+	       }
+	        return result; 
+	     }
 
 
  /* This method uses a CallStatement object to call an SQL stored procedure
@@ -312,6 +330,7 @@ public void setStuuserName(String stuUsername) {
 	             E.printStackTrace();
 	   }
 }
+ 
  
  /* This method uses a CallStatement object to call an SQL stored procedure
   * Procedure team5.STUDENT_UPDATE_EVENT  to  update a event to the calendar.**/
