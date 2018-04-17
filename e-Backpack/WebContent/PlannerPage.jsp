@@ -18,7 +18,7 @@ search a specific day to see events for days other than the current.  -->
 *{
 	 box-sizing: border-box;
 }
-<!-- Top banner element, used throughout project. -->
+/* Top banner element, used throughout project. */
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -32,7 +32,7 @@ search a specific day to see events for days other than the current.  -->
   padding: 0,0,0,0;
 }
 
-<!-- DIV element used throughout the project to hold other elements, and add contrast from background.-->
+/* DIV element used throughout the project to hold other elements, and add contrast from background.*/
 #holdingblock{
 	
 	width: 50%;
@@ -44,13 +44,13 @@ search a specific day to see events for days other than the current.  -->
 	
 	
 	}
-<!-- CSS for each row in Calendar -->
+/* CSS for each row in Calendar */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-<!-- Changes the color of the calendar day element to yellow, to make it stand out to the user. -->
+/* Changes the color of the calendar day element to yellow, to make it stand out to the user. */
 #current_day { background-color:yellow; font-weight: bold; } 
 -->
 

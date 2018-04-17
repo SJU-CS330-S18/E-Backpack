@@ -14,7 +14,7 @@ allows the user to view, create, and edit their current notes for that specific 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Notebook</title>
 <style>
-<!-- Top banner element, used throughout project. -->
+/* Top banner element, used throughout project. */
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -28,7 +28,7 @@ allows the user to view, create, and edit their current notes for that specific 
   padding: 0,0,0,0;
 }
 
-<!-- DIV element used throughout the project to hold other elements, and add contrast from background.-->
+/* DIV element used throughout the project to hold other elements, and add contrast from background. */
 #holdingblock{
 	display: inline-block;
 	vertical-align: top;
