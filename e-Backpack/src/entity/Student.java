@@ -179,30 +179,49 @@ public void setPassword(String password) {
 }
 
 
-
+/**
+ * A boolean method to check if the notebook is retired
+ */
 public Boolean checkIsRetired() {
 	return this.isRetired;
 }
 
+/**
+ * A setter for class field  password
+ * @param password the password to set
+ */
 public String getCoursetitle() {
 	return courseTitle;
 }
 
+/**
+ * A setter for class field  password
+ * @param password the password to set
+ */
 public String getStuUsername() {
 	return stuUsername;
 }
 
+/**
+ * A setter for class field  password
+ * @param password the password to set
+ */
 public void setCourseTitle(String courseTitle) {
 	this.courseTitle = courseTitle; 
 }
 
+/**
+ * A setter for class field  password
+ * @param password the password to set
+ */
 public void setStuuserName(String stuUsername) {
 	this.stuUsername = stuUsername;
 }
 
 
-/* This method uses a CallStatement object to call an SQL stored procedure
- * Procedure team5.CUSTOMER_REGISTER_PROC  to  register a customer.**/
+/** This method uses a CallStatement object to call an SQL stored procedure
+ * Procedure team5.CUSTOMER_REGISTER_PROC  to  register a customer.
+ */
  public void registerCustomer() {
 	   
 	   try{
@@ -271,7 +290,11 @@ public void setStuuserName(String stuUsername) {
    this.loggedIn = false;
  }
  
-
+ 
+ /** 
+  * This method attempts to retrieve the events for this student
+  * @return returns a resultset with event list 
+  */
  public ResultSet getEventList()  throws IllegalStateException{
 	  
 	  if(!isLoggedIn())
@@ -290,6 +313,12 @@ public void setStuuserName(String stuUsername) {
 	       }
 	        return result; 
 	     }
+ 
+ /** 
+  * This method attempts to retrieve the events for a specific date
+  * @Date the date being searched for events
+  * @return returns a resultset with the events for the specific date
+  */
  public ResultSet search1Day(Date date)  throws IllegalStateException{
 	  
 	  if(!isLoggedIn())
@@ -310,8 +339,9 @@ public void setStuuserName(String stuUsername) {
 	     }
 
 
- /* This method uses a CallStatement object to call an SQL stored procedure
-  * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.**/
+ /** This method uses a CallStatement object to call an SQL stored procedure
+  * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.
+  */
  
  public void addEvent(String title, String description, String location, Date date) {
 	   
@@ -332,8 +362,10 @@ public void setStuuserName(String stuUsername) {
 }
  
  
- /* This method uses a CallStatement object to call an SQL stored procedure
-  * Procedure team5.STUDENT_UPDATE_EVENT  to  update a event to the calendar.**/
+ /** 
+  * This method uses a CallStatement object to call an SQL stored procedure
+  * Procedure team5.STUDENT_UPDATE_EVENT  to  update a event to the calendar.
+  */
  
  public void updateEvent(String title, String description, String location, Date date) {
 	   
@@ -387,6 +419,11 @@ public void setStuuserName(String stuUsername) {
 		}
 	}
 	
+	
+	/** 
+	  * This method adds a new notebook into the student's account
+	  * @String courseT the course title for the notebook
+	  */
 	public void addNewNotebook(String courseT) {
 		PreparedStatement stmt;
 		try {
@@ -404,6 +441,10 @@ public void setStuuserName(String stuUsername) {
 		
 	}
 	
+	/** 
+	  * This method attempts to retrieve the current notes list for the student
+	  * @return returns a resultset with the current notes list
+	  */
 	public ResultSet getCurrentNotesList()  throws IllegalStateException{
 		  
 		  if(!isLoggedIn()) {
