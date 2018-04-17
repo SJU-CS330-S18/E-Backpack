@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--This file works on show events of a specific day to meet user's requirement-->
+<!--Contributor: Yidan Zhang -->
+<!--Date: 04/16/2018 -->
 
-<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<html>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- ISOLATED VERSION OF BOOTSTRAP, NOT NEEDED IF YOUR SITE ALREADY USES BOOTSTRAP -->
 <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
 <link rel="stylesheet" type="text/css" href="modalStyle.css"/>
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
-<!-- Bootstrap Date-Picker Plugin -->
+
+<!-- BOOTSTRAP DATE-PICKER PLUGIN -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<!-- END PLUGIN -->
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Jump To</title>
@@ -30,27 +37,21 @@
 <meta content="text/html; charset=ISO-8859-1"
 		http-equiv="content-type">
 <body>
-
-
+<!-- CONSITENT BACKGROUND UI DESIGN -->
 <div id="banner">
-
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="userMenu.jsp">Menu</a>
   <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>
 </div>
-
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
-
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
-
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
-
 </script>
 <!-- This title is not the same as the others because of the modal HTML  -->
  <font size="120">e-Backpack </font>
@@ -59,7 +60,7 @@ function closeNav() {
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
 
-    <!-- Form code begins -->
+    <!-- FORM TO OBTAIN SPECIFIC DATE AND POST TO SEARCH1DAY.JSP -->
     <form method="post" action="search1Day.jsp">
       <div class="form-group"> <!-- Date input -->
         <label class="control-label" for="date">Date</label>
@@ -69,11 +70,10 @@ function closeNav() {
         <button class="btn btn-primary " name="submit" type="submit">Submit</button>
       </div>
      </form>
-     <!-- Form code ends --> 
-
     </div>
   </div>    
  </div>
+<!-- FORM AND BACKGROUD DESIGN CODE END -->
 
 <script>
     $(document).ready(function(){
@@ -88,7 +88,5 @@ function closeNav() {
       date_input.datepicker(options);
     })
 </script>
-
-
 </body>
 </html>

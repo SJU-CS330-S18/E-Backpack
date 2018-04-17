@@ -1,8 +1,11 @@
-<%@page import="entity.Event"%>
+<%-- Import java.sql.*, java.util.Date, and others. Use the Student bean as id: student --%>
 <%@ page language="java" import="java.sql.*" %>
 <%@ page import = "java.io.*, java.util.Date" %>
 <%@ page import = "javax.servlet.*, java.text.*" %>
 <jsp:useBean id="student" class="entity.Student" scope="session"/> 
+
+<%-- this try catch gets the parameters to add a new event and calls the student 
+	 javabean to addevent with those parameters. --%>
 <%
 try{
 	
