@@ -27,11 +27,48 @@
 	width: 810px;
 	height: 600px;
 	background-color: white;
-	box-shadow: 10px 10px 5px #333333;
 	text-align: center;
 	margin-left: 25%;
 
 	}
+	
+#newNoteBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#newNoteBtn:hover{
+	background: #babdb6;
+}
+
+#deleteNoteBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#deleteNoteBtn:hover{
+	background: #babdb6;
+}
+
+#saveBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#saveBtn:hover{
+	background: #babdb6;
+}
+
+
  
 .bordered {
     border: 1px solid;
@@ -39,6 +76,25 @@
  
 .number {
     width: 64px;
+}
+
+#divNotebookFile{
+	background-color: #ffff;
+}
+
+#divNoteList{
+	background-color: #ffff;
+	
+}
+
+#divDocumentSelected{
+	background-color: #ffff;
+
+}
+
+#testID{
+	background-color: #ffff;
+
 }
 </style>
 <body>
@@ -73,7 +129,7 @@ function closeNav() {
 <div>
     <div id="divNotebookFile" class="bordered">
         <div>
-            <label>NoteBook:</label>
+            <label>Notebook:</label>
             <input id="inputNootbookName" ></input>
         </div>
      
@@ -82,22 +138,22 @@ function closeNav() {
     <div id="divNoteList" class="bordered">
         <label>Notes:</label>
         <div>
-            <button >New</button>     
-            <button >Remove Selected</button>
+            <button id = "newNoteBtn">Add new note</button>     
+            <button id = "deleteNoteBtn" >Delete selected Note</button>
         </div>
-        <select id="selectDocumentsInProject" style="width:100%" size="10" onchange=""></select>
+        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange=""></select>
     </div>
  
     <div id="divDocumentSelected" class="bordered">
         <div><label>Document Selected:</label></div>
         <div>
             <label>Name:</label>
-            <input id="inputDocumentSelectedName" onchange="inputDocumentSelectedName_Changed(this);"></input>
-            <button onclick="buttonDocumentSelectedSave_Clicked();">Save</button>
+            <input id="noteTextBox" ></input>
+            <button id = "saveBtn"onclick="buttonDocumentSelectedSave_Clicked();">Save</button>
            
         </div>
         <div></div>
-        <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20" onchange="textareaDocumentSelectedContents_Changed(this);" onkeyup="textareaDocumentSelectedContents_CursorMoved(this);" onmouseup="textareaDocumentSelectedContents_CursorMoved(this);"></textarea></div>
+        <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20"></textarea></div>
     </div>
  
        
