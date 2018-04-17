@@ -103,7 +103,7 @@ function closeNav() {
 			while(rs.next()){
 			%>
 			<tr>
-				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
+				<td style="vertical-align: top;"><a href="NoteUI.jsp"><%=rs.getString("COURSETITLE")%></a><br>
 				</td>
 				<td>
 					<form method="post" action="NoteUI.jsp" name="note"></form>
@@ -133,7 +133,7 @@ function closeNav() {
 			while(rs.next()){
 			%>
 			<tr>
-				<td style="vertical-align: top;"><%=rs.getString("COURSETITLE")%><br>
+				<td style="vertical-align: top;"><a href="NoteUI.jsp"><%=rs.getString("COURSETITLE")%></a><br>
 				</td>
 				<td>
 					<form method="post" action="NoteUI.jsp" name="note"></form>
