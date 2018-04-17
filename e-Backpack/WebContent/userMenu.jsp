@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="userMenuErrorPage.jsp"%>
+
+<!-- JSP Page to represent the UserMenu UI. This UI page is a landing where the student can move to each 
+feature of the e-Backpack: planner, folder, and notebook. A clean layout and clear icons allow easy use.  -->
+
+<!-- Checks to see if user is logged in. If not, user cannot access page and will be directed to login page. -->
 <%if(!hasAccess){
 	response.sendRedirect("Login.jsp?Error=2");
 	}%>
@@ -8,7 +13,7 @@
    		  
 <style>
 
-
+<!-- Top banner element, used throughout project. -->
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -22,6 +27,7 @@
   padding: 0,0,0,0;
 }
 
+<!-- DIV element used throughout the project to hold other elements, and add contrast from background.-->
 #holdingblock{
 	display: inline-block;
 	vertical-align: top;
@@ -37,7 +43,7 @@
 
 
 </style>
-   		  
+<!-- Page Title -->  
 	<head>
 		<meta content="text/html; charset=ISO-8859-1"
 		http-equiv="content-type">
@@ -45,9 +51,10 @@
 	</head>
 	
 	<body>
-	
+<!-- Implement Banner-->
 	<div id="banner">
 
+<!--Sidebar navigation Links -->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="updateProfile.jsp">Update Profile</a>
@@ -57,6 +64,7 @@
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
 <script>
+<!-- Javascript element to control sidebar menu, where user can navigate to other pages-->
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
@@ -70,6 +78,7 @@ function closeNav() {
  e-Backpack 
 </div>
 
+<!-- Block containing icon and link to planner page-->
 <div id="holdingblock">
 
 
@@ -81,6 +90,7 @@ function closeNav() {
 				</div>
 </div>
 
+<!-- Block containing icon and link to folder page-->
 <div id="holdingblock">
 
 			<div class="list-group">
@@ -91,7 +101,7 @@ function closeNav() {
 				</div>
 </div>
 
-
+<!-- Block containing icon and like to notebook page-->
 <div id="holdingblock">
 			<div class="list-group">
 					<a class="list-group-item btn btn-success" href="notebookMenu.jsp"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL-ISSPGZ2coE4SxMpZ1kNekfpufmjWspeV3ZNyUZMW8Hy4FLt"></a> 

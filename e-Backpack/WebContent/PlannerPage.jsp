@@ -1,3 +1,7 @@
+<!-- JSP Page to represent the Planner UI. This UI page is a place where the
+user can see their calendar, and events for the current day. The user has the ability to 
+search a specific day to see events for days other than the current.  -->
+
 <%@ page language="java" import="java.sql.*,entity.*, java.util.*"%>
 <jsp:useBean id="student" class= "entity.Student" scope="session"/> 
 <jsp:setProperty name="student" property="*"/> 
@@ -7,12 +11,14 @@
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
 
 <head>
+<!-- Page Title -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Personal Planner</title>
 <style>
 *{
 	 box-sizing: border-box;
 }
+<!-- Top banner element, used throughout project. -->
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -26,7 +32,7 @@
   padding: 0,0,0,0;
 }
 
-
+<!-- DIV element used throughout the project to hold other elements, and add contrast from background.-->
 #holdingblock{
 	
 	width: 50%;
@@ -38,13 +44,13 @@
 	
 	
 	}
-
+<!-- CSS for each row in Calendar -->
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-
+<!-- Changes the color of the calendar day element to yellow, to make it stand out to the user. -->
 #current_day { background-color:yellow; font-weight: bold; } 
 -->
 
@@ -60,9 +66,9 @@
 
 </head>
 <body>
-
+<!-- Implement Banner-->
 <div id="banner">
-
+<!--Sidebar navigation Links -->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="updateProfile.jsp">Update Profile</a>
@@ -73,6 +79,7 @@
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
 <script>
+<!-- Javascript element to control sidebar menu, where user can navigate to other pages-->
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
@@ -82,7 +89,6 @@ function closeNav() {
 }
 
 </script>
-<!-- This title is not the same as the others because of the modal HTML  -->
  <font size="120">e-Backpack </font>
 </div>
 <div class="row">
@@ -166,6 +172,7 @@ actual_calendar.innerHTML = month_menu.calendar();
 
 
 <body>
+<!-- Add Event Button: Brings user to a new jsp page where they can add a new event to their calendar-->
 <!-- <button id="modalBtn" class="Modalbutton">Add Event</button> -->
 <div name= "SimpleModal" id="SimpleModal" class="modal">
 	<div class="modal-content">
@@ -228,11 +235,13 @@ actual_calendar.innerHTML = month_menu.calendar();
 <button id="modalBtn" class="link">Add Event</button>
 </form>
 
+<!-- Button to allow the user to jump to another day other than the current day, to view that day's events-->
 <script src = "modalFunc.js"></script>
  <form style=""font-family: Times New Roman,Times,serif";" method="post"action="search.html" name="search">
 <button id="modalBtn" class="link">Jump To...</button>
 </form>
 </div>
+<!-- DIV element containing table with the current day's events. -->
 <div id="holdingblock" style= text-align:center>
 <h2>Today's Schedule</h2>
 	<%try{

@@ -1,11 +1,12 @@
-
+<!-- JSP Page to represent the Folder UI. This UI page is a place where the
+user can see their current folders.  -->
 
 <html>
 	<link rel="stylesheet" type="text/css" href="e-BP.css"/>
   
   <style>
 
-
+<!-- Top banner element, used throughout project. -->
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -19,6 +20,7 @@
   padding: 0,0,0,0;
 }
 
+<!-- DIV element used throughout the project to hold other elements, and add contrast from background.-->
 #holdingblock{
 	display: inline-block;
 	vertical-align: top;
@@ -34,7 +36,7 @@
 
 
 </style>
-   		  
+   	<!-- Page Title -->  	  
 	<head>
 		<meta content="text/html; charset=ISO-8859-1"
 		http-equiv="content-type">
@@ -44,8 +46,9 @@
 	
 	
 	<body>
+	<!-- Implement Banner-->
 	<div id="banner">
-
+<!--Sidebar navigation Links -->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="updateProfile.jsp">Update Profile</a>
@@ -56,6 +59,7 @@
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
 <script>
+<!-- Javascript element to control sidebar menu, where user can navigate to other pages-->
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
@@ -69,7 +73,7 @@ function closeNav() {
  e-Backpack 
 </div>
 
-
+<!-- Block containing icon and link to Add a new Folder, jumps to AddSubjectFolder.jsp page -->
 <div id="holdingblock">
 <br>
 			<a href="AddSubjectFolder.jsp"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ4Uesj_ZEC-sLUuTPCI5fBaBfN_iX0Erscqlz9ACtD_pPUIovg"></a>

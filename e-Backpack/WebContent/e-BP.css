@@ -1,8 +1,11 @@
+<!-- General CSS page containing elements used consistantly in project.-->
+
 body {
     background-color: #7C898B;
 }
 /*extra css pg*/
-/* The side navigation menu */
+/* The side navigation menu, represented as triple bar icon next to title on each page
+Clicking this menu pulls up a sliding menu from the left, where new navigation links are located */
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
