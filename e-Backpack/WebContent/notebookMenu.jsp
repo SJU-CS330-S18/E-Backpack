@@ -81,8 +81,8 @@ function closeNav() {
 	<body>
 	<div id="holdingblock">
 <br>
-			<a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ4Uesj_ZEC-sLUuTPCI5fBaBfN_iX0Erscqlz9ACtD_pPUIovg"></a>
-			<br><br> <a href="#">Add New Notebook</a>
+			<a href="NoteUI.jsp"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ4Uesj_ZEC-sLUuTPCI5fBaBfN_iX0Erscqlz9ACtD_pPUIovg"></a>
+			<br><br> <a href="NoteUI.jsp">Add New Notebook</a>
 </div>
 	
 	</body>
