@@ -1,4 +1,4 @@
-<!--  JSP Page to represent the Folder UI. This UI page is a place where the
+<!-- JSP Page to represent the Folder UI. This UI page is a place where the
 user can see their current folders.  -->
 
 <html>

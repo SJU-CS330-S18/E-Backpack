@@ -1,4 +1,4 @@
-<!--  JSP Page to represent the Planner UI. This UI page is a place where the
+<!-- JSP Page to represent the Planner UI. This UI page is a place where the
 user can see their calendar, and events for the current day. The user has the ability to 
 search a specific day to see events for days other than the current.  -->
 
