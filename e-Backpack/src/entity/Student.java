@@ -178,31 +178,49 @@ public void setPassword(String password) {
 	this.password = password;
 }
 
-
-
+/**
+ * A boolean method to check if notebook is retired
+ */
 public Boolean checkIsRetired() {
 	return this.isRetired;
 }
 
+/**
+ * A getter for course title
+ * @return coursetitle
+ */
 public String getCoursetitle() {
 	return courseTitle;
 }
 
+/**
+ * A getter for student username
+ * @return student username
+ */
 public String getStuUsername() {
 	return stuUsername;
 }
 
+/**
+ * A setter for courseTitle
+ * @param courseTitle to set
+ */
 public void setCourseTitle(String courseTitle) {
 	this.courseTitle = courseTitle; 
 }
 
+/**
+ * A setter for student username
+ * @param stuUsername username of student
+ */
 public void setStuuserName(String stuUsername) {
 	this.stuUsername = stuUsername;
 }
 
 
-/* This method uses a CallStatement object to call an SQL stored procedure
- * Procedure team5.CUSTOMER_REGISTER_PROC  to  register a customer.**/
+/** This method uses a CallStatement object to call an SQL stored procedure
+ * Procedure team5.CUSTOMER_REGISTER_PROC  to  register a customer.
+ */
  public void registerCustomer() {
 	   
 	   try{
@@ -271,7 +289,10 @@ public void setStuuserName(String stuUsername) {
    this.loggedIn = false;
  }
  
-
+ /** 
+  * This method retrieves events list
+  * @return resultset of current events list
+  */
  public ResultSet getEventList()  throws IllegalStateException{
 	  
 	  if(!isLoggedIn())
@@ -290,6 +311,10 @@ public void setStuuserName(String stuUsername) {
 	       }
 	        return result; 
 	     }
+ /** 
+  * This method retrieves events for specific date
+  * @return resultset of search day events
+  */
  public ResultSet search1Day(Date date)  throws IllegalStateException{
 	  
 	  if(!isLoggedIn())
@@ -310,8 +335,9 @@ public void setStuuserName(String stuUsername) {
 	     }
 
 
- /* This method uses a CallStatement object to call an SQL stored procedure
-  * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.**/
+ /** This method uses a CallStatement object to call an SQL stored procedure
+  * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.*
+  */
  
  public void addEvent(String title, String description, String location, Date date) {
 	   
@@ -332,8 +358,9 @@ public void setStuuserName(String stuUsername) {
 }
  
  
- /* This method uses a CallStatement object to call an SQL stored procedure
-  * Procedure team5.STUDENT_UPDATE_EVENT  to  update a event to the calendar.**/
+ /** This method uses a CallStatement object to call an SQL stored procedure
+  * Procedure team5.STUDENT_UPDATE_EVENT  to  update a event to the calendar.
+  */
  
  public void updateEvent(String title, String description, String location, Date date) {
 	   
@@ -387,6 +414,11 @@ public void setStuuserName(String stuUsername) {
 		}
 	}
 	
+	
+	 /** 
+	  * This method adds a new notebook and inserts into database
+	  * @String courseT course title to name notebook
+	  */
 	public void addNewNotebook(String courseT) {
 		PreparedStatement stmt;
 		try {
@@ -404,16 +436,44 @@ public void setStuuserName(String stuUsername) {
 		
 	}
 	
-	public ResultSet getCurrentNotesList()  throws IllegalStateException{
+	/** 
+	  * This method retrieves notebooks for user
+	  * @return resultset of current notebook list
+	  */
+	public ResultSet getCurrentNotebooksList()  throws IllegalStateException{
 		  
 		  if(!isLoggedIn()) {
 		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
 		  try{
 			  stmt = con.createStatement();
-	          String queryString = "SELECT coursetitle"+
+	          String queryString = "SELECT COURSETITLE "+
 	         		 			   "FROM NOTEBOOK "+
-	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"'" + 
+	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"' and " + 
 	         		 			   "ISRETIRED = 'N'";
+
+	          result = stmt.executeQuery(queryString);
+	         
+		       }
+		       catch (Exception E) {
+		         E.printStackTrace();
+		       }
+		        return result; 
+		     }
+	
+	/** 
+	  * This method retrieves retired notebooks for user
+	  * @return resultset of retired notebook list
+	  */
+	public ResultSet getRetiredNotebooksList()  throws IllegalStateException{
+		  
+		  if(!isLoggedIn()) {
+		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
+		  try{
+			  stmt = con.createStatement();
+	          String queryString = "SELECT coursetitle "+
+	         		 			   "FROM NOTEBOOK "+
+	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"'and " + 
+	         		 			   "ISRETIRED = 'Y'";
 
 	          result = stmt.executeQuery(queryString);
 	         

@@ -95,7 +95,7 @@ function closeNav() {
 <!-- Gets the list of a student's current notebooks to display from the information in the database -->
 <%try{
 
-	ResultSet rs = student.getCurrentNotesList();
+	ResultSet rs = student.getCurrentNotebooksList();
 %>		
 <div id="holdingblock">		
 

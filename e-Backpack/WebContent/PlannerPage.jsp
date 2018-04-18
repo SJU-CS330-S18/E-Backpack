@@ -170,67 +170,6 @@ actual_calendar.innerHTML = month_menu.calendar();
 <div id="show_calendar">&nbsp;</div>
 <div id="current_month">&nbsp;</div>
 
-
-<body>
-<!-- Add Event Button: Brings user to a new jsp page where they can add a new event to their calendar-->
-<!-- <button id="modalBtn" class="Modalbutton">Add Event</button> -->
-<div name= "SimpleModal" id="SimpleModal" class="modal">
-	<div class="modal-content">
-		<div class = "modal-header">
-		<span class="closeBtn">&times;</span>
-		<h2 class= "modalHead">Add New Event</h2>
-		</div>
-		<div class="modal-body">
-		<form method="post" action="addEvent_action.jsp" name="addEvent">
-		
-					<div class="form-group">
-						<p class="center">
-							<label>Event Title:</label> <input type ="text" id="Title" class="event-title"
-								name="Event Title" value="">
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Description:</label> <textarea rows="10" cols = "30" type ="text"id="descText" class="event-desc"
-								name="Description" value=""></textarea>
-						</p>
-					</div>
-					<div class="form-group">
-						<p class="center">
-							<label>Date:</label> <input type = "text" class="event-date"
-								name="Date" value="">
-						</p>
-					</div>
-<!-- 					<div class="form-group"> -->
-<!-- 						<p class="center"> -->
-<!-- 							<label>Start Time</label> <input type = "text" class="event-start" -->
-<!-- 								name="Timestart" value=""> -->
-<!-- 								<label>AM</label><input type = "radio" id ="endAM" name="startAMPM"> -->
-<!-- 								<label>PM</label><input type = "radio" id ="endPM" name="startAMPM"> -->
-<!-- 						</p> -->
-<!-- 					</div> -->
-<!-- 					<div class="form-group"> -->
-<!-- 						<p class="center"> -->
-<!-- 							<label>End Time</label> <input type = "text" class="event-end" -->
-<!-- 								name="Timeend" value=""> -->
-<!-- 								<label>AM</label><input type = "radio" id ="endAM" name="endAMPM"> -->
-<!-- 								<label>PM</label><input type = "radio" id ="endPM" name="endAMPM"> -->
-							
-<!-- 						</p> -->
-<!-- 					</div> -->
-					<div class="form-group">
-						<p class="center">
-							<label>Location:</label> <input type = "text" id="Location" class="event-location"
-								name="Event Location" value="">
-						</p>
-					</div>
-					<div><button id="addEventBtn" class="Eventbutton">Add Event</button></div>
-					</form>
-					</div>
-	</div>
-</div>
-
-
  <form style=""font-family: Times New Roman,Times,serif";" method="post"action="AddEvent.jsp" name="addEvent">
 <button id="modalBtn" class="link">Add Event</button>
 </form>
