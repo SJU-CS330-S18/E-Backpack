@@ -513,7 +513,7 @@ public void setStuuserName(String stuUsername) {
 		
 		PreparedStatement stmt;
 		try {
-			String query = "UPDATE NOTEBOOK SET ISRETIRED='Y' WHERE coursetitle = ? and username=?";
+			String query = "UPDATE NOTEBOOK SET ISRETIRED='Y' WHERE coursetitle = ? and stuusername=?";
 			stmt = con.prepareStatement(query);
 			stmt.clearParameters();
 			stmt.setString(1, courseT);
