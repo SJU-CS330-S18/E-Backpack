@@ -26,7 +26,7 @@ if(value!=null)
 
 #logginblock{
 	width: 600px;
-	height: 350px;
+	height: 460px;
 	background-color: white;
 	background-position:center;
 	margin:auto;
@@ -76,7 +76,7 @@ function closeNav() {
 <div id="logginblock">
  <div class ="container">
  <header>
- <h1 align="center"> Create e-Backpack Account</h1>
+ <h1 align="center"> Create e-Backpack Account</h1> 
  </header>
 <form style=""font-family: Times New Roman,Times,serif";" method="post"action="Register_Action.jsp" name="RegisterForm">
 <table align="center">
@@ -121,6 +121,15 @@ function closeNav() {
  	<div class="form-group">
 	<p class="center">
 	<input type="checkbox" onclick="myFunction()">Show Password
+	
+	<div class="tooltip"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREDqWA3HbtskFN4K8s9I9qJmYOQj3U1dqEaDh0bN_FCYtrzMho"
+ width="35" height="35"> <span class="tooltiptext">Create your e-Backpack account to digitize your planner, notebook, and folder.
+ 												   Access your digital files at any time, and organize your life without the strain of a heavy backpack!</span></div>
+	
+	<br><br><b>Already have an e-Backpack account?</b><br>
+	<form style=""font-family: Times New Roman,Times,serif";" method="post"action="Login.jsp" name="login">
+<button id="modalBtn" class="link">Return to Login</button>
+</form>
 </div>
 </form>
 
