@@ -112,10 +112,15 @@ function closeNav() {
 			while(rs.next()){
 			%>
 			<tr>
-				<td style="vertical-align: top;"><a href="NoteUI.jsp"><%=rs.getString("COURSETITLE")%></a><br>
+				<td style="vertical-align: top;">
+				<%=rs.getString("COURSETITLE")%>				
+				<br>			
 				</td>
 				<td>
-					<form method="post" action="NoteUI.jsp" name="note"></form>
+					<form method="post" action="NoteUI.jsp" name="note">
+					<input name="coursetitle" type="hidden" value="<%=rs.getString("COURSETITLE")%>"type="submit">
+					<input value="Note" name="note" type="submit">
+					</form>
 				</td>
 			</tr>
 		</tbody>

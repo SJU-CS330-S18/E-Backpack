@@ -1,3 +1,6 @@
+<%@ page language="java" import="java.sql.*,entity.*"%>
+<jsp:useBean id="student" class="entity.Student" scope="session"/>
+<jsp:setProperty name="student" property="*"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -151,7 +154,7 @@ function closeNav() {
         <div>
             <label>Notebook:</label>
             <!-- notebook thats selected name -->
-            <input id="inputNootbookName" ></input>
+            <input id="inputNootbookName" value=<%=request.getParameter("coursetitle")%>></input>
             <button id = "retireNotebookBtn">Retire this Notebook</button>    
         </div>
      
