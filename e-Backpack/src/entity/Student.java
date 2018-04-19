@@ -494,14 +494,15 @@ public void setStuuserName(String stuUsername) {
 	public void addNewNote(Date noteDate, String noteTitle, String noteText, String courseTitle2) {
 		PreparedStatement stmt;
 		try{
-			String query = "INSERT INTO NOTE (NOTEDATE, NOTETITLE, NOTETEXT, COURSETITLE) VALUES (?, ?, ?, ?)";
+			String query = "INSERT INTO NOTE (USERNAME, NOTEDATE, NOTETITLE, NOTETEXT, COURSETITLE) VALUES (?, ?, ?, ?, ?)";
 			stmt = con.prepareStatement(query);
 			stmt.clearParameters();
-			stmt.setDate(1,(java.sql.Date) noteDate);
-			stmt.setString(2, noteTitle);
-			stmt.setString(3, noteText);
-			stmt.setString(4, courseTitle2);
-//			stmt.setString(4, this.username);
+			stmt.setString(1, this.getUsername());
+			stmt.setDate(2,(java.sql.Date) noteDate);
+			stmt.setString(3, noteTitle);
+			stmt.setString(4, noteText);
+			stmt.setString(5, courseTitle2);
+			
 			stmt.executeQuery(query);
 		}
 	       catch (Exception E) {

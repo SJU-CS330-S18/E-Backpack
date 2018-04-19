@@ -10,9 +10,9 @@
 try{
 	String noteTitle = request.getParameter("nameOfNote");
 	String noteContent = request.getParameter("noteContent");
+	//String noteContent = request.getElementById("noteContent");
 	String courseTitle = request.getParameter("coursetitle");
-	String date = request.getParameter("dateOfNote");
-	
+	String date = request.getParameter("dateOfNote");	
 		
  	SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
   	Date neweventdate = sdf.parse(date);
