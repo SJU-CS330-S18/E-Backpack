@@ -49,6 +49,14 @@ public class Student implements Serializable {
   private ResultSet result;
   private Connection con;
   private CallableStatement callStmt;
+  
+  /**
+   * Note Fields
+   */
+  private Date noteDate;
+  private String noteTitle;
+  private String noteText;
+  private String courseTitle2;
   /**
    * The following stores whether or not the customer has successfully logged
    * to the System
@@ -483,5 +491,21 @@ public void setStuuserName(String stuUsername) {
 		       }
 		        return result; 
 		     }
-  
-}
+	public void addNewNote(Date noteDate, String noteTitle, String noteText, String courseTitle2) {
+		PreparedStatement stmt;
+		try{
+			String query = "INSERT INTO NOTE (NOTEDATE, NOTETITLE, NOTETEXT, COURSETITLE) VALUES (?, ?, ?, ?)";
+			stmt = con.prepareStatement(query);
+			stmt.clearParameters();
+			stmt.setDate(1,(java.sql.Date) noteDate);
+			stmt.setString(2, noteTitle);
+			stmt.setString(3, noteText);
+			stmt.setString(4, courseTitle2);
+//			stmt.setString(4, this.username);
+			stmt.executeQuery(query);
+		}
+	       catch (Exception E) {
+	         E.printStackTrace();
+	       }
+	}
+	}

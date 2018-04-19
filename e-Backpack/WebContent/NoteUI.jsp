@@ -163,8 +163,12 @@ function closeNav() {
     <div id="divNoteList" class="bordered">
         <label>Notes:</label>
         <div>
+        <form method = "post" action = "addNewNote.jsp" name = "newNoteForm">
         <!-- button to create a new note  -->
-            <button id = "newNoteBtn">Add new note</button>    
+            <input id = "newNoteBtn" value = "Add New Note" type = "submit">
+            <input name = "coursetitle" type = "hidden" value = <%=request.getParameter("coursetitle")%> type = "submit">
+            </form>
+            
             <!-- button to delete a selcted note from list of notes --> 
             <button id = "deleteNoteBtn" >Delete selected Note</button>
         </div>
