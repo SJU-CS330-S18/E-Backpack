@@ -109,12 +109,20 @@
 
 }
 </style>
+<head>
+<!-- Page Title -->
+<meta content="text/html; charset=ISO-8859-1"
+		http-equiv="content-type">
+				<title >Notes</title>
+
+</head>
 <body>
 
 <div id="banner">
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="notebookMenu.jsp">Notebook Menu</a>
   <a href="updateProfile.jsp">Update Profile</a>
   <a href="userMenu.jsp">Menu</a>
   <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>

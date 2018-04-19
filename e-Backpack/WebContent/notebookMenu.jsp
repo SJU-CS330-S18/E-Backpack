@@ -92,7 +92,7 @@ function closeNav() {
 			<a href="addNewNotebook.jsp"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ4Uesj_ZEC-sLUuTPCI5fBaBfN_iX0Erscqlz9ACtD_pPUIovg"></a>
 			<br><br> <a href="addNewNotebook.jsp">Add New Notebook</a>
 </div>
-<!-- Gets the list of a student's current notebooks to display from the information in the database -->
+<!-- Gets the list of a student's current Active notebooks to display from the information in the database -->
 <%try{
 
 	ResultSet rs = student.getCurrentNotebooksList();
@@ -128,15 +128,16 @@ function closeNav() {
 	</table>
 	</div>
 	
-	
+	<!-- Gets the list of a student's current Retired notebooks to display from the information in the database -->
 	
 	<%try{
 	ResultSet rs = student.getRetiredNotebooksList();
 %>				
+<div id="holdingblock">
 <table>
 		<tbody>
 			<tr>
-				<td style="vertical-align: top;">Retired Notebook Title<br>
+				<td style="vertical-align: top;">Currently Retired Notebooks:<br>
 				</td>
 				<td style="vertical-align: top;"> <br>
 				</td>
@@ -160,6 +161,6 @@ function closeNav() {
 			%>
 	</table>
 	
-	
+	</div>
 	</body>
 </html>
