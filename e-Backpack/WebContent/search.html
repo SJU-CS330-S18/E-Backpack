@@ -32,6 +32,28 @@
   font-size: 72;
   padding: 0,0,0,0;
 }
+
+#logginblock{
+	width: 250px;
+	height: 140px;
+	background-color: white;
+	background-position:center;
+	margin:auto;
+	margin-top:25px;
+	box-shadow: 10px 10px 5px #333333;
+	text-align: center;
+}
+
+
+#calblock{
+	width: 250px;
+	height: 140px;
+	background-color: white;
+	background-position:center;
+	box-shadow: 10px 10px 5px #333333;
+	text-align: center;
+}
+
 </style>
 </head>
 <meta content="text/html; charset=ISO-8859-1"
@@ -41,6 +63,7 @@
 <div id="banner">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="PlannerPage.jsp">Planner</a>
   <a href="userMenu.jsp">Menu</a>
   <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>
 </div>
@@ -56,6 +79,8 @@ function closeNav() {
 <!-- This title is not the same as the others because of the modal HTML  -->
  <font size="120">e-Backpack </font>
 </div>
+
+<div id = "logginblock">
 <div class="container-fluid">
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
@@ -73,9 +98,13 @@ function closeNav() {
     </div>
   </div>    
  </div>
+ <br> <div class="tooltip"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREDqWA3HbtskFN4K8s9I9qJmYOQj3U1dqEaDh0bN_FCYtrzMho"
+ width="35" height="35"> <span class="tooltiptext">Select a Date to view that day's events.</span></div>
+ </div>
 <!-- FORM AND BACKGROUD DESIGN CODE END -->
 
 <script>
+
     $(document).ready(function(){
       var date_input=$('input[name="date"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
@@ -87,6 +116,8 @@ function closeNav() {
       };
       date_input.datepicker(options);
     })
+  
 </script>
+
 </body>
 </html>

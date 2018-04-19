@@ -3,6 +3,7 @@
 body {
     background-color: #7C898B;
 }
+
 /*extra css pg*/
 /* The side navigation menu, represented as triple bar icon next to title on each page
 Clicking this menu pulls up a sliding menu from the left, where new navigation links are located */
@@ -58,4 +59,31 @@ Clicking this menu pulls up a sliding menu from the left, where new navigation l
 caption { 
   
     text-size: 40;
+}
+
+/* Allows for hoverable text, used for help buttons, etc.*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }

@@ -31,7 +31,7 @@
 	height: 600px;
 	background-color: white;
 	text-align: center;
-	margin-left: 25%;
+	margin-left:25%;
 
 	}
 	

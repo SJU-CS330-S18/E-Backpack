@@ -16,7 +16,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Personal Planner</title>
+<title>Search for Event</title>
 <style>
 *{
 	 box-sizing: border-box;
@@ -38,7 +38,8 @@
 	height: 500px;
 	background-color: white;
 	background-position:left;
-	float:left
+	float:left;
+	margin-left:25%;
 	}
 .row:after {
     content: "";
@@ -52,7 +53,7 @@
 <head>
 <meta content="text/html; charset=ISO-8859-1"
 		http-equiv="content-type">
-				<title >Planner Page</title>
+				<title >Search for Event</title>
 </head>
 
 
@@ -62,6 +63,7 @@
 <div id="banner">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="PlannerPage.jsp">Planner</a>
   <a href="updateProfile.jsp">Update Profile</a>
   <a href="userMenu.jsp">Menu</a>
   <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>
@@ -106,6 +108,11 @@ SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 	    out.println(ise.getMessage());
 	} %>
 	</table>
+	<!-- Button to allow the user to jump to another day other than the current day, to view that day's events-->
+<br><br><script src = "modalFunc.js"></script>
+ <form style=""font-family: Times New Roman,Times,serif";" method="post"action="search.html" name="search">
+<button id="modalBtn" class="link">Return to Search...</button>
+</form>
 	</div>
 	</div>
 </body>

@@ -103,7 +103,7 @@ function closeNav() {
 <table>
 		<tbody>
 			<tr>
-				<td style="vertical-align: top;">Currently Active Notebooks:<br>
+				<td style="vertical-align: top;"><b>Active Notebooks:</b><br>
 				</td>
 				<td style="vertical-align: top;"> <br>
 				</td>
@@ -142,7 +142,7 @@ function closeNav() {
 <table>
 		<tbody>
 			<tr>
-				<td style="vertical-align: top;">Currently Retired Notebooks:<br>
+				<td style="vertical-align: top;"><b>Retired Notebooks:</b><br>
 				</td>
 				<td style="vertical-align: top;"> <br>
 				</td>
