@@ -10,7 +10,7 @@ feature of the e-Backpack: planner, folder, and notebook. A clean layout and cle
 	}%>
 <html>
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
-   		  
+   		   
 <style>
 
 /* Top banner element, used throughout project.*/

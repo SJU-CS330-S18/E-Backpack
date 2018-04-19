@@ -6,7 +6,7 @@
 
 <style>
 
-
+ 
 #banner{
   width:100%;
   background-size:880px 680px;

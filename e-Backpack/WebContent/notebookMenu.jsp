@@ -103,7 +103,7 @@ function closeNav() {
 			<br><br> <a href="addNewNotebook.jsp">Add New Notebook</a>
 </div>
 <!-- Gets the list of a student's current Active notebooks to display from the information in the database -->
-<%try{
+<%try{ 
 
 	ResultSet rs = student.getCurrentNotebooksList();
 %>		
