@@ -49,6 +49,13 @@ public class Student implements Serializable {
   private ResultSet result;
   private Connection con;
   private CallableStatement callStmt;
+  
+  /**
+   * Note Fields
+   */
+  private Date noteDate;
+  private String noteTitle;
+  private String noteText;
   /**
    * The following stores whether or not the customer has successfully logged
    * to the System
@@ -483,5 +490,20 @@ public void setStuuserName(String stuUsername) {
 		       }
 		        return result; 
 		     }
-  
-}
+	public void addNewNote(String noteTitle, String noteText, String courseTitle) {
+		PreparedStatement stmt;
+		try{
+			String query = "INSERT INTO NOTE (NOTEDATE, NOTETITLE, NOTETEXT, COURSETITLE) VALUES (CONVERT(date, GETDATE()), ?, ?, ?, ?)";
+			stmt = con.prepareStatement(query);
+			stmt.clearParameters();
+			stmt.setString(1, noteTitle);
+			stmt.setString(2, noteText);
+			stmt.setString(3, courseTitle);
+			stmt.setString(4, this.username);
+			stmt.executeUpdate();
+		}
+	       catch (Exception E) {
+	         E.printStackTrace();
+	       }
+	}
+	}

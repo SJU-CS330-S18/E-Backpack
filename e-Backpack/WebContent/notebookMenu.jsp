@@ -41,7 +41,17 @@ allows the user to view, create, and edit their current notes for that specific 
 
 	}
 
+#noteBookBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
 
+#noteBookBtn:hover{
+	background: #babdb6;
+}
 
 
 </style>
@@ -119,7 +129,7 @@ function closeNav() {
 				<td>
 					<form method="post" action="NoteUI.jsp" name="note">
 					<input name="coursetitle" type="hidden" value="<%=rs.getString("COURSETITLE")%>"type="submit">
-					<input value="Note" name="note" type="submit">
+					<input id = "noteBookBtn" value="Note" name="note" type="submit">
 					</form>
 				</td>
 			</tr>
