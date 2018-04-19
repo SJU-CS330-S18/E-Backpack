@@ -508,4 +508,20 @@ public void setStuuserName(String stuUsername) {
 	         E.printStackTrace();
 	       }
 	}
+	
+	public void retireNotebook(String courseT) {
+		
+		PreparedStatement stmt;
+		try {
+			String query = "UPDATE NOTEBOOK SET ISRETIRED='Y' WHERE coursetitle = ? and username=?";
+			stmt = con.prepareStatement(query);
+			stmt.clearParameters();
+			stmt.setString(1, courseT);
+			stmt.setString(2, this.username);
+			stmt.executeUpdate();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
 	}
+}
