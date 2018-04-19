@@ -82,7 +82,8 @@ function closeNav() {
         <div>
             <label>Name Of New Note:</label>
             <!-- name of selected note that is being viewed -->
-             <input id="nameOfNote" ></input>
+             <input id="nameOfNote" value = "" ></input>
+             <input name = "dateOfNote" id="date" value=""> 
             <!-- button to save any new notes or changes to a note -->
             
            
@@ -91,7 +92,7 @@ function closeNav() {
         
         </div>
         <!-- text are for selected notes contents used for reading and editing and creating a note -->
-        <div><textarea id="noteContent" style="width:95%" rows="20"></textarea>
+        <div><textarea id="noteContent" style="width:95%" rows="20" value = ""></textarea>
         </div>
         <input style="color: black;" id = "Confirm" name="Confirm" value="Add Note" type="submit">
          </div>

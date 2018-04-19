@@ -10,16 +10,19 @@
 try{
 	String noteTitle = request.getParameter("nameOfNote");
 	String noteContent = request.getParameter("noteContent");
-		
-// 	SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-//  	Date neweventdate = sdf.parse(date);
-// 	java.sql.Date sDate = new java.sql.Date(neweventdate.getTime());
+	String courseTitle = request.getParameter("coursetitle");
+	String date = request.getParameter("dateOfNote");
 	
-	student.addNewNote(noteTitle, noteContent, courseTitle, username);
+		
+ 	SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+  	Date neweventdate = sdf.parse(date);
+ 	java.sql.Date sDate = new java.sql.Date(neweventdate.getTime());
+	
+	student.addNewNote(sDate, noteTitle, noteContent, courseTitle);
 	
  }catch(IllegalStateException ise){
     out.println(ise.getMessage());
 }
-response.sendRedirect("updateEvent.jsp");
+response.sendRedirect("notebookMenu.jsp");
 
 %>
