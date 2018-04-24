@@ -3,7 +3,8 @@
 <jsp:setProperty name="student" property="*"/>
 
 <%
-	String courseTitle = request.getParameter("coursetitle");
+String courseTitle =(String)session.getAttribute(request.getParameter("courseID"));
+//System.out.println(courseTitle);
 	student.retireNotebook(courseTitle);
 	response.sendRedirect("notebookMenu.jsp");
 

@@ -157,7 +157,7 @@ function closeNav() {
             <input name = "oldNotebookName" type = "hidden" value = <%= oldName%>>
             <form method = "post" action = "NoteUIRetireNotebook_action.jsp" name = "retireNotebook">
             <input id = "retireNotebookBtn" value = "Retire this Notebook" type = "submit">
-           <input name="courseID" type="hidden" value=<%= request.getParameter("courseID")%>>
+            <input name="courseID" type="hidden" value=<%= request.getParameter("courseID")%>>
             </form>    
         </div>
      
