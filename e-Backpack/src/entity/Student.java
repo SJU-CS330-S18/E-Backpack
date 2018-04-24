@@ -500,7 +500,7 @@ public void setStuuserName(String stuUsername) {
 			System.out.println(noteText);
 			System.out.println(courseTitle2);
 
-			String query = "INSERT INTO NOTE (USERNAME, NOTEDATE, NOTETITLE, NOTETEXT, COURSETITLE) VALUES (?, ?, ?, ?, ?)";
+			String query = "INSERT INTO NOTE (STUUSERNAME, NOTEDATE, NOTETITLE, NOTETEXT, COURSETITLE) VALUES (?, ?, ?, ?, ?)";
 			stmt = con.prepareStatement(query);
 			stmt.clearParameters();
 			stmt.setString(1, usern);
@@ -509,7 +509,7 @@ public void setStuuserName(String stuUsername) {
 			stmt.setString(4, noteText);
 			stmt.setString(5, courseTitle2);
 			
-			stmt.executeQuery(query);
+			stmt.executeQuery();
 			
 		}
 	       catch (Exception E) {
