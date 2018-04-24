@@ -6,6 +6,10 @@ import java.io.*;
 
 import java.sql.*;
 import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import javax.servlet.*; 
+import java.text.*;
 
 
 
@@ -491,15 +495,21 @@ public void setStuuserName(String stuUsername) {
 		       }
 		        return result; 
 		     }
-	public void addNewNote(Date noteDate, String noteTitle, String noteText, String courseTitle2) {
+	public void addNewNote(String noteTitle, String noteText, String courseTitle2) throws ParseException {
 		PreparedStatement stmt;
+		LocalDateTime currentDate = LocalDateTime.now();
+		String date = DateTimeFormatter.ofPattern("MM/dd/yyyy").format(currentDate);
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+	  	Date neweventdate2 = sdf.parse(date);
+	 	java.sql.Date sDate2 = new java.sql.Date(neweventdate2.getTime());
 		try{
 			String usern = this.getUsername();
 			String query = "INSERT INTO NOTE (STUUSERNAME, NOTEDATE, NOTETITLE, NOTETEXT, COURSETITLE) VALUES (?, ?, ?, ?, ?)";
 			stmt = con.prepareStatement(query);
 			stmt.clearParameters();
 			stmt.setString(1, usern);
-			stmt.setDate(2,(java.sql.Date) noteDate);
+			stmt.setDate(2,(java.sql.Date) sDate2);
 			stmt.setString(3, noteTitle);
 			stmt.setString(4, noteText);
 			stmt.setString(5, courseTitle2);
