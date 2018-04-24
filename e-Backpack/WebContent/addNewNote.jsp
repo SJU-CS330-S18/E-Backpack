@@ -72,17 +72,17 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-}
+}0
 </script>
  e-Backpack 
 </div>
 <body>
-<form style=""font-family: Times New Roman,Times,serif";" method="post"action="addNote_action.jsp" name="NoteForm">
+<form method="post" action="addNote_action.jsp" name="NoteForm">
     <div id="divDocumentSelected" class="bordered">
         <div>
-            <label>Name Of New Note:</label>
+            <label>Name Of New Note For Your <%= request.getParameter("coursetitle")%> Notebook:</label>
             <!-- name of selected note that is being viewed -->
-             <input name = "nameOfNote" value = "" >
+             <input name = "nameOfNote" id= "name" value ="" >
              <input name = "dateOfNote" id="date" value=""> 
             <!-- button to save any new notes or changes to a note -->
             
@@ -92,7 +92,7 @@ function closeNav() {
         
         </div>
         <!-- text are for selected notes contents used for reading and editing and creating a note -->
-        <div><textarea name = "noteContent"  style="width:95%" rows="20"></textarea>
+        <div><textarea name = "noteContent"  id = "content" style="width:95%" rows="20"></textarea>
         </div>
         <input style="color: black;" id = "Confirm" name="Confirm" value="Add Note" type="submit">
          </div>

@@ -12,13 +12,13 @@ try{
 	String noteContent = request.getParameter("noteContent");
 	//String noteContent = request.getElementById("noteContent");
 	String courseTitle = request.getParameter("coursetitle");
-	String date = request.getParameter("dateOfNote");	
+	String date2 = request.getParameter("dateOfNote");	
 		
  	SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-  	Date neweventdate = sdf.parse(date);
- 	java.sql.Date sDate = new java.sql.Date(neweventdate.getTime());
+  	Date neweventdate2 = sdf.parse(date2);
+ 	java.sql.Date sDate2 = new java.sql.Date(neweventdate2.getTime());
 	
-	student.addNewNote(sDate, noteTitle, noteContent, courseTitle);
+	student.addNewNote(sDate2, noteTitle, noteContent, courseTitle);
 	
  }catch(IllegalStateException ise){
     out.println(ise.getMessage());
