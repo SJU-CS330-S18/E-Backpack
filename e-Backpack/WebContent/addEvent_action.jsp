@@ -1,3 +1,4 @@
+<%-- Action page to add an event to user's personal planner --%>
 <%-- Import java.sql.*, java.util.Date, and others. Use the Student bean as id: student --%>
 <%@ page language="java" import="java.sql.*" %>
 <%@ page import = "java.io.*, java.util.Date" %>

@@ -1,3 +1,5 @@
+<!-- JSP Page to represent Add new notebook UI. This UI page is a place where the
+user can input information add a new notebook under their account -->
 <%@ page language="java" import="java.sql.*,entity.*"%>
 
 <html>
@@ -5,7 +7,7 @@
 
 <style>
 
- 
+ /*Top banner element, used throughout project. */
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -17,7 +19,7 @@
   text-align: center;
   font-size: 72;
 }
-
+/* DIV element used throughout the project to hold other elements, and add contrast from background */
 #logginblock{
 	width: 325px;
 	height: 125px;
@@ -29,7 +31,7 @@
 	text-align: center;
 }
 </style>
-
+<%-- Additional checking to ensure user is logged in--%>
 <script>function myFunction() {
     var x = document.getElementById("pass");
     if (x.type === "password") {
@@ -49,7 +51,8 @@
 <body>
 
 <div id="banner">
-
+<!-- Implement Banner-->
+<!--Sidebar navigation Links -->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="notebookMenu.jsp">Notebook Menu</a>
@@ -62,6 +65,7 @@
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
 <script>
+<!-- Javascript element to control sidebar menu, where user can navigate to other pages-->
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
@@ -71,10 +75,11 @@ function closeNav() {
 }
 </script>
 
-<!--  ignore the ...... that was just me being sneaky and centering the title w/ out messing up the navigation bar-->
  e-Backpack 
 </div>
 
+<%-- Container to add a new notebook with elements being typed in. The action after is to go to
+	addNewNotebook_action.jsp. This add action page interacts with the student bean. --%>
 <div id="logginblock"> 
 		<form method="post" action="addNewNotebook_action.jsp"
 			name="AddNewNotebook">

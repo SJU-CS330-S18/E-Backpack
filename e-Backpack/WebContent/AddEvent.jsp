@@ -1,3 +1,5 @@
+<!-- JSP Page to represent Add event UI. This UI page is a place where the
+user can input information to be able to add a new event to their calendar  -->
 <%-- Import java.sql.* and use the Student bean as id: student --%>
 <%@ page language="java" import="java.sql.*" %>
 <jsp:useBean id="student" class="entity.Student" scope="session"/>
@@ -7,7 +9,7 @@
 
 <style>
 
-
+/*Top banner element, used throughout project. */
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -19,7 +21,7 @@
   text-align: center;
   font-size: 72;
 }
-
+/* DIV element used throughout the project to hold other elements, and add contrast from background */
 #logginblock{
 	width: 600px;
 	height: 350px;
@@ -30,7 +32,7 @@
 	text-align: center;
 }
 </style>
-
+<%-- Additional checking to ensure user is logged in--%>
 <script>function myFunction() {
     var x = document.getElementById("pass");
     if (x.type === "password") {
@@ -46,8 +48,9 @@
 <title>e-Backpack Add Event</title>
 
 </head>
+<!-- Implement Banner-->
 <div id="banner">
-
+<!--Sidebar navigation Links -->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="userMenu.jsp">Menu</a>
@@ -57,6 +60,7 @@
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
 <script>
+<!-- Javascript element to control sidebar menu, where user can navigate to other pages-->
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
