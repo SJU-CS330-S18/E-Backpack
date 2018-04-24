@@ -44,7 +44,6 @@
 							<input name="date" value="<%=rs.getString("eventdate")%>"> 
 						</p>
 					</div>
-<%}%>
 <%rs.close();}
 
     catch(IllegalStateException ise){

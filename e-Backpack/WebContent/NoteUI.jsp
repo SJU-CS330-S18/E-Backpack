@@ -152,7 +152,12 @@ function closeNav() {
 <div>
     <div id="divNotebookFile" class="bordered">
         <div>
-            <label>Notebook: <%=session.getAttribute(request.getParameter("courseID"))%></label>
+            <label>Notebook: </label>
+            <%String oldName = (String)session.getAttribute(request.getParameter("courseID"));%>
+            <form method = "post" action = "changeNotebookName_action.jsp" name = "notebookName">
+            <input name = "oldNotebookName" type = "hidden" value = <%= oldName%>>
+            <input name = "notebookName" value = <%=session.getAttribute(request.getParameter("courseID"))%>>
+            <input name = "changeNotebookNameBtn" type = "submit" value = "Change Notebook Name"></form>
             <form method = "post" action = "NoteUIRetireNotebook_action.jsp" name = "retireNotebook">
             <input id = "retireNotebookBtn" value = "Retire this Notebook" type = "submit">
            <input name="courseID" type="hidden" value=<%= request.getParameter("courseID")%>>

@@ -495,11 +495,6 @@ public void setStuuserName(String stuUsername) {
 		PreparedStatement stmt;
 		try{
 			String usern = this.getUsername();
-			System.out.println(noteDate);
-			System.out.println(noteTitle);
-			System.out.println(noteText);
-			System.out.println(courseTitle2);
-
 			String query = "INSERT INTO NOTE (STUUSERNAME, NOTEDATE, NOTETITLE, NOTETEXT, COURSETITLE) VALUES (?, ?, ?, ?, ?)";
 			stmt = con.prepareStatement(query);
 			stmt.clearParameters();
@@ -528,6 +523,24 @@ public void setStuuserName(String stuUsername) {
 			stmt.setString(2, this.username);
 			stmt.executeUpdate();
 			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public void updateNotebookName(String newName, String oldName) {
+		PreparedStatement stmt;
+		System.out.println(newName);
+		System.out.println(oldName);
+
+		try {
+			String query = "UPDATE NOTEBOOK SET coursetitle = ? WHERE coursetitle = ? and stuusername = ?";
+			stmt = con.prepareStatement(query);
+			stmt.clearParameters();
+			stmt.setString(1, newName);
+			stmt.setString(2, oldName);
+			stmt.setString(3, this.username);
+			stmt.executeUpdate();
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}

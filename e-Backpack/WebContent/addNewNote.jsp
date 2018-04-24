@@ -83,11 +83,11 @@ function closeNav() {
 <form method="post" action="addNote_action.jsp" name="NoteForm">
     <div id="divDocumentSelected" class="bordered">
         <div>
-        	<label>Add new Note to your <%= session.getAttribute(request.getParameter("courseID"))%>Notebook</label>>
+        	<label>Add new Note to your <%= session.getAttribute(request.getParameter("courseID"))%> Notebook</label>
             <input name="courseID" type="hidden" value=<%= request.getParameter("courseID")%>>
             <!-- name of selected note that is being viewed -->
              <input name = "nameOfNote" id= "name" value ="" >
-             <input name = "dateOfNote" id="date" value=""> 
+            <input name = "dateOfNote" id="date" value="">
             <!-- button to save any new notes or changes to a note -->
             
            
@@ -96,7 +96,7 @@ function closeNav() {
         
         </div>
         <!-- text are for selected notes contents used for reading and editing and creating a note -->
-        <div><textarea name = "noteContent"  id = "content" style="width:95%" rows="20"></textarea>
+        <div><textarea name = "noteContent"  id = "content" style="width:70%" rows="20"></textarea>
         </div>
         <input style="color: black;" id = "Confirm" name="Confirm" value="Add Note" type="submit">
          </div>
