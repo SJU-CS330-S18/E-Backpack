@@ -1,3 +1,4 @@
+<!-- This page will display all the Notes that currently login user has -->
 <%@ page language="java" import="java.sql.*,entity.*"%>
 <jsp:useBean id="student" class="entity.Student" scope="session"/>
 <jsp:setProperty name="student" property="*"/>
