@@ -160,22 +160,24 @@ function closeNav() {
 				</td>
 			</tr>
 			<%
+			int n=0;
 			while(rs.next()){
+				session.setAttribute(Integer.toString(n),rs.getString("COURSETITLE"));
 			%>
 			<tr>
 				<td style="vertical-align: top;">
 					<form method="post" action="NoteUI.jsp" name="note">
-					<input name="coursetitle" type="hidden" value="<%=rs.getString("COURSETITLE")%>"type="submit">
+					 <input name="courseID" type="hidden" value=<%=n %>>
 					<input id = "noteBookBtn" value="<%=rs.getString("COURSETITLE")%>" name="note" type="submit">
-					</form>
-				<br>
+					</form>				
+				<br>			
 				</td>
 				<td>
-					
+
 				</td>
 			</tr>
 		</tbody>
-					<%
+					<%n++;
 			}
 			}catch(IllegalStateException ise){
 			    out.println(ise.getMessage());
