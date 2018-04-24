@@ -1,6 +1,6 @@
+<!-- Page to login  -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-
 <html>
 <link rel="stylesheet" type="text/css" href="e-BP.css" />
 
@@ -73,7 +73,7 @@ function closeNav() {
  e-Backpack 
 </div>
 
-
+<!-- Container to login student/UI -->
 
 <div id="logginblock"> 
 
