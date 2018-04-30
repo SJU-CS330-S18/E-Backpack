@@ -4,9 +4,9 @@
 <jsp:setProperty name="student" property="*"/>
 
 <%
-String courseTitle =(String)session.getAttribute(request.getParameter("courseID"));
-System.out.println(courseTitle);
-	student.retireNotebook(courseTitle);
+String retiredCourseTitle =(String)session.getAttribute(request.getParameter("retiredCourseID"));
+System.out.println(retiredCourseTitle);
+	student.reactivateNotebook(retiredCourseTitle);
 	response.sendRedirect("notebookMenu.jsp");
 
 	
