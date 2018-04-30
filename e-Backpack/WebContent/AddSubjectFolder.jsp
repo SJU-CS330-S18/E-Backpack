@@ -27,7 +27,7 @@ user can input information to be able to add a new folder under their account  -
 	display: inline-block;
 	vertical-align: top;
 	width: 810px;
-	height: 600px;
+	height: 300px;
 	background-color: white;
 	text-align: center;
 	margin-left: 25%;
@@ -109,13 +109,18 @@ user can input information to be able to add a new folder under their account  -
         x.type = "password";
         
     }
-}</script>
+}
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Add New Folder</title>
 <body>
 <!-- Implement Banner-->
 <div id="banner">
 <!--Sidebar navigation Links -->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="folderMenu.jsp">Folder Menu</a>
   <a href="updateProfile.jsp">Update Profile</a>
   <a href="userMenu.jsp">Menu</a>
   <td align="right" width="690"><a href="Logout.jsp">Logout</a></td></tr><br>

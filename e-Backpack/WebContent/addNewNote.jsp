@@ -24,7 +24,7 @@ user can input information to add a new note to a selected notebook  -->
 /* DIV element used throughout the project to hold other elements, and add contrast from background */
 #logginblock{
 	width: 600px;
-	height: 350px;
+	height: 370px;
 	background-color: white;
 	background-position:center;
 	margin:auto;
@@ -55,13 +55,14 @@ user can input information to add a new note to a selected notebook  -->
     }
 }</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Add New Note</title>
 </head>
 <!-- Implement Banner-->
 <div id="banner">
 <!--Sidebar navigation Links -->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="notebookMenu.jsp">Notebook Menu</a>
   <a href="userMenu.jsp">Menu</a>
   <a href="Logout.jsp">Log Out</a>
 </div>
@@ -80,6 +81,8 @@ function closeNav() {
  e-Backpack 
 </div>
 <body>
+
+<div id="logginblock">
 <form method="post" action="addNote_action.jsp" name="NoteForm">
     <div id="divDocumentSelected" class="bordered">
         <div>
@@ -101,5 +104,6 @@ function closeNav() {
         <input style="color: black;" id = "Confirm" name="Confirm" value="Add Note" type="submit">
          </div>
         </form>
+        </div>
 </body>
 </html>
