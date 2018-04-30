@@ -166,7 +166,7 @@ function closeNav() {
 			%>
 			<tr>
 				<td style="vertical-align: top;">
-					<form method="post" action="NoteUI.jsp" name="note">
+					<form method="post" action="retiredNoteUI.jsp" name="note">
 					 <input name="courseID" type="hidden" value=<%=n %>>
 					<input id = "noteBookBtn" value="<%=rs.getString("COURSETITLE")%>" name="note" type="submit">
 					</form>				
