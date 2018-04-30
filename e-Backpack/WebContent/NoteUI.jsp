@@ -29,7 +29,7 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 810px;
-	height: 660px;
+	height: 654px;
 	background-color: white;
 	text-align: center;
 	margin-left:25%;

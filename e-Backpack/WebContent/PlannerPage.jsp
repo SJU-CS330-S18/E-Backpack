@@ -182,7 +182,10 @@ actual_calendar.innerHTML = month_menu.calendar();
 </div>
 <!-- DIV element containing table with the current day's events. -->
 <div id="holdingblock" style= text-align:center>
-<h2>Today's Schedule</h2>
+<h2>Today's Schedule <div class="tooltip"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREDqWA3HbtskFN4K8s9I9qJmYOQj3U1dqEaDh0bN_FCYtrzMho"
+ width="35" height="35"> <span class="tooltiptext">Here is your list of your current events for today. If you want to view events for another day, 
+ 												   use the Jump To... feature.
+ 												   </span></div></h2> 
 	<%try{
 	ResultSet rs = student.getEventList();
 	java.sql.Date dateC = new java.sql.Date(Calendar.getInstance().getTime().getTime());
