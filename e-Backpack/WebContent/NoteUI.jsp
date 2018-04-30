@@ -153,14 +153,14 @@ function closeNav() {
 <div>
     <div id="divNotebookFile" class="bordered">
         <div>
-            <label>Notebook: <%=(String)session.getAttribute(request.getParameter("actCourseID"))%></label>
+            <label>Notebook: <%=session.getAttribute(request.getParameter("actCourseID"))%></label>
             <%
             String oldName =(String)session.getAttribute(request.getParameter("actCourseID"));
             %>
             <input name = "oldNotebookName" type = "hidden" value = <%= oldName%>>
             <form method = "post" action = "NoteUIRetireNotebook_action.jsp" name = "retireNotebook">
             <input id = "retireNotebookBtn" value = "Retire this Notebook" type = "submit">
-            <input name="courseID" type="hidden" value=<%= request.getParameter("actCourseID")%>>
+            <input name="courseID" type="hidden" value=<%= (String)session.getAttribute(request.getParameter("actCourseID"))%>>
             </form>    
         </div>
      
@@ -172,7 +172,7 @@ function closeNav() {
         <form method = "post" action = "addNewNote.jsp" name = "newNoteForm">
         <!-- button to create a new note  -->
             <input id = "newNoteBtn" value = "Add New Note" type = "submit">
-            <input name="retCourseID" type="hidden" value=<%= request.getParameter("retCourseID")%>>
+            <input name="addCourseID" type="hidden" value=<%=(String)session.getAttribute(request.getParameter("actCourseID"))%>>
             </form>
             
             <!-- button to delete a selcted note from list of notes --> 

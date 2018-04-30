@@ -86,8 +86,8 @@ function closeNav() {
 <form method="post" action="addNote_action.jsp" name="NoteForm">
     <div id="divDocumentSelected" class="bordered">
         <div>
-        	<label>Title of new <%= session.getAttribute(request.getParameter("courseID"))%> note: </label>
-            <input name="courseID" type="hidden" value=<%= request.getParameter("courseID")%>>
+        	<label>Title of new <%= (String)session.getAttribute(request.getParameter("addCourseID"))%> note: </label>
+            <input name="addCourseID" type="hidden" value=<%= (String)session.getAttribute(request.getParameter("addCourseID"))%>>
             <!-- name of selected note that is being viewed -->
              <input name = "nameOfNote" id= "name" value ="" >
             <!-- <input name = "dateOfNote" id="date" value="">

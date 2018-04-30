@@ -153,10 +153,10 @@ function closeNav() {
 <div>
     <div id="divNotebookFile" class="bordered">
         <div>
-            <label>Retired Notebook: <%=request.getParameter("retiredCourseID")%></label>
+            <label>Retired Notebook: <%=session.getAttribute(request.getParameter("retCourseID"))%></label>
             <form method = "post" action = "NoteUIReactivateNotebook_action.jsp" name = "reactivateNotebook">
             <input id = "reactivateNotebookBtn" value = "Reactivate this Notebook" type = "submit">
-            <input name="retiredCourseID" type="hidden" value=<%= request.getParameter("retiredCourseID")%>>
+            <input name="retiredCourseID" type="hidden" value=<%=request.getParameter("retCourseID")%>>
             </form>    
         </div>
      
