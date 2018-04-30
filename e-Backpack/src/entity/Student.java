@@ -555,4 +555,27 @@ public void setStuuserName(String stuUsername) {
 			ex.printStackTrace();
 		}
 	}
+	
+	/** 
+	  * This method retrieves notes for user
+	  * @return resultset of note list
+	  */
+	public ResultSet getNotesList(String courseT)  throws IllegalStateException{
+		  
+		  if(!isLoggedIn()) {
+		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
+		  try{
+			  stmt = con.createStatement();
+	          String queryString = "SELECT NOTETITLE, NOTETITLE "+
+	         		 			   "FROM NOTE "+
+	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"' and COURSETITLE = '"+courseT+"'";
+	          
+	          result = stmt.executeQuery(queryString);
+	         
+		       }
+		       catch (Exception E) {
+		         E.printStackTrace();
+		       }
+		        return result; 
+		     }
 }

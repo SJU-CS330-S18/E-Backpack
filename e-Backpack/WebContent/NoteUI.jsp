@@ -153,12 +153,16 @@ function closeNav() {
 <div>
     <div id="divNotebookFile" class="bordered">
         <div>
-            <label>Notebook: <%=session.getAttribute(request.getParameter("courseID"))%></label>
-            <%String oldName = (String)session.getAttribute(request.getParameter("courseID"));%>
+            <label>Notebook: <%=(String)session.getAttribute(request.getParameter("actCourseID"))%></label>
+            <%
+            String oldName =(String)session.getAttribute(request.getParameter("actCourseID"));
+            System.out.println("3: "+request.getParameter("actCourseID"));
+            System.out.println("4: "+oldName);
+            %>
             <input name = "oldNotebookName" type = "hidden" value = <%= oldName%>>
             <form method = "post" action = "NoteUIRetireNotebook_action.jsp" name = "retireNotebook">
             <input id = "retireNotebookBtn" value = "Retire this Notebook" type = "submit">
-            <input name="courseID" type="hidden" value=<%= request.getParameter("courseID")%>>
+            <input name="courseID" type="hidden" value=<%= request.getParameter("actCourseID")%>>
             </form>    
         </div>
      
@@ -170,13 +174,32 @@ function closeNav() {
         <form method = "post" action = "addNewNote.jsp" name = "newNoteForm">
         <!-- button to create a new note  -->
             <input id = "newNoteBtn" value = "Add New Note" type = "submit">
-            <input name="courseID" type="hidden" value=<%= request.getParameter("courseID")%>>
+            <input name="retCourseID" type="hidden" value=<%= request.getParameter("retCourseID")%>>
             </form>
             
             <!-- button to delete a selcted note from list of notes --> 
             <button id = "deleteNoteBtn" >Delete selected Note</button>
         </div>
-        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange=""></select>
+        <%try{ 
+    String courseT = (String)session.getAttribute(request.getParameter("actCourseID"));
+	ResultSet rs = student.getNotesList(courseT);
+%>
+        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange="">
+        	<%
+			int n=0;
+			while(rs.next()){
+				session.setAttribute(Integer.toString(n),rs.getString("NOTETITLE"));
+			%>
+			<option value="<%=rs.getString("NOTETITLE") %>"><%=rs.getString("NOTETITLE") %></option>
+			
+        	<%n++;
+			}
+			
+			}catch(IllegalStateException ise){
+			    out.println(ise.getMessage());
+			}
+			%>
+        </select>
     </div>
  <!-- section for a selected or new note. able read create and change a note -->
     <div id="divDocumentSelected" class="bordered">

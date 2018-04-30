@@ -122,11 +122,13 @@ function closeNav() {
 			int n=0;
 			while(rs.next()){
 				session.setAttribute(Integer.toString(n),rs.getString("COURSETITLE"));
+				System.out.println("1: "+ rs.getString("COURSETITLE"));
+				System.out.println("2: "+n);
 			%>
 			<tr>
 				<td style="vertical-align: top;">
 					<form method="post" action="NoteUI.jsp" name="note">
-					 <input name="courseID" type="hidden" value=<%=n %>>
+					 <input name="actCourseID" type="hidden" value=<%=n%>>
 					<input id = "noteBookBtn" value="<%=rs.getString("COURSETITLE")%>" name="note" type="submit">
 					</form>				
 				<br>			
@@ -138,17 +140,14 @@ function closeNav() {
 		</tbody>
 					<%n++;
 			}
-			}catch(IllegalStateException ise){
-			    out.println(ise.getMessage());
-			}
 			%>
 	</table>
 	</div>
 	
 	<!-- Gets the list of a student's current Retired notebooks to display from the information in the database -->
 	
-	<%try{
-	ResultSet rs = student.getRetiredNotebooksList();
+	<%
+	ResultSet rs2 = student.getRetiredNotebooksList();
 %>				
 <div id="holdingblock">
 <table>
@@ -160,15 +159,15 @@ function closeNav() {
 				</td>
 			</tr>
 			<%
-			int n=0;
-			while(rs.next()){
-				session.setAttribute(Integer.toString(n),rs.getString("COURSETITLE"));
+			int t=100;
+			while(rs2.next()){
+				session.setAttribute(Integer.toString(t),rs2.getString("COURSETITLE"));
 			%>
 			<tr>
 				<td style="vertical-align: top;">
 					<form method="post" action="NoteUI.jsp" name="note">
-					 <input name="courseID" type="hidden" value=<%=n %>>
-					<input id = "noteBookBtn" value="<%=rs.getString("COURSETITLE")%>" name="note" type="submit">
+					 <input name="retCourseID" type="hidden" value=<%=t%>>
+					<input id = "noteBookBtn" value="<%=rs2.getString("COURSETITLE")%>" name="note" type="submit">
 					</form>				
 				<br>			
 				</td>
@@ -177,7 +176,7 @@ function closeNav() {
 				</td>
 			</tr>
 		</tbody>
-					<%n++;
+					<%t++;
 			}
 			}catch(IllegalStateException ise){
 			    out.println(ise.getMessage());
