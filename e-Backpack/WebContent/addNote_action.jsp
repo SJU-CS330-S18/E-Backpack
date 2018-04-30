@@ -12,7 +12,6 @@ try{
 	String noteContent = request.getParameter("noteContent");
 	//String noteContent = request.getElementById("noteContent");
 	String courseTitle =(String)session.getAttribute(request.getParameter("difCourseID"));
-	System.out.println(courseTitle);
 	//String date2 = request.getParameter("dateOfNote");	
 		
  	//SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
