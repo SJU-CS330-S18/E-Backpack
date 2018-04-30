@@ -622,7 +622,7 @@ public void reactivateNotebook(String courseT) {
 	  * @return resultset of note text
 	  */
 	public ResultSet getNoteText(String courseT, String noteT)  throws IllegalStateException{
-		  
+		  System.out.print("test");
 		  if(!isLoggedIn()) {
 		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
 		  try{

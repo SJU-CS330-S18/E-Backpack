@@ -143,6 +143,15 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
+function noteContentFunction(){
+	var theNoteTitle = document.getElementById('selectSpecificNoteInNotebook').value;
+	var theCourseTitle = document.getElementById('theTitle').value;
+	//console.log(theCourseTitle);
+	var theNoteSet = Packages.Student.getNoteText(theCourseTitle, theNoteTitle);
+		document.getElementById("textareaDocumentSelectedContents").value = theCourseTitle
+	
+}
+
 </script>
 <!-- This title is not the same as the others because of the modal HTML  -->
  <font size="120">e-Backpack </font>
@@ -182,7 +191,9 @@ function closeNav() {
     String courseT = (String)session.getAttribute(request.getParameter("actCourseID"));
 	ResultSet rs = student.getNotesList(courseT);
 %>
-        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange="">
+		<input id = "theTitle" name="forEditNote" type="hidden" value=<%=(String)session.getAttribute(request.getParameter("actCourseID"))%>>
+        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange="noteContentFunction()">
+        
         	<%
 			int c=300;
 			while(rs.next()){
@@ -197,6 +208,7 @@ function closeNav() {
 			    out.println(ise.getMessage());
 			}
 			%>
+			
         </select>
     </div>
  <!-- section for a selected or new note. able read create and change a note -->
