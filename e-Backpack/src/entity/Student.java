@@ -616,4 +616,29 @@ public void reactivateNotebook(String courseT) {
 		       }
 		        return result; 
 		     }
+	
+	/** 
+	  * This method retrieves note text for user
+	  * @return resultset of note text
+	  */
+	public ResultSet getNoteText(String courseT, String noteT)  throws IllegalStateException{
+		  
+		  if(!isLoggedIn()) {
+		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
+		  try{
+			  stmt = con.createStatement();
+	          String queryString = "SELECT NOTETEXT "+
+	         		 			   "FROM NOTE "+
+	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"'"+
+	         		 			   " and COURSETITLE = '"+courseT+"'"+
+	         		 			   " and NOTETITLE = '"+ noteT +"'";
+	          
+	          result = stmt.executeQuery(queryString);
+	         
+		       }
+		       catch (Exception E) {
+		         E.printStackTrace();
+		       }
+		        return result; 
+		     }
 }
