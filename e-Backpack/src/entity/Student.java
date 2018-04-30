@@ -538,6 +538,22 @@ public void setStuuserName(String stuUsername) {
 		}
 	}
 	
+public void reactivateNotebook(String courseT) {
+		
+		PreparedStatement stmt;
+		try {
+			String query = "UPDATE NOTEBOOK SET ISRETIRED='N' WHERE coursetitle = ? and stuusername=?";
+			stmt = con.prepareStatement(query);
+			stmt.clearParameters();
+			stmt.setString(1, courseT);
+			stmt.setString(2, this.username);
+			stmt.executeUpdate();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
 	public void updateNotebookName(String newName, String oldName) {
 		PreparedStatement stmt;
 		System.out.println(newName);

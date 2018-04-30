@@ -105,25 +105,33 @@ function closeNav() {
 	<td> <input name="password" size ="25%" height = "100" value= "" type="password" id="pass" ></td>
 </tr>
 <tr>
+	<td></td>
+	<td><input type="checkbox" onclick="myFunction('password')">Show Password</td>
+</tr>
+<tr>
 	<th align "right"> Retype Password : </th> 
 	<td> <input name="password2" size ="25%" height = "100" value= "" type="password" id="pass">
 	
 	</td>
 </tr>
-
+<tr>
+	<td></td>
+	<td><input type="checkbox" onclick="myFunction('password2')">Show Password</td>
+</tr>
+<tr>
 <%-- Submit the new account request/creation--%>
 <td colspan="4" align ="right">
    <input style="color: black;" name="Confirm" value="Confirm" type="submit">
 </td>
+</tr>
 </div>
 </div>
 </table>
  	<div class="form-group">
 	<p class="center">
-	<input type="checkbox" onclick="myFunction()">Show Password
 	
 	<div class="tooltip"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREDqWA3HbtskFN4K8s9I9qJmYOQj3U1dqEaDh0bN_FCYtrzMho"
- width="35" height="35"> <span class="tooltiptext">Create your e-Backpack account to digitize your planner, notebook, and folder.
+ width="35" height="25"> <span class="tooltiptext">Create your e-Backpack account to digitize your planner, notebook, and folder.
  												   Access your digital files at any time, and organize your life without the strain of a heavy backpack!</span></div>
 	
 	<br><br><b>Already have an e-Backpack account?</b><br>
@@ -132,6 +140,5 @@ function closeNav() {
 </form>
 </div>
 </form>
-
 </body>
 </html>

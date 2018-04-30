@@ -79,6 +79,34 @@ function closeNav() {
 			<br><br> <a href="AddSubjectFolder.jsp">Add New Folder</a>
 </div>
 
+<div id="holdingblock">
+<br>
+			<tbody>
+			<tr>
+				<td style="vertical-align: top;"><b>Current Folders:</b><br>
+				</td>
+				<td style="vertical-align: top;"> <br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td style="vertical-align: top;">
+					<form method="post" action="FolderUI.jsp" name="folder">
+					 
+					<input id = "folerBtn" value="My Folder" name="folder" type="submit">
+					</form>				
+						
+				</td>
+				<td>
+
+				</td>
+			</tr>
+		</tbody>
+			
+	</table>
+	
+</div>
+
 
 
 

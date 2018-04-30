@@ -122,8 +122,6 @@ function closeNav() {
 			int n=0;
 			while(rs.next()){
 				session.setAttribute(Integer.toString(n),rs.getString("COURSETITLE"));
-				System.out.println("1: "+ rs.getString("COURSETITLE"));
-				System.out.println("2: "+n);
 			%>
 			<tr>
 				<td style="vertical-align: top;">
@@ -131,7 +129,7 @@ function closeNav() {
 					 <input name="actCourseID" type="hidden" value=<%=n%>>
 					<input id = "noteBookBtn" value="<%=rs.getString("COURSETITLE")%>" name="note" type="submit">
 					</form>				
-				<br>			
+							
 				</td>
 				<td>
 
@@ -165,11 +163,17 @@ function closeNav() {
 			%>
 			<tr>
 				<td style="vertical-align: top;">
+
 					<form method="post" action="NoteUI.jsp" name="note">
 					 <input name="retCourseID" type="hidden" value=<%=t%>>
 					<input id = "noteBookBtn" value="<%=rs2.getString("COURSETITLE")%>" name="note" type="submit">
+
+					<form method="post" action="retiredNoteUI.jsp" name="note">
+					 <input name="courseID" type="hidden" value=<%=n %>>
+					<input id = "noteBookBtn" value="<%=rs.getString("COURSETITLE")%>" name="note" type="submit">
+
 					</form>				
-				<br>			
+						
 				</td>
 				<td>
 

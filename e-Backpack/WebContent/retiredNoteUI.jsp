@@ -29,7 +29,7 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 810px;
-	height: 654px;
+	height: 660px;
 	background-color: white;
 	text-align: center;
 	margin-left:25%;
@@ -72,7 +72,7 @@
 	background: #babdb6;
 }
 
-#retireNotebookBtn{
+#reactivateNotebookBtn{
 	background: #f3f3f3;
 	padding: .4em .4em;
 	color: #000;
@@ -80,7 +80,7 @@
 	
 }
 
-#retireNotebookBtn:hover{
+#reactivateNotebookBtn:hover{
 	background: #babdb6;
 }
 
@@ -153,16 +153,10 @@ function closeNav() {
 <div>
     <div id="divNotebookFile" class="bordered">
         <div>
-            <label>Notebook: <%=(String)session.getAttribute(request.getParameter("actCourseID"))%></label>
-            <%
-            String oldName =(String)session.getAttribute(request.getParameter("actCourseID"));
-            System.out.println("3: "+request.getParameter("actCourseID"));
-            System.out.println("4: "+oldName);
-            %>
-            <input name = "oldNotebookName" type = "hidden" value = <%= oldName%>>
-            <form method = "post" action = "NoteUIRetireNotebook_action.jsp" name = "retireNotebook">
-            <input id = "retireNotebookBtn" value = "Retire this Notebook" type = "submit">
-            <input name="courseID" type="hidden" value=<%= request.getParameter("actCourseID")%>>
+            <label>Retired Notebook: <%=request.getParameter("retiredCourseID")%></label>
+            <form method = "post" action = "NoteUIReactivateNotebook_action.jsp" name = "reactivateNotebook">
+            <input id = "reactivateNotebookBtn" value = "Reactivate this Notebook" type = "submit">
+            <input name="retiredCourseID" type="hidden" value=<%= request.getParameter("retiredCourseID")%>>
             </form>    
         </div>
      
@@ -170,36 +164,11 @@ function closeNav() {
  <!-- section for all notes in selcted notebook -->
     <div id="divNoteList" class="bordered">
         <label>Notes:</label>
-        <div>
-        <form method = "post" action = "addNewNote.jsp" name = "newNoteForm">
-        <!-- button to create a new note  -->
-            <input id = "newNoteBtn" value = "Add New Note" type = "submit">
-            <input name="retCourseID" type="hidden" value=<%= request.getParameter("retCourseID")%>>
-            </form>
-            
+        <div>   
             <!-- button to delete a selcted note from list of notes --> 
             <button id = "deleteNoteBtn" >Delete selected Note</button>
         </div>
-        <%try{ 
-    String courseT = (String)session.getAttribute(request.getParameter("actCourseID"));
-	ResultSet rs = student.getNotesList(courseT);
-%>
-        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange="">
-        	<%
-			int n=0;
-			while(rs.next()){
-				session.setAttribute(Integer.toString(n),rs.getString("NOTETITLE"));
-			%>
-			<option value="<%=rs.getString("NOTETITLE") %>"><%=rs.getString("NOTETITLE") %></option>
-			
-        	<%n++;
-			}
-			
-			}catch(IllegalStateException ise){
-			    out.println(ise.getMessage());
-			}
-			%>
-        </select>
+        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange=""></select>
     </div>
  <!-- section for a selected or new note. able read create and change a note -->
     <div id="divDocumentSelected" class="bordered">
