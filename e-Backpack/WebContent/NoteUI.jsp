@@ -156,8 +156,6 @@ function closeNav() {
             <label>Notebook: <%=(String)session.getAttribute(request.getParameter("actCourseID"))%></label>
             <%
             String oldName =(String)session.getAttribute(request.getParameter("actCourseID"));
-            System.out.println("3: "+request.getParameter("actCourseID"));
-            System.out.println("4: "+oldName);
             %>
             <input name = "oldNotebookName" type = "hidden" value = <%= oldName%>>
             <form method = "post" action = "NoteUIRetireNotebook_action.jsp" name = "retireNotebook">
