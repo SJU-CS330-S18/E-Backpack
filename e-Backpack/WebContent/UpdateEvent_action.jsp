@@ -8,12 +8,18 @@
 	in student bean which interacts with the database--%>
 <%
 try{
-	String eventtitle = request.getParameter("eventtitle");
-	String eventdescription = request.getParameter("eventdescription");
-	String location = request.getParameter("location");
-	String date = request.getParameter("eventdate");
+	String eventtitle = request.getParameter("eventt");
+	System.out.println(eventtitle);
+	String eventdescription = request.getParameter("eventde");
+	System.out.println(eventdescription);
+	String location = request.getParameter("eventl");
+	System.out.println(location);
+	String date = request.getParameter("eventd");
+	System.out.println(date);
+
 	
-	SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
  	Date neweventdate = sdf.parse(date);
 	java.sql.Date sDate = new java.sql.Date(neweventdate.getTime());
 	
@@ -22,6 +28,6 @@ try{
  }catch(IllegalStateException ise){
     out.println(ise.getMessage());
 }
-response.sendRedirect("updateEvent.jsp");
+response.sendRedirect("search.html");
 
 %>

@@ -345,7 +345,28 @@ public void setStuuserName(String stuUsername) {
 	       }
 	        return result; 
 	     }
+ /** 
+  * This method retrieves events for specific date
+  * @return resultset of search day events
+  */
+ public ResultSet searchDayWithTitile(String title)  throws IllegalStateException{
+	  
+	  if(!isLoggedIn())
+	      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");
+	       try{
+	    	   stmt = con.createStatement();
+       String queryString = "SELECT EVENTDESCRIPTION, LOCATION1,EVENTDATE " 
+       		+ "FROM EVENT "
+             + " WHERE STUUSERNAME = '" + this.getUsername() +"' and EVENTTITLE='"+title+"'";
 
+       result = stmt.executeQuery(queryString);
+       
+	       }
+	       catch (Exception E) {
+	         E.printStackTrace();
+	       }
+	        return result; 
+	     }
 
  /** This method uses a CallStatement object to call an SQL stored procedure
   * Procedure team5.STUDENT_ADD_EVENT  to  add a event to the calendar.*
@@ -378,12 +399,13 @@ public void setStuuserName(String stuUsername) {
 	   
 	   try{
 		   String usern = this.getUsername();
+		   java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 		    con = openDBConnection();
 		    callStmt = con.prepareCall(" {call team5.STUDENT_UPDATE_EVENT(?,?,?,?,?)}");
 		    callStmt.setString(1,title);
 		    callStmt.setString(2,description);
 		    callStmt.setString(3,location);
-		    callStmt.setDate(4,(java.sql.Date) date);
+		    callStmt.setDate(4,sqlDate);
 		    callStmt.setString(5,usern);
 		    callStmt.execute();
 		    callStmt.close();

@@ -97,13 +97,24 @@ SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 	<tr><th>Event</th>
 	<th>Event Date</th>
 	<th>Location</th></tr>
-	<%	while(rs.next()){%>
+	<%	int n=0;
+	while(rs.next()){
+		session.setAttribute(Integer.toString(n), rs.getString("EVENTTITLE"));
+	%>
 	<%--PRINT OUT THE RESULTS IN WEB PAGE --%>
      	<tr>
      	<td style="vertical-align: top; text-align: center;"><%=rs.getString("EVENTTITLE")%></td>
 			<td style="vertical-align: top; text-align: center;"><%=rs.getString("eventdescription")%></td>
        		<td style="vertical-align: top; text-align: center;"><%=rs.getString("location1")%></td> 
-     	</tr><%}
+       		<td><form method="post" action="UpdateEvent.jsp" >
+       			<input name="eventID" type="hidden" value=<%=n%>>
+       			 <input id = "eventbtn" value = "Update Event" type = "submit">
+       		</form>
+       		
+       		</td>
+     	</tr><%
+    n++; 	
+	}
 	}catch(IllegalStateException ise){
 	    out.println(ise.getMessage());
 	} %>
