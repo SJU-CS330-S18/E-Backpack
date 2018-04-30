@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
 
 <style>
-<!-- creating tables design -->
+
+	
+
+/* creating tables design */
 table.GeneratedTable {
 	width: 100%;
 	background-color: #000000;
@@ -26,8 +29,7 @@ table.GeneratedTable thead {
 	background-color: #000000;
 }
 
-
-<!-- creating banners design -->
+/*creating banners design */
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -119,6 +121,13 @@ table.GeneratedTable thead {
 }
 </style>
 
+ 	<!-- Page Title -->  	  
+	<head>
+		<meta content="text/html; charset=ISO-8859-1"
+		http-equiv="content-type">
+				<title >Folder Contents</title>
+	</head>
+
 <!-- script to delete row -->
 <script>
 	function SomeDeleteRowFunction(o) {
@@ -152,7 +161,9 @@ function closeNav() {
 }
 
 </script>
-	<p style="text-align: center;">Folder Name</p>
+ e-Backpack 
+ </div>
+	<p style="text-align: center;">My Folder</p>
 
 	<p>
 		​Files&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

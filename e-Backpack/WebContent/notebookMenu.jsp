@@ -129,7 +129,7 @@ function closeNav() {
 					 <input name="courseID" type="hidden" value=<%=n %>>
 					<input id = "noteBookBtn" value="<%=rs.getString("COURSETITLE")%>" name="note" type="submit">
 					</form>				
-				<br>			
+							
 				</td>
 				<td>
 
@@ -170,7 +170,7 @@ function closeNav() {
 					 <input name="courseID" type="hidden" value=<%=n %>>
 					<input id = "noteBookBtn" value="<%=rs.getString("COURSETITLE")%>" name="note" type="submit">
 					</form>				
-				<br>			
+						
 				</td>
 				<td>
 
