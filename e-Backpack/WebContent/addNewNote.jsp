@@ -87,6 +87,7 @@ function closeNav() {
     <div id="divDocumentSelected" class="bordered">
         <div>
         	<label>Title of new <%= (String)session.getAttribute(request.getParameter("addCourseID"))%> note: </label>
+            <%System.out.println((String)session.getAttribute(request.getParameter("addCourseID"))); %>
             <input name="addCourseID" type="hidden" value=<%= (String)session.getAttribute(request.getParameter("addCourseID"))%>>
             <!-- name of selected note that is being viewed -->
              <input name = "nameOfNote" id= "name" value ="" >

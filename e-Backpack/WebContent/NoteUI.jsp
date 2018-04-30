@@ -172,7 +172,7 @@ function closeNav() {
         <form method = "post" action = "addNewNote.jsp" name = "newNoteForm">
         <!-- button to create a new note  -->
             <input id = "newNoteBtn" value = "Add New Note" type = "submit">
-            <input name="addCourseID" type="hidden" value=<%=(String)session.getAttribute(request.getParameter("actCourseID"))%>>
+            <input name="addCourseID" type="hidden" value=<%=request.getParameter("actCourseID")%>>
             </form>
             
             <!-- button to delete a selcted note from list of notes --> 
@@ -184,13 +184,13 @@ function closeNav() {
 %>
         <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange="">
         	<%
-			int n=0;
+			int c=300;
 			while(rs.next()){
-				session.setAttribute(Integer.toString(n),rs.getString("NOTETITLE"));
+				session.setAttribute(Integer.toString(c),rs.getString("NOTETITLE"));
 			%>
 			<option value="<%=rs.getString("NOTETITLE") %>"><%=rs.getString("NOTETITLE") %></option>
 			
-        	<%n++;
+        	<%c++;
 			}
 			
 			}catch(IllegalStateException ise){
