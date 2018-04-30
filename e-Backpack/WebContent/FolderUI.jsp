@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
 
 <style>
+<!-- creating tables design -->
 table.GeneratedTable {
 	width: 100%;
 	background-color: #000000;
@@ -26,7 +27,7 @@ table.GeneratedTable thead {
 }
 
 
-
+<!-- creating banners design -->
 #banner{
   width:100%;
   background-size:880px 680px;
@@ -117,6 +118,8 @@ table.GeneratedTable thead {
 
 }
 </style>
+
+<!-- script to delete row -->
 <script>
 	function SomeDeleteRowFunction(o) {
 		//no clue what to put here?
@@ -127,6 +130,7 @@ table.GeneratedTable thead {
 <html>
 <body>
 
+<!-- adding banner to page -->
 <div id="banner">
 
 <div id="mySidenav" class="sidenav">
@@ -161,6 +165,8 @@ function closeNav() {
 		<tbody>
 			<%//insert while loop for ever file in folder %>
     <tr>
+    <!-- area where pulling file info an placing on page should happen -->
+    <!-- sprint 4 task-->
     <td>FileName</td>
     <td>Date</td>
     <td>Type</td>
