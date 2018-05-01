@@ -169,7 +169,7 @@ function noteContentFunction(){
             <input name = "oldNotebookName" type = "hidden" value = <%= oldName%>>
             <form method = "post" action = "NoteUIRetireNotebook_action.jsp" name = "retireNotebook">
             <input id = "retireNotebookBtn" value = "Retire this Notebook" type = "submit">
-            <input name="courseID" type="hidden" value=<%= (String)session.getAttribute(request.getParameter("actCourseID"))%>>
+            <input name="courseID" type="hidden" value=<%=request.getParameter("actCourseID")%>>
             </form>    
         </div>
      
