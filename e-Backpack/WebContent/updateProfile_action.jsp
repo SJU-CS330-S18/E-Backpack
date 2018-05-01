@@ -3,6 +3,7 @@
 <jsp:useBean id="student" class="entity.Student" scope="session"/>
 <jsp:setProperty name="student" property="*"/>
 
+<%-- if student password is equal to stored password then update password in database, if not, send error--%>
 <%
 	String newPass = request.getParameter("newPass");
 	if(newPass.equals(request.getParameter("newPass2")) && newPass.length() > 0){
