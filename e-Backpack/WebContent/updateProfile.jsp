@@ -79,7 +79,7 @@ function closeNav() {
 <!--  ignore the ...... that was just me being sneaky and centering the title w/ out messing up the navigation bar-->
  e-Backpack 
 </div>
-
+<!--  block to update profile-->
 <div id="logginblock">
 	<div style="text-align: center;">
 		<h1>Update Profile</h1>
@@ -140,6 +140,7 @@ function closeNav() {
 				<tr>
 				<font color="red"><%
 String error = request.getParameter("Error");
+				//sucessfully updated profile or passwords don't match
 if(error != null && error.equals("1")){
 	out.println("You have successfully updated your personal information.");
 }
