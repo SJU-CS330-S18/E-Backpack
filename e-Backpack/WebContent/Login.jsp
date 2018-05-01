@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <link rel="stylesheet" type="text/css" href="e-BP.css" />
+<!-- Style to set banner and loginblock appearance  -->
 
 <style>
 
@@ -30,6 +31,7 @@
 }
 </style>
 
+<!-- Page to login  -->
 <script>function myFunction() {
     var x = document.getElementById("pass");
     if (x.type === "password") {
@@ -39,6 +41,7 @@
     }
 }</script>
 
+<!-- start of html layout  -->
 <head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>e-Backpack Login</title>
@@ -59,6 +62,7 @@
 
 <span style="font-color: white;font-size:45px;cursor:pointer; " onclick="openNav()">&#9776;</span>
 
+<!-- Function for the banners nav bar use -->
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
