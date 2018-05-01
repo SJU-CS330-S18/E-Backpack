@@ -210,7 +210,7 @@ function noteContentFunction(){
         </select>
         
         <input name="actCourseID" type="hidden" value=<%=request.getParameter("actCourseID")%>>	
-		<input id = "theTitle" name="forEditNote" type="hidden" value=<%=(String)session.getAttribute(request.getParameter("actCourseID"))%>>
+		<input id = "theTitle" name="forEditNote" type="hidden" value=<%=request.getParameter("actCourseID")%>>
         <input id = "noteBookBtn" value="List" name="note" type="submit">
         </form>
     </div>
@@ -231,7 +231,7 @@ function noteContentFunction(){
         <!-- text are for selected notes contents used for reading and editing and creating a note -->
            <%
    
-String strMyText = request.getParameter("forEditNote");
+String strMyText = (String)session.getAttribute(request.getParameter("forEditNote"));
 String noteTitle = request.getParameter("selectSpecificNoteInNotebook");
 System.out.println(strMyText);
 System.out.println(noteTitle);
