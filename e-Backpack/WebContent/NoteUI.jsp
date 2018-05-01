@@ -191,8 +191,9 @@ function noteContentFunction(){
     String courseT = (String)session.getAttribute(request.getParameter("actCourseID"));
 	ResultSet rs = student.getNotesList(courseT);
 %>
-		<input id = "theTitle" name="forEditNote" type="hidden" value=<%=(String)session.getAttribute(request.getParameter("actCourseID"))%>>
-        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange="noteContentFunction()">
+		
+        <form method = "post"  action = "NoteUI.jsp" name="listNoteText">
+        <select name="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange="">
         
         	<%
 			int c=300;
@@ -201,16 +202,20 @@ function noteContentFunction(){
 			%>
 			<option value="<%=rs.getString("NOTETITLE") %>"><%=rs.getString("NOTETITLE") %></option>
 			
-        	<%c++;
-			}
-			
-			}catch(IllegalStateException ise){
+        	 <%c++;
+        	 }}catch(IllegalStateException ise){
 			    out.println(ise.getMessage());
 			}
 			%>
-			
         </select>
+        
+        <input name="actCourseID" type="hidden" value=<%=request.getParameter("actCourseID")%>>	
+		<input id = "theTitle" name="forEditNote" type="hidden" value=<%=(String)session.getAttribute(request.getParameter("actCourseID"))%>>
+        <input id = "noteBookBtn" value="List" name="note" type="submit">
+        </form>
     </div>
+
+			
  <!-- section for a selected or new note. able read create and change a note -->
     <div id="divDocumentSelected" class="bordered">
         <div><label>Document Selected:</label></div>
@@ -219,12 +224,22 @@ function noteContentFunction(){
             <!-- name of selected note that is being viewed -->
             <input id="noteTextBox" ></input>
             <!-- button to save any new notes or changes to a note -->
-            <button id = "saveBtn"onclick="buttonDocumentSelectedSave_Clicked();">Save</button>
+            <button id = "saveBtn">Save</button>
            
         </div>
         <div></div>
         <!-- text are for selected notes contents used for reading and editing and creating a note -->
-        <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20"></textarea></div>
+           <%
+   
+String strMyText = request.getParameter("forEditNote");
+String noteTitle = request.getParameter("selectSpecificNoteInNotebook");
+System.out.println(strMyText);
+System.out.println(noteTitle);
+	ResultSet rs5= student.getNoteText(strMyText,noteTitle);
+	
+while(rs5.next()){ %>
+        <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20"><%=rs5.getString("NOTETEXT") %></textarea></div>
+        <%}%>
     </div>
  
        

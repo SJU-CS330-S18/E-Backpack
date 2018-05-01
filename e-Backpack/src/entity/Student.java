@@ -604,7 +604,7 @@ public void reactivateNotebook(String courseT) {
 		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
 		  try{
 			  stmt = con.createStatement();
-	          String queryString = "SELECT NOTETITLE, NOTETITLE "+
+	          String queryString = "SELECT NOTETITLE, NOTETEXT "+
 	         		 			   "FROM NOTE "+
 	         		 			   " WHERE STUUSERNAME = '" + this.getUsername() +"' and COURSETITLE = '"+courseT+"'";
 	          
@@ -622,7 +622,7 @@ public void reactivateNotebook(String courseT) {
 	  * @return resultset of note text
 	  */
 	public ResultSet getNoteText(String courseT, String noteT)  throws IllegalStateException{
-		  System.out.print("test");
+		
 		  if(!isLoggedIn()) {
 		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
 		  try{
