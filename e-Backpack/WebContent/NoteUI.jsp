@@ -218,7 +218,6 @@ function noteContentFunction(){
 			
  <!-- section for a selected or new note. able read create and change a note -->
     <div id="divDocumentSelected" class="bordered">
-        <div><label>Document Selected:</label></div>
         <div>
             <label>Name:</label>
             <!-- name of selected note that is being viewed -->

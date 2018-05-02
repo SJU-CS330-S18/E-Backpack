@@ -168,7 +168,32 @@ function closeNav() {
             <!-- button to delete a selcted note from list of notes --> 
             <button id = "deleteNoteBtn" >Delete selected Note</button>
         </div>
-        <select id="selectSpecificNoteInNotebook" style="width:100%" size="10" onchange=""></select>
+        <%try{ 
+    String courseT = (String)session.getAttribute(request.getParameter("retCourseID"));
+	ResultSet rs = student.getNotesList(courseT);
+%>
+		
+        <form method = "post"  action = "retiredNoteUI.jsp" name="retiredListNoteText">
+        <select name="selectSpecificNoteInRetNotebook" style="width:100%" size="10" onchange="">
+        
+        	<%
+			int c=300;
+			while(rs.next()){
+				session.setAttribute(Integer.toString(c),rs.getString("NOTETITLE"));
+			%>
+			<option value="<%=rs.getString("NOTETITLE") %>"><%=rs.getString("NOTETITLE") %></option>
+			
+        	 <%c++;
+        	 }}catch(IllegalStateException ise){
+			    out.println(ise.getMessage());
+			}
+			%>
+        </select>
+        
+         <input name="retCourseID" type="hidden" value=<%=request.getParameter("retCourseID")%>>	
+		<input id = "theTitle" name="forEditRetNote" type="hidden" value=<%=request.getParameter("retCourseID")%>>
+        <input id = "noteBookBtn" value="List" name="note" type="submit">
+        </form>
     </div>
  <!-- section for a selected or new note. able read create and change a note -->
     <div id="divDocumentSelected" class="bordered">
@@ -183,7 +208,18 @@ function closeNav() {
         </div>
         <div></div>
         <!-- text are for selected notes contents used for reading and editing and creating a note -->
-        <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20"></textarea></div>
+        <%
+   
+String strMyText = (String)session.getAttribute(request.getParameter("forEditRetNote"));
+String noteTitle = request.getParameter("selectSpecificNoteInRetNotebook");
+System.out.println(strMyText);
+System.out.println(noteTitle);
+	ResultSet rs6= student.getNoteText(strMyText,noteTitle);
+	
+while(rs6.next()){ %>
+        <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20"><%=rs6.getString("NOTETEXT") %></textarea></div>
+        <%}%>
+    </div>
     </div>
  
        
@@ -191,7 +227,6 @@ function closeNav() {
           
  
     </div>
- </div>
 
 </body>
 </html>
