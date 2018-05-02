@@ -197,7 +197,6 @@ function noteContentFunction(){
             </form>
             
             <!-- button to delete a selcted note from list of notes --> 
-            <button id = "deleteNoteBtn" >Delete selected Note</button>
         </div>
         <%try{ 
     String courseT = (String)session.getAttribute(request.getParameter("actCourseID"));

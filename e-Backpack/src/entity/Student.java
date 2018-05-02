@@ -649,28 +649,20 @@ public void reactivateNotebook(String courseT) {
 		
 		 PreparedStatement stmt;
 		  try{
-			  System.out.println(courseT);
-			  System.out.println(noteT);
-			  System.out.println(noteText);
+			  
 	          String query = "UPDATE NOTE SET NOTETEXT=? "+
 	        		  " WHERE STUUSERNAME = ? "+
 		 			   " and COURSETITLE = ? "+
 		 			   " and NOTETITLE = ?";
-				System.out.println("test!1");
+				
 
 				stmt = con.prepareStatement(query);
 				stmt.clearParameters();
-				System.out.println("test!.5");
 				stmt.setString(1, noteText);
-				System.out.println("test!2");
 				stmt.setString(2, this.username);
-				System.out.println("test!3");
 				stmt.setString(3,courseT);
-				System.out.println("test!4");
 				stmt.setString(4, noteT);
-				System.out.println("test!5");
 				stmt.execute();
-				System.out.println("test!6");
 	         
 		       }
 		       catch (Exception E) {
