@@ -641,4 +641,32 @@ public void reactivateNotebook(String courseT) {
 		       }
 		        return result; 
 		     }
+	
+	/** 
+	  * This method update note text for user
+	  */
+	public void updateNoteText(String courseT, String noteT, String noteText){
+		
+		  if(!isLoggedIn()) {
+		      throw new IllegalStateException("MUST BE LOGGED IN FIRST!");}
+		  try{
+			  PreparedStatement stmt;
+	          String query = "UPDATE NOTE SET NOTETEXT=? "+
+	        		  " WHERE STUUSERNAME = ? "+
+		 			   " and COURSETITLE = ? "+
+		 			   " and NOTETITLE = ?";
+	          
+				stmt = con.prepareStatement(query);
+				stmt.clearParameters();
+				stmt.setString(1, noteText);
+				stmt.setString(2, this.username);
+				stmt.setString(3,courseT);
+				stmt.setString(4, noteT);
+				stmt.executeUpdate();
+	         
+		       }
+		       catch (Exception E) {
+		         E.printStackTrace();
+		       }
+		     }
 }
