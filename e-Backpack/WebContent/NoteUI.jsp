@@ -60,7 +60,7 @@
 	background: #babdb6;
 }
 
-#saveBtn{
+#saveNoteEdits{
 	background: #f3f3f3;
 	padding: .4em .4em;
 	color: #000;
@@ -68,7 +68,7 @@
 	
 }
 
-#saveBtn:hover{
+#saveNoteEdits:hover{
 	background: #babdb6;
 }
 
@@ -112,6 +112,18 @@
 	background-color: #ffff;
 
 } 
+
+#noteBookBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#noteBookBtn:hover{
+	background: #babdb6;
+}
 </style>
 <head>
 <!-- Page Title -->
@@ -217,28 +229,33 @@ function noteContentFunction(){
 
 			
  <!-- section for a selected or new note. able read create and change a note -->
+ <%
+   
+String strMyText = (String)session.getAttribute(request.getParameter("forEditNote"));
+String noteTitle = request.getParameter("selectSpecificNoteInNotebook");
+//System.out.println(strMyText);
+//System.out.println(noteTitle);
+	ResultSet rs5= student.getNoteText(strMyText,noteTitle);
+	
+while(rs5.next()){ %>
     <div id="divDocumentSelected" class="bordered">
         <div>
-            <label>Name:</label>
             <!-- name of selected note that is being viewed -->
-            <input id="noteTextBox" ></input>
-            <!-- button to save any new notes or changes to a note -->
-            <button id = "saveBtn">Save</button>
+            <label>Note Title: <%=request.getParameter("selectSpecificNoteInNotebook")%></label>
+            
            
         </div>
         <div></div>
         <!-- text are for selected notes contents used for reading and editing and creating a note -->
-           <%
-   
-String strMyText = (String)session.getAttribute(request.getParameter("forEditNote"));
-String noteTitle = request.getParameter("selectSpecificNoteInNotebook");
-System.out.println(strMyText);
-System.out.println(noteTitle);
-	ResultSet rs5= student.getNoteText(strMyText,noteTitle);
-	
-while(rs5.next()){ %>
-        <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20"><%=rs5.getString("NOTETEXT") %></textarea></div>
-        <%}%>
+        
+        <form method = "post"  action = "saveNoteEdits_action.jsp" name="checkNoteForEdits">   
+        <div><textarea name = "noteContent" id="textareaDocumentSelectedContents" style="width:95%" rows="19"><%=rs5.getString("NOTETEXT") %></textarea></div>
+        <!-- button to save any new notes or changes to a note -->
+        <input  name="courseT" type="hidden" value=<%=(String)session.getAttribute(request.getParameter("forEditNote"))%>>
+         <input  name="noteT" type="hidden" value=<%=request.getParameter("selectSpecificNoteInNotebook")%>>
+            <input id = "saveNoteEdits" value="Save" name="saveNoteEdits" type="submit">
+        </form>
+        <%} %>
     </div>
  
        
