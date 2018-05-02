@@ -5,9 +5,9 @@ search a specific day to see events for days other than the current.  -->
 <%@ page language="java" import="java.sql.*,entity.*, java.util.*"%>
 <jsp:useBean id="student" class= "entity.Student" scope="session"/> 
 <jsp:setProperty name="student" property="*"/> 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
-<link rel="stylesheet" type="text/css" href="modalStyle.css"/>
+
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
 
 <head>
@@ -89,7 +89,7 @@ function closeNav() {
 }
 
 </script>
- <font size="120">e-Backpack </font>
+ e-Backpack 
 </div>
 <div class="row">
 <div id="holdingblock" style= text-align:center>
