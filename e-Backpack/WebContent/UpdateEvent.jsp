@@ -7,11 +7,11 @@
 
 <%--START HTML--%>
 <html>
-<link rel="stylesheet" type="text/css" href="modalStyle.css"/>
+
 <link rel="stylesheet" type="text/css" href="e-BP.css"/>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Update Event</title>
 <style>
 *{
@@ -30,12 +30,12 @@
   padding: 0,0,0,0;
 }
 #holdingblock{	
-	width: 50%;
-	height: 500px;
+	width: 350;
+	height: 250px;
 	background-color: white;
 	background-position:left;
 	float:left;
-	margin-left:25%;
+	margin-left: 40%;
 	}
 .row:after {
     content: "";
@@ -78,6 +78,7 @@ function closeNav() {
 <font size="120">e-Backpack </font>
 </div>
 <div>
+<div id="holdingblock">
 		<form method="post" action="UpdateEvent_action.jsp"
 			id="UpdateEvent">
 			<table id="UpdateEvent">
@@ -94,19 +95,19 @@ try{
 	
 		
 				<tr>
-					<td>Event Title</td>
+					<td><b>Event Title</b></td>
 					<td><textarea name = "eventt"readonly><%=eventT%></textarea></td>
 				</tr>
 				<tr>
-					<td>Event Description</td>
+					<td><b>Event Description</b></td>
 					<td><textarea name="eventde"><%=rs.getString("EVENTDESCRIPTION")%></textarea></td>
 				</tr>
 								<tr>
-					<td>Event Location</td>
+					<td><b>Event Location</b></td>
 					<td><textarea name="eventl"><%=rs.getString("LOCATION1")%></textarea></td>
 				</tr>
 								<tr>
-					<td>Event Date</td>
+					<td><b>Event Date</b></td>
 					<td><input name="eventd"
 						value=<%=rs.getString("EVENTDATE")%>></td>
 				</tr>
@@ -123,7 +124,7 @@ try{
 	} %>
 	</table>
 	</form>
-	
+	</div>
 </div>
 
 

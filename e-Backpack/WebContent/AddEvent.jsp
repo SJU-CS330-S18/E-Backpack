@@ -24,7 +24,7 @@ user can input information to be able to add a new event to their calendar  -->
 /* DIV element used throughout the project to hold other elements, and add contrast from background */
 #logginblock{
 	width: 600px;
-	height: 350px;
+	height: 300px;
 	background-color: white;
 	background-position:center;
 	margin:auto;
