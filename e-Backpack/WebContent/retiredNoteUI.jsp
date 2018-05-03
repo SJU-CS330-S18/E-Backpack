@@ -111,6 +111,30 @@
 #testID{
 	background-color: #ffff;
 
+}
+
+#noteBookBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#noteBookBtn:hover{
+	background: #babdb6;
+}
+
+#saveNoteEdits{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#saveNoteEdits:hover{
+	background: #babdb6;
 } 
 </style>
 <head>
@@ -174,7 +198,7 @@ function closeNav() {
 %>
 		
         <form method = "post"  action = "retiredNoteUI.jsp" name="retiredListNoteText">
-        <select name="selectSpecificNoteInRetNotebook" style="width:100%" size="10" onchange="">
+        <select name="SelectSpecificNoteInRetNotebook" style="width:100%" size="10" onchange="">
         
         	<%
 			int c=300;
@@ -196,30 +220,40 @@ function closeNav() {
         </form>
     </div>
  <!-- section for a selected or new note. able read create and change a note -->
-    <div id="divDocumentSelected" class="bordered">
-        <div><label>Document Selected:</label></div>
-        <div>
-            <label>Name:</label>
-            <!-- name of selected note that is being viewed -->
-            <input id="noteTextBox" ></input>
-            <!-- button to save any new notes or changes to a note -->
-            <button id = "saveBtn"onclick="buttonDocumentSelectedSave_Clicked();">Save</button>
-           
-        </div>
+    
         <div></div>
         <!-- text are for selected notes contents used for reading and editing and creating a note -->
         <%
    
 String strMyText = (String)session.getAttribute(request.getParameter("forEditRetNote"));
-String noteTitle = request.getParameter("selectSpecificNoteInRetNotebook");
-System.out.println(strMyText);
-System.out.println(noteTitle);
+String noteTitle = request.getParameter("SelectSpecificNoteInRetNotebook");
 	ResultSet rs6= student.getNoteText(strMyText,noteTitle);
 	
 while(rs6.next()){ %>
-        <div><textarea id="textareaDocumentSelectedContents" style="width:95%" rows="20"><%=rs6.getString("NOTETEXT") %></textarea></div>
-        <%}%>
+       <div id="divDocumentSelected" class="bordered">
+        <div>
+            <!-- name of selected note that is being viewed -->
+            <label>Note Title: <%=request.getParameter("SelectSpecificNoteInRetNotebook")%></label>
+            
+           
+        </div>
+        <div></div>
+        <!-- text are for selected notes contents used for reading and editing and creating a note -->
+        
+        <form method = "post"  action = "saveNoteEdits_action.jsp" name="checkNoteForEdits">   
+        <div><textarea name = "noteContent" id="textareaDocumentSelectedContents" style="width:95%" rows="19"><%=rs6.getString("NOTETEXT") %></textarea></div>
+        <!-- button to save any new notes or changes to a note -->
+        <input  name="courseT" type="hidden" value=<%=(String)session.getAttribute(request.getParameter("forEditRetNote"))%>>
+         <input  name="noteT" type="hidden" value=<%=request.getParameter("SelectSpecificNoteInRetNotebook")%>>
+            <input id = "saveNoteEdits" value="Save" name="saveNoteEdits" type="submit">
+        </form>
+        <%} %>
     </div>
+ 
+       
+        
+          
+ 
     </div>
  
        

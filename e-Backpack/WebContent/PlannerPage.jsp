@@ -57,6 +57,18 @@ search a specific day to see events for days other than the current.  -->
 .btn:hover {background: #eee;}
 .link{color:black;}
 
+#modalBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#modalBtn:hover{
+	background: #babdb6;
+}
+
 </style>
 <head>
 <meta content="text/html; charset=ISO-8859-1"

@@ -29,6 +29,30 @@
 	box-shadow: 10px 10px 5px #333333;
 	text-align: center;
 }
+
+#loginBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#loginBtn:hover{
+	background: #babdb6;
+}
+
+#resetBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#resetBtn:hover{
+	background: #babdb6;
+}
 </style>
 
 <!-- Page to login  -->
@@ -105,8 +129,8 @@ function closeNav() {
 			
 
 			
-					<input class="button" name="Login" value="Login" type="submit">
-					<input class="button" type="reset"><br><br>
+					<input class="button" id = "loginBtn" name="Login" value="Login" type="submit">
+					<input class="button" id = "resetBtn" type="reset"><br><br>
 					
 <font color="red"><%
 String error = request.getParameter("Error");

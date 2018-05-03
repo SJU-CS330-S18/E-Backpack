@@ -31,6 +31,30 @@ user can input information to be able to add a new event to their calendar  -->
 	box-shadow: 10px 10px 5px #333333;
 	text-align: center;
 }
+
+#return{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#return:hover{
+	background: #babdb6;
+}
+
+#confirm{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
+}
+
+#confirm:hover{
+	background: #babdb6;
+}
 </style>
 <%-- Additional checking to ensure user is logged in--%>
 <script>function myFunction() {
@@ -103,13 +127,13 @@ function closeNav() {
 <td colspan="4" align ="right">
 
 
-<input style="color: black;" name="Confirm" value="Confirm" type="submit">
+<input style="color: black;" id = "confirm" name="Confirm" value="Confirm" type="submit">
 </td>
 </table>
 </form>
 
 <form method="post" action="PlannerPage.jsp" name="Return">
-<input style="color: black;" name="Return" value="Return to Planner" type="submit">
+<input style="color: black;" id = "return"name="Return" value="Return to Planner" type="submit">
 </form>
 
 </body>

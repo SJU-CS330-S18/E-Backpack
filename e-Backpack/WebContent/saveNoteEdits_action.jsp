@@ -10,8 +10,6 @@
 	String newNoteContent = request.getParameter("noteContent");
 	String noteTitle = request.getParameter("noteT");
 	String courseTitle = request.getParameter("courseT");
-	//System.out.println(newNoteContent);
-	//System.out.println(noteTitle);;
 	
 	student.updateNoteText(courseTitle, noteTitle, newNoteContent);
  

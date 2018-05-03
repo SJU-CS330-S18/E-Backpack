@@ -52,7 +52,19 @@
 	background-position:center;
 	box-shadow: 10px 10px 5px #333333;
 	text-align: center;
+	}
+#submitBtn{
+	background: #f3f3f3;
+	padding: .4em .4em;
+	color: #000;
+	border: 0;
+	
 }
+
+#submitBtn:hover{
+	background: #babdb6;
+}
+
 
 </style>
 </head>
@@ -92,7 +104,7 @@ function closeNav() {
         <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
       </div>
       <div class="form-group"> <!-- Submit button -->
-        <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+        <button class="btn btn-primary " id = "submitBtn"name="submit" type="submit">Submit</button>
       </div>
      </form>
      </div>
